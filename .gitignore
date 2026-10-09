@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/
+outputs/
+*.sqlite3
+*.db
+
+# The local proposal contains group members' personal information.
+[[]Group 59[]] ClipAgent Evidence-Grounded Video Editing with Stateful Planning and Verified Tool Execution.pdf
