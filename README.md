@@ -4,7 +4,7 @@ Local demo for evidence-grounded video editing. It accepts 1–3 MP4 files, tran
 
 ## Run locally
 
-Requires Python 3.12 or newer on macOS. The demo bundles FFmpeg through `imageio-ffmpeg`, so a system FFmpeg installation is not required.
+Tested on Python 3.12 and macOS. The demo bundles FFmpeg through `imageio-ffmpeg`, so a system FFmpeg installation is not required.
 
 ```bash
 python3 -m venv .venv
@@ -15,6 +15,8 @@ python3 -m venv .venv
 ```
 
 Open <http://127.0.0.1:8765>. Choose **Run sample edit** for the prepared three-video demonstration, or upload your own English MP4 files. The first model download requires internet access. `scripts.make_demo` uses the macOS `say` voice; uploading your own videos works on other systems.
+
+If the Python.org macOS installation reports a certificate error while installing packages or downloading the model, set `PIP_CERT=/etc/ssl/cert.pem` for pip and `SSL_CERT_FILE=/etc/ssl/cert.pem` for the model-download command.
 
 ## Repository layout
 

@@ -237,17 +237,20 @@ def make_srt(timeline, transcript):
     offset = 0.0
     for clip in timeline:
         for cue in cues_by_asset.get(clip["asset_id"], []):
-            words = [word for word in cue.get("words", []) if word["start"] >= clip["start"] - 0.1 and word["end"] <= clip["end"] + 0.1]
+            words = [
+                word for word in cue.get("words", [])
+                if word["end"] > clip["start"] and word["start"] < clip["end"]
+            ]
             if words:
                 group = []
                 for word in words:
                     group.append(word)
                     content = "".join(item["text"] for item in group).strip()
                     if len(group) >= 7 or len(content) >= 42 or content.endswith((".", "?", "!")):
-                        output.append((offset + group[0]["start"] - clip["start"], offset + group[-1]["end"] - clip["start"], content))
+                        output.append((max(0, offset + group[0]["start"] - clip["start"]), offset + min(group[-1]["end"], clip["end"]) - clip["start"], content))
                         group = []
                 if group:
-                    output.append((offset + group[0]["start"] - clip["start"], offset + group[-1]["end"] - clip["start"], "".join(item["text"] for item in group).strip()))
+                    output.append((max(0, offset + group[0]["start"] - clip["start"]), offset + min(group[-1]["end"], clip["end"]) - clip["start"], "".join(item["text"] for item in group).strip()))
             else:
                 start = max(cue["start"], clip["start"])
                 end = min(cue["end"], clip["end"])

@@ -198,15 +198,23 @@ def edit_timeline(job_id: str, body: TimelineEdit):
 
 @app.get("/api/jobs/{job_id}/{artifact}")
 def artifact(job_id: str, artifact: str):
-    _get(job_id)
+    record = _get(job_id)
     if artifact == "timeline.json":
         return JSONResponse(
-            {"job_id": job_id, "version": get_job(job_id)["version"], "clips": get_job(job_id)["timeline"]},
+            {
+                "job_id": job_id,
+                "version": record["version"],
+                "sources": [
+                    {key: asset[key] for key in ("id", "name", "duration", "width", "height")}
+                    for asset in record["assets"]
+                ],
+                "clips": record["timeline"],
+            },
             headers={"Content-Disposition": 'attachment; filename="timeline.json"'},
         )
     if artifact == "report.json":
         return JSONResponse(
-            get_job(job_id)["report"],
+            record["report"],
             headers={"Content-Disposition": 'attachment; filename="report.json"'},
         )
     names = {"video": "final.mp4", "subtitles": "captions.srt"}
