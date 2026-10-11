@@ -170,22 +170,16 @@ def edit_timeline(job_id: str, body: TimelineEdit):
     current = _get(job_id)
     if current["status"] not in {"complete", "needs_review"}:
         raise HTTPException(409, "This job is not ready for timeline changes")
-    prior = current["timeline"]
     clips = []
     for input_clip in body.clips:
-        original = next(
-            (clip for clip in prior if clip["asset_id"] == input_clip.asset_id and
-             abs(clip["start"] - input_clip.start) < 1),
-            None,
-        )
         clips.append({
             "asset_id": input_clip.asset_id,
             "start": round(input_clip.start, 3),
             "end": round(input_clip.end, 3),
-            "evidence_ids": original["evidence_ids"] if original else [],
+            "evidence_ids": [],
             "reason": "Manual timeline edit",
-            "required": original["required"] if original else False,
-            "score": original["score"] if original else 0.0,
+            "required": False,
+            "score": 0.0,
         })
     try:
         validate_timeline(clips, current["assets"])

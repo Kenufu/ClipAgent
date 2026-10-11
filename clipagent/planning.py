@@ -82,6 +82,62 @@ def validate_timeline(timeline, assets):
     return round(sum(float(clip["end"]) - float(clip["start"]) for clip in timeline), 3)
 
 
+def review_timeline_evidence(timeline, transcript, topics, *, annotate=False):
+    """Check only speech that remains audible inside the selected clip bounds."""
+    document_frequency = {}
+    for cue in transcript:
+        for token in _tokens(cue["text"]):
+            document_frequency[token] = document_frequency.get(token, 0) + 1
+
+    reviewed = []
+    matches = {topic: [] for topic in topics}
+    for clip in timeline:
+        fragments = []
+        for cue in transcript:
+            if cue["asset_id"] != clip["asset_id"]:
+                continue
+            words = cue.get("words", [])
+            if words:
+                selected = [
+                    word["text"].strip() for word in words
+                    if clip["start"] <= (word["start"] + word["end"]) / 2 <= clip["end"]
+                ]
+                content = " ".join(selected)
+            else:
+                overlap = max(0, min(clip["end"], cue["end"]) - max(clip["start"], cue["start"]))
+                content = cue["text"] if overlap >= 0.8 * (cue["end"] - cue["start"]) else ""
+            if content:
+                fragments.append((cue["id"], content))
+
+        covered = []
+        best_score = 0.0
+        for topic in topics:
+            for cue_id, content in fragments:
+                if not _tokens(topic).issubset(_tokens(content)):
+                    continue
+                score = _score(topic, {"text": content}, document_frequency, len(transcript))
+                if score >= 0.35:
+                    if cue_id not in matches[topic]:
+                        matches[topic].append(cue_id)
+                    if topic not in covered:
+                        covered.append(topic)
+                    best_score = max(best_score, score)
+        if annotate:
+            clip = dict(clip)
+            clip["evidence_ids"] = list(dict.fromkeys(cue_id for cue_id, _ in fragments))
+            clip["required"] = bool(covered)
+            clip["score"] = round(best_score, 3)
+            clip["reason"] = "Required topic: " + ", ".join(covered) if covered else "Manual timeline edit"
+        reviewed.append(clip)
+
+    topic_evidence = [
+        {"topic": topic, "evidence_ids": matches[topic], "verified": bool(matches[topic])}
+        for topic in topics
+    ]
+    unresolved = [f"No selected spoken evidence found for: {topic}" for topic in topics if not matches[topic]]
+    return reviewed, topic_evidence, unresolved
+
+
 def build_timeline(assets, transcript, options):
     asset_order = {asset["id"]: i for i, asset in enumerate(assets)}
     document_frequency = {}

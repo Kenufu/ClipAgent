@@ -3,7 +3,7 @@ from pathlib import Path
 
 from .config import JOBS
 from .media import render, transcribe, verify
-from .planning import build_timeline, make_srt, parse_request, repair_duration, srt_max_end, validate_timeline
+from .planning import build_timeline, make_srt, parse_request, repair_duration, review_timeline_evidence, srt_max_end, validate_timeline
 from .storage import event, get_job, update_job
 
 _workers = ThreadPoolExecutor(max_workers=1, thread_name_prefix="clipagent")
@@ -34,7 +34,9 @@ def _process(job_id, revision, manual_timeline):
 
         event(job_id, "planning", "Selecting source-linked clips")
         if manual_timeline is not None:
-            timeline = manual_timeline
+            timeline, _, _ = review_timeline_evidence(
+                manual_timeline, transcript, options["topics"], annotate=True
+            )
             unresolved = []
         else:
             timeline, unresolved = build_timeline(assets, transcript, options)
@@ -62,6 +64,14 @@ def _process(job_id, revision, manual_timeline):
             version += 1
             update_job(job_id, timeline=timeline, version=version)
 
+        _, topic_evidence, missing_topics = review_timeline_evidence(
+            timeline, transcript, options["topics"]
+        )
+        unresolved = [
+            issue for issue in unresolved
+            if not issue.startswith("No reliable spoken evidence found for:")
+        ]
+        unresolved.extend(issue for issue in missing_topics if issue not in unresolved)
         checks["predicted_duration"] = predicted
         checks["subtitle_cues"] = srt.count(" --> ")
         checks["subtitle_within_video"] = srt_max_end(srt) <= checks["duration"] + 0.05
@@ -83,6 +93,7 @@ def _process(job_id, revision, manual_timeline):
             "unresolved": unresolved,
             "checks": checks,
             "evidence_count": len(transcript),
+            "topic_evidence": topic_evidence,
             "timeline_version": version,
             "repairs": repairs,
             "outputs": {"video": final.name, "subtitles": captions.name},

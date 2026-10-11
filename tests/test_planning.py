@@ -5,6 +5,7 @@ from clipagent.planning import (
     make_srt,
     parse_request,
     repair_duration,
+    review_timeline_evidence,
     srt_max_end,
     validate_timeline,
 )
@@ -58,6 +59,57 @@ class PlanningTests(unittest.TestCase):
     def test_rejects_out_of_bounds(self):
         with self.assertRaisesRegex(ValueError, "out-of-bounds"):
             validate_timeline([{"asset_id": "a", "start": 29, "end": 31}], self.assets)
+
+    def test_manual_trim_rechecks_word_level_evidence(self):
+        cue = {
+            "id": "a:t1", "asset_id": "a", "start": 1.0, "end": 5.0,
+            "text": "The problem is slow search.",
+            "words": [
+                {"start": 1.0, "end": 1.5, "text": "The"},
+                {"start": 1.6, "end": 2.2, "text": "problem"},
+                {"start": 3.0, "end": 3.5, "text": "is"},
+                {"start": 3.6, "end": 4.2, "text": "slow"},
+                {"start": 4.3, "end": 5.0, "text": "search."},
+            ],
+        }
+        clip = {
+            "asset_id": "a", "start": 2.9, "end": 5.0,
+            "evidence_ids": ["a:t1"], "required": True, "score": 1.0,
+        }
+        reviewed, topics, unresolved = review_timeline_evidence(
+            [clip], [cue], ["problem"], annotate=True
+        )
+        self.assertFalse(reviewed[0]["required"])
+        self.assertEqual(reviewed[0]["score"], 0.0)
+        self.assertEqual(topics[0]["evidence_ids"], [])
+        self.assertIn("problem", unresolved[0])
+
+    def test_manual_edit_rebuilds_evidence_ids(self):
+        clips = [{"asset_id": "a", "start": 7.0, "end": 12.0, "evidence_ids": ["a:t1"]}]
+        reviewed, topics, unresolved = review_timeline_evidence(
+            clips, self.cues, ["solution"], annotate=True
+        )
+        self.assertEqual(reviewed[0]["evidence_ids"], ["a:t2"])
+        self.assertTrue(reviewed[0]["required"])
+        self.assertEqual(topics[0]["evidence_ids"], ["a:t2"])
+        self.assertEqual(unresolved, [])
+
+    def test_unverified_partial_cue_without_word_times(self):
+        clips = [{"asset_id": "b", "start": 2.0, "end": 3.0}]
+        reviewed, topics, unresolved = review_timeline_evidence(
+            clips, self.cues, ["demonstration result"], annotate=True
+        )
+        self.assertEqual(reviewed[0]["evidence_ids"], [])
+        self.assertFalse(topics[0]["verified"])
+        self.assertEqual(len(unresolved), 1)
+
+    def test_partial_multiword_topic_is_not_verified(self):
+        clips = [{"asset_id": "a", "start": 1.0, "end": 5.0}]
+        _, topics, unresolved = review_timeline_evidence(
+            clips, self.cues, ["problem solution"]
+        )
+        self.assertFalse(topics[0]["verified"])
+        self.assertEqual(len(unresolved), 1)
 
 
 if __name__ == "__main__":

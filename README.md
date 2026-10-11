@@ -2,6 +2,8 @@
 
 Local demo for evidence-grounded video editing. It accepts 1–3 MP4 files, transcribes English speech, selects source-linked clips for requested topics, exports an MP4 and SRT, and checks the finished file. The timeline can be edited and follow-up instructions reuse cached source analysis.
 
+The verification report lists each requested topic and the speech evidence still present in the final timeline. Manual trims trigger a fresh evidence check; missing topics remain flagged for review.
+
 ## Run locally
 
 Tested on Python 3.12 and macOS. The demo bundles FFmpeg through `imageio-ffmpeg`, so a system FFmpeg installation is not required.
