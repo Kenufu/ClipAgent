@@ -2,7 +2,7 @@
 
 Local demo for evidence-grounded video editing. It accepts 1–3 MP4 files, transcribes English speech, selects source-linked clips for requested topics, exports an MP4 and SRT, and checks the finished file. The timeline can be edited and follow-up instructions reuse cached source analysis.
 
-The verification report lists each requested topic and the speech evidence still present in the final timeline. Manual trims trigger a fresh evidence check; missing topics remain flagged for review.
+The verification report lists each requested topic and the speech evidence still present in the final timeline. Manual trims trigger a fresh evidence check; missing topics remain flagged for review. The browser workbench keeps edits, preview, clip timeline, evidence, checks and activity in one responsive view.
 
 ## Run locally
 
@@ -30,6 +30,7 @@ If the Python.org macOS installation reports a certificate error while installin
 | `clipagent/storage.py` | SQLite job records and activity history |
 | `clipagent/service.py` | Stateful execution, revision and limited duration repair |
 | `web/` | Editing workspace |
+| `web/icons/` | Locally served Lucide icons and their license |
 | `scripts/` | Reproducible sample media |
 | `tests/` | Planning and media tests |
 | `data/` | Local model weights, uploads, outputs and SQLite (ignored by Git) |

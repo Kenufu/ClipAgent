@@ -8,103 +8,112 @@
   <script src="/static/app.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="brand-mark">C</span><span>ClipAgent</span></div>
-    <div class="topbar-right"><span class="status-dot"></span> Local workspace</div>
+  <header class="app-header">
+    <div class="brand"><span class="brand-mark"><span class="icon icon-clapperboard" aria-hidden="true"></span></span><span>ClipAgent</span></div>
+    <span class="header-context">Editing workspace</span>
+    <span class="connection"><span class="connection-dot"></span> Local</span>
   </header>
 
-  <main class="layout">
-    <aside class="sidebar">
-      <section class="sidebar-section">
-        <div class="section-head"><h1>New edit</h1><span class="subtle">01 / Setup</span></div>
-        <form id="edit-form">
-          <label class="field-label" for="files">Source videos <span>1–3 MP4</span></label>
-          <input id="files" name="files" type="file" accept="video/mp4" multiple required>
-
-          <label class="field-label" for="instruction">Editing brief</label>
-          <textarea id="instruction" name="instruction" rows="5" required>Make a 30-second recap covering the problem, solution, and demonstration result; remove long pauses, add English subtitles, and export vertically.</textarea>
-
-          <label class="field-label" for="topics">Required topics <span>comma-separated</span></label>
-          <input id="topics" name="topics" type="text" placeholder="problem, solution, demonstration result">
-
-          <div class="form-row">
-            <div>
-              <label class="field-label" for="target_seconds">Target length <span>seconds</span></label>
-              <input id="target_seconds" name="target_seconds" type="number" min="1" max="600" value="30">
-            </div>
-            <fieldset class="aspect-field">
-              <legend class="field-label">Frame</legend>
-              <div class="segmented">
-                <label><input type="radio" name="aspect" value="16:9"><span>16:9</span></label>
-                <label><input type="radio" name="aspect" value="9:16" checked><span>9:16</span></label>
-              </div>
-            </fieldset>
-          </div>
-
-          <button class="primary-button" type="submit">Create edit</button>
-        </form>
-        <button id="demo-button" class="secondary-button" type="button">Run sample edit</button>
-        <p id="form-error" class="error" role="alert" hidden></p>
-      </section>
-
-      <section class="sidebar-section history-section">
-        <div class="section-head"><h2>Recent jobs</h2></div>
-        <div id="job-list" class="job-list"></div>
-      </section>
+  <div class="app-shell">
+    <aside class="rail" aria-label="Edits navigation">
+      <button id="new-edit-button" class="primary-button rail-create" type="button"><span class="icon icon-plus" aria-hidden="true"></span>New edit</button>
+      <div class="rail-heading"><h2>Edits</h2><span id="job-count">0</span></div>
+      <label class="search-field"><span class="icon icon-search" aria-hidden="true"></span><input id="job-search" type="search" placeholder="Find an edit" aria-label="Find an edit"></label>
+      <nav id="job-list" class="job-list" aria-label="Recent edits"></nav>
+      <div class="rail-footer"><button id="demo-button" class="sample-button" type="button"><span class="icon icon-play" aria-hidden="true"></span>Run sample edit</button></div>
     </aside>
 
-    <section class="workspace" aria-live="polite">
+    <main class="workspace">
+      <p id="workspace-error" class="error" role="alert" hidden></p>
       <div id="empty-state" class="empty-state">
-        <div class="empty-graphic"><span>01</span><span>02</span><span>03</span><span>04</span></div>
-        <h2>No edit selected</h2>
-        <p>Upload source videos or open the prepared sample.</p>
+        <span class="empty-icon"><span class="icon icon-clapperboard" aria-hidden="true"></span></span>
+        <h1>No edit selected</h1>
+        <div class="empty-actions"><button id="empty-new-edit" class="primary-button" type="button"><span class="icon icon-plus" aria-hidden="true"></span>New edit</button><button id="empty-demo" class="quiet-button" type="button"><span class="icon icon-play" aria-hidden="true"></span>Run sample</button></div>
       </div>
 
       <div id="job-view" hidden>
-        <div class="workspace-header">
-          <div><p class="eyebrow">CURRENT EDIT</p><h2 id="job-title">Edit</h2></div>
-          <span id="job-status" class="badge">Queued</span>
+        <div class="job-header">
+          <div class="job-heading"><p class="kicker">EDIT <span id="job-short-id"></span></p><h1 id="job-title">Edit</h1></div>
+          <span id="job-status" class="status-badge">Queued</span>
         </div>
-        <div id="progress" class="progress" hidden><div class="progress-track"><div id="progress-bar"></div></div><p id="progress-text">Preparing</p></div>
-        <div id="job-error" class="error" hidden></div>
-
-        <div class="workspace-grid">
-          <div class="main-column">
-            <section class="panel preview-panel">
-              <div class="panel-head"><h3>Preview</h3><span id="preview-meta" class="subtle"></span></div>
-              <div class="video-shell"><video id="preview-video" controls playsinline preload="metadata"></video><div id="video-placeholder">Video preview appears after export</div></div>
-              <div class="download-row"><a id="video-link" class="text-link" hidden>Download MP4</a><a id="subtitle-link" class="text-link" hidden>Download SRT</a><a id="timeline-link" class="text-link" hidden>Timeline JSON</a><a id="report-link" class="text-link" hidden>Report JSON</a></div>
+        <div id="progress" class="agent-progress" hidden>
+          <div class="progress-copy"><span id="progress-text">Preparing</span><span id="progress-detail"></span></div>
+          <div class="progress-track"><div id="progress-bar"></div></div>
+          <div id="phase-steps" class="phase-steps" aria-label="Editing progress"></div>
+        </div>
+        <div class="workbench">
+          <div class="canvas-column">
+            <section class="preview-section" aria-labelledby="preview-title">
+              <div class="section-heading"><h2 id="preview-title">Preview</h2><span id="preview-meta" class="muted"></span></div>
+              <div class="preview-stage"><div class="video-shell"><video id="preview-video" controls playsinline preload="metadata"></video><div id="video-placeholder">Preview appears when the edit is ready</div></div></div>
+              <div class="output-bar">
+                <span id="output-summary" class="output-summary"></span>
+                <div class="output-actions">
+                  <a id="video-link" class="export-button" hidden><span class="icon icon-download" aria-hidden="true"></span>MP4</a>
+                  <a id="subtitle-link" class="text-action" hidden><span class="icon icon-captions" aria-hidden="true"></span>SRT</a>
+                  <a id="timeline-link" class="text-action" hidden><span class="icon icon-layers-3" aria-hidden="true"></span>Timeline</a>
+                  <a id="report-link" class="text-action" hidden><span class="icon icon-file-text" aria-hidden="true"></span>Report</a>
+                </div>
+              </div>
             </section>
 
-            <section class="panel">
-              <div class="panel-head"><h3>Timeline</h3><span id="timeline-total" class="subtle"></span></div>
-              <div id="timeline" class="timeline"></div>
-              <div class="panel-actions"><button id="save-timeline" class="secondary-button compact" type="button" hidden>Render edited timeline</button></div>
+            <section class="timeline-section" aria-labelledby="timeline-title">
+              <div class="section-heading timeline-heading"><div><h2 id="timeline-title">Timeline</h2><span id="timeline-total" class="muted"></span></div><button id="save-timeline" class="secondary-button" type="button" hidden>Render changes</button></div>
+              <div id="timeline-track" class="timeline-track" aria-label="Selected clip sequence"></div>
+              <div id="timeline" class="timeline-list"></div>
             </section>
 
-            <section class="panel">
-              <div class="panel-head"><h3>Revision</h3><span class="subtle">Uses cached source analysis</span></div>
-              <div class="revision-form"><input id="revision-text" type="text" placeholder="e.g. Cover only the solution and export landscape"><button id="revise-button" class="secondary-button compact" type="button">Apply</button></div>
+            <section class="followup-section" aria-labelledby="followup-title">
+              <div class="section-heading"><h2 id="followup-title">Follow-up</h2></div>
+              <form id="revision-form" class="revision-form"><textarea id="revision-text" rows="2" placeholder="Cover only the solution and switch to landscape" aria-label="Follow-up instruction"></textarea><button id="revise-button" class="primary-button" type="submit"><span class="icon icon-send" aria-hidden="true"></span>Apply</button></form>
             </section>
           </div>
 
-          <div class="detail-column">
-            <section class="panel">
-              <div class="panel-head"><h3>Checks</h3></div>
-              <div id="checks" class="checks"></div>
+          <aside class="inspector" aria-label="Edit details">
+            <div class="inspector-tabs" role="tablist" aria-label="Edit details">
+              <button id="tab-evidence" role="tab" aria-controls="panel-evidence" aria-selected="true" type="button">Evidence</button>
+              <button id="tab-checks" role="tab" aria-controls="panel-checks" aria-selected="false" type="button">Checks</button>
+              <button id="tab-activity" role="tab" aria-controls="panel-activity" aria-selected="false" type="button">Activity</button>
+            </div>
+            <section id="panel-evidence" class="inspector-panel" role="tabpanel" aria-labelledby="tab-evidence">
+              <div class="inspector-heading"><h2>Source evidence</h2><span id="evidence-count" class="muted"></span></div>
+              <div id="evidence" class="evidence-list"></div>
             </section>
-            <section class="panel">
-              <div class="panel-head"><h3>Source evidence</h3><span id="evidence-count" class="subtle"></span></div>
-              <div id="evidence" class="evidence"></div>
+            <section id="panel-checks" class="inspector-panel" role="tabpanel" aria-labelledby="tab-checks" hidden>
+              <div class="inspector-heading"><h2>Verification</h2><span id="checks-count" class="muted"></span></div>
+              <div id="checks" class="checks-list"></div>
             </section>
-            <section class="panel">
-              <div class="panel-head"><h3>Activity</h3></div>
-              <div id="activity" class="activity"></div>
+            <section id="panel-activity" class="inspector-panel" role="tabpanel" aria-labelledby="tab-activity" hidden>
+              <div class="inspector-heading"><h2>Activity</h2><span id="activity-count" class="muted"></span></div>
+              <div id="activity" class="activity-list"></div>
             </section>
-          </div>
+          </aside>
         </div>
       </div>
-    </section>
-  </main>
+    </main>
+  </div>
+
+  <dialog id="create-dialog" class="create-dialog" aria-labelledby="create-title">
+    <form id="edit-form">
+      <div class="dialog-header"><div><p class="kicker">NEW TASK</p><h2 id="create-title">Create edit</h2></div><button id="close-dialog" class="icon-button" type="button" aria-label="Close"><span class="icon icon-x" aria-hidden="true"></span></button></div>
+      <div class="dialog-body">
+        <label class="field-label" for="files">Source videos <span>1–3 MP4 files</span></label>
+        <div class="file-field"><span class="icon icon-upload" aria-hidden="true"></span><span id="file-summary">Choose video files</span><input id="files" name="files" type="file" accept="video/mp4" multiple required aria-label="Source videos"></div>
+
+        <label class="field-label" for="instruction">Editing brief</label>
+        <textarea id="instruction" name="instruction" rows="4" required placeholder="Make a 30-second recap covering the problem, solution, and result."></textarea>
+
+        <label class="field-label" for="topics">Required topics <span>Separate with commas</span></label>
+        <input id="topics" name="topics" type="text" placeholder="problem, solution, result">
+
+        <div class="form-row">
+          <div><label class="field-label" for="target_seconds">Target length <span>seconds</span></label><input id="target_seconds" name="target_seconds" type="number" min="1" max="600" value="30" required></div>
+          <fieldset class="aspect-field"><legend class="field-label">Frame</legend><div class="segmented"><label><input type="radio" name="aspect" value="16:9"><span>16:9</span></label><label><input type="radio" name="aspect" value="9:16" checked><span>9:16</span></label></div></fieldset>
+        </div>
+        <p id="form-error" class="error" role="alert" hidden></p>
+      </div>
+      <div class="dialog-footer"><button id="cancel-dialog" class="quiet-button" type="button">Cancel</button><button class="primary-button" type="submit"><span class="icon icon-plus" aria-hidden="true"></span>Create edit</button></div>
+    </form>
+  </dialog>
 </body>
 </html>
