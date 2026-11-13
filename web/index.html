@@ -1,98 +1,100 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ClipAgent</title>
-  <link rel="stylesheet" href="/static/styles.css">
-  <script src="/static/app.js" defer></script>
+  <link rel="stylesheet" href="/static/styles.css?v=2">
+  <script src="/static/app.js?v=2" defer></script>
 </head>
 <body>
   <header class="app-header">
+    <button id="project-drawer-toggle" class="icon-button toolbar-icon" type="button" aria-label="打开项目" aria-controls="project-drawer" aria-expanded="false"><span class="icon icon-panel-left" aria-hidden="true"></span></button>
     <div class="brand"><span class="brand-mark"><span class="icon icon-clapperboard" aria-hidden="true"></span></span><span>ClipAgent</span></div>
-    <span class="header-context">Editor</span>
-    <span class="connection"><span class="connection-dot"></span> Local</span>
+    <div class="header-project"><span id="job-short-id">未选择项目</span><strong id="job-title">剪辑工作台</strong></div>
+    <div id="progress" class="agent-progress" hidden>
+      <span class="progress-pulse" aria-hidden="true"></span><span id="progress-text">准备中</span><span id="progress-detail" class="sr-only"></span>
+      <div class="progress-track"><div id="progress-bar"></div></div><div id="phase-steps" class="phase-steps" aria-label="处理进度"></div>
+    </div>
+    <span id="job-status" class="status-badge">待处理</span>
+    <a id="header-export" class="header-export" hidden><span class="icon icon-download" aria-hidden="true"></span>导出</a>
+    <span class="connection"><span class="connection-dot"></span> 本地</span>
   </header>
 
   <div class="app-shell">
-    <aside class="rail" aria-label="Edits navigation">
-      <button id="new-edit-button" class="primary-button rail-create" type="button"><span class="icon icon-plus" aria-hidden="true"></span>New edit</button>
-      <div class="rail-heading"><h2>Edits</h2><span id="job-count">0</span></div>
-      <label class="search-field"><span class="icon icon-search" aria-hidden="true"></span><input id="job-search" type="search" placeholder="Find an edit" aria-label="Find an edit"></label>
-      <nav id="job-list" class="job-list" aria-label="Recent edits"></nav>
-      <div class="rail-footer"><button id="demo-button" class="sample-button" type="button"><span class="icon icon-play" aria-hidden="true"></span>Run sample edit</button></div>
+    <button id="drawer-backdrop" class="drawer-backdrop" type="button" aria-label="关闭项目抽屉" tabindex="-1" hidden></button>
+    <aside id="project-drawer" class="rail" aria-label="项目" aria-hidden="true">
+      <div class="drawer-header"><div><span class="panel-eyebrow">PROJECTS</span><h2>项目</h2></div><button id="project-drawer-close" class="icon-button" type="button" aria-label="关闭项目抽屉"><span class="icon icon-x" aria-hidden="true"></span></button></div>
+      <button id="new-edit-button" class="primary-button rail-create" type="button"><span class="icon icon-plus" aria-hidden="true"></span>新建项目</button>
+      <div class="rail-heading"><span>最近项目</span><span id="job-count">0</span></div>
+      <label class="search-field"><span class="icon icon-search" aria-hidden="true"></span><input id="job-search" type="search" placeholder="搜索项目" aria-label="搜索项目"></label>
+      <nav id="job-list" class="job-list" aria-label="最近项目"></nav>
+      <div class="rail-footer"><button id="demo-button" class="sample-button" type="button"><span class="icon icon-play" aria-hidden="true"></span>运行示例项目</button></div>
     </aside>
 
     <main class="workspace">
       <p id="workspace-error" class="error" role="alert" hidden></p>
       <div id="empty-state" class="empty-state">
         <span class="empty-icon"><span class="icon icon-clapperboard" aria-hidden="true"></span></span>
-        <h1>No edit selected</h1>
-        <div class="empty-actions"><button id="empty-new-edit" class="primary-button" type="button"><span class="icon icon-plus" aria-hidden="true"></span>New edit</button><button id="empty-demo" class="quiet-button" type="button"><span class="icon icon-play" aria-hidden="true"></span>Run sample</button></div>
+        <h1>没有打开的项目</h1>
+        <div class="empty-actions"><button id="empty-new-edit" class="primary-button" type="button"><span class="icon icon-plus" aria-hidden="true"></span>新建项目</button><button id="empty-demo" class="quiet-button" type="button"><span class="icon icon-play" aria-hidden="true"></span>运行示例</button></div>
       </div>
 
       <div id="job-view" hidden>
-        <div class="job-header">
-          <div class="job-heading"><p class="kicker">EDIT <span id="job-short-id"></span></p><h1 id="job-title">Edit</h1></div>
-          <span id="job-status" class="status-badge">Queued</span>
-        </div>
-        <div id="progress" class="agent-progress" hidden>
-          <div class="progress-copy"><span id="progress-text">Preparing</span><span id="progress-detail"></span></div>
-          <div class="progress-track"><div id="progress-bar"></div></div>
-          <div id="phase-steps" class="phase-steps" aria-label="Editing progress"></div>
-        </div>
         <div class="workbench">
           <div class="canvas-column">
             <div class="editor-top">
               <section class="source-bin" aria-labelledby="source-title">
-                <div class="section-heading"><h2 id="source-title">Media</h2><span id="source-count" class="muted"></span></div>
+                <div class="panel-header"><h2 id="source-title">素材</h2><span id="source-count" class="muted"></span></div>
                 <div id="source-list" class="source-list"></div>
-                <div class="source-bin-footer"><button id="add-source-clip" class="secondary-button" type="button" disabled><span class="icon icon-plus" aria-hidden="true"></span>Add clip</button></div>
+                <div class="source-bin-footer"><button id="add-source-clip" class="secondary-button" type="button" disabled><span class="icon icon-plus" aria-hidden="true"></span>加入时间线</button></div>
               </section>
               <section class="preview-section" aria-labelledby="preview-title">
-                <div class="section-heading monitor-heading"><h2 id="preview-title">Monitor</h2><div class="monitor-modes" role="tablist" aria-label="Monitor mode"><button id="monitor-output" type="button" role="tab" aria-selected="true">Output</button><button id="monitor-source" type="button" role="tab" aria-selected="false">Source</button></div><span id="preview-meta" class="muted"></span></div>
-                <div class="preview-stage"><div class="video-shell"><video id="preview-video" controls playsinline preload="metadata"></video><video id="source-video" controls playsinline preload="metadata" hidden></video><div id="video-placeholder">Preview appears when the edit is ready</div></div></div>
+                <div class="panel-header monitor-heading"><h2 id="preview-title">监看器</h2><div class="monitor-modes" role="tablist" aria-label="监看器模式"><button id="monitor-output" type="button" role="tab" aria-selected="true">成片</button><button id="monitor-source" type="button" role="tab" aria-selected="false">原素材</button></div><span id="preview-meta" class="muted"></span></div>
+                <div class="preview-stage"><div class="video-shell"><video id="preview-video" controls playsinline preload="metadata"></video><video id="source-video" controls playsinline preload="metadata" hidden></video><div id="video-placeholder">处理完成后显示成片</div></div></div>
                 <div class="output-bar">
                   <span id="output-summary" class="output-summary"></span>
                   <div class="output-actions">
                     <a id="video-link" class="export-button" hidden><span class="icon icon-download" aria-hidden="true"></span>MP4</a>
                     <a id="subtitle-link" class="text-action" hidden><span class="icon icon-captions" aria-hidden="true"></span>SRT</a>
-                    <a id="timeline-link" class="text-action" hidden><span class="icon icon-layers-3" aria-hidden="true"></span>Timeline</a>
-                    <a id="report-link" class="text-action" hidden><span class="icon icon-file-text" aria-hidden="true"></span>Report</a>
+                    <a id="timeline-link" class="text-action" hidden><span class="icon icon-layers-3" aria-hidden="true"></span>时间线</a>
+                    <a id="report-link" class="text-action" hidden><span class="icon icon-file-text" aria-hidden="true"></span>报告</a>
                   </div>
                 </div>
               </section>
             </div>
 
             <section class="timeline-section" aria-labelledby="timeline-title">
-              <div class="section-heading timeline-heading"><div><h2 id="timeline-title">Timeline</h2><span id="timeline-total" class="muted"></span></div><div class="timeline-tools"><button id="split-clip" class="secondary-button" type="button" disabled>Split at playhead</button><div class="zoom-control"><span class="icon icon-search" aria-hidden="true"></span><input id="timeline-zoom" type="range" min="18" max="60" value="30" aria-label="Timeline zoom"></div><button id="save-timeline" class="secondary-button" type="button" hidden>Render changes</button></div></div>
-              <div id="timeline-scroller" class="timeline-scroller"><div id="timeline-content" class="timeline-content"><div id="timeline-ruler" class="timeline-ruler" aria-label="Timeline ruler"></div><div class="timeline-lane"><div class="lane-label">V1</div><div id="timeline-track" class="timeline-track" aria-label="Selected clip sequence"></div></div><div id="timeline-playhead" class="timeline-playhead" aria-hidden="true"></div></div></div>
+              <div class="panel-header timeline-heading"><div class="timeline-title-group"><h2 id="timeline-title">时间线</h2><span id="timeline-total" class="muted"></span></div><div class="timeline-tools"><button id="split-clip" class="icon-button tool-button" type="button" disabled aria-label="在播放头处分割" title="在播放头处分割"><span class="icon icon-scissors" aria-hidden="true"></span></button><label class="zoom-control" title="时间线缩放"><span class="icon icon-search" aria-hidden="true"></span><input id="timeline-zoom" type="range" min="18" max="60" value="30" aria-label="时间线缩放"></label><button id="save-timeline" class="secondary-button render-button" type="button" hidden>重新渲染</button></div></div>
+              <div id="timeline-scroller" class="timeline-scroller"><div id="timeline-content" class="timeline-content"><div id="timeline-ruler" class="timeline-ruler" aria-label="时间尺"></div><div class="timeline-lane"><div class="lane-label">V1</div><div id="timeline-track" class="timeline-track" aria-label="已选片段"></div></div><div id="timeline-playhead" class="timeline-playhead" aria-hidden="true"></div></div></div>
               <div class="timeline-state"><span id="playhead-time">00:00 / 00:00</span><span id="draft-state"></span></div>
-              <div id="timeline" class="timeline-list"></div>
+              <div id="timeline" class="timeline-list" hidden></div>
             </section>
 
             <section class="followup-section" aria-labelledby="followup-title">
-              <div class="section-heading"><h2 id="followup-title">Follow-up</h2></div>
-              <form id="revision-form" class="revision-form"><textarea id="revision-text" rows="2" placeholder="Cover only the solution and switch to landscape" aria-label="Follow-up instruction"></textarea><button id="revise-button" class="primary-button" type="submit"><span class="icon icon-send" aria-hidden="true"></span>Apply</button></form>
+              <h2 id="followup-title">修改指令</h2>
+              <form id="revision-form" class="revision-form"><textarea id="revision-text" rows="1" placeholder="例如：只保留解决方案，并改为横屏" aria-label="修改指令"></textarea><button id="revise-button" class="primary-button" type="submit"><span class="icon icon-send" aria-hidden="true"></span>执行</button></form>
             </section>
           </div>
 
-          <aside class="inspector" aria-label="Edit details">
-            <div class="inspector-tabs" role="tablist" aria-label="Edit details">
-              <button id="tab-evidence" role="tab" aria-controls="panel-evidence" aria-selected="true" type="button">Evidence</button>
-              <button id="tab-checks" role="tab" aria-controls="panel-checks" aria-selected="false" type="button">Checks</button>
-              <button id="tab-activity" role="tab" aria-controls="panel-activity" aria-selected="false" type="button">Console</button>
+          <aside class="inspector" aria-label="检查器">
+            <div class="inspector-tabs" role="tablist" aria-label="检查器">
+              <button id="tab-properties" role="tab" aria-controls="panel-properties" aria-selected="true" type="button">属性</button>
+              <button id="tab-evidence" role="tab" aria-controls="panel-evidence" aria-selected="false" type="button">证据</button>
+              <button id="tab-checks" role="tab" aria-controls="panel-checks" aria-selected="false" type="button">检查</button>
+              <button id="tab-activity" role="tab" aria-controls="panel-activity" aria-selected="false" type="button">控制台</button>
             </div>
+            <section id="panel-properties" class="inspector-panel" role="tabpanel" aria-labelledby="tab-properties"><div id="properties" class="properties-panel"></div></section>
             <section id="panel-evidence" class="inspector-panel" role="tabpanel" aria-labelledby="tab-evidence">
-              <div class="inspector-heading"><h2>Source evidence</h2><span id="evidence-count" class="muted"></span></div>
+              <div class="inspector-heading"><h2>来源证据</h2><span id="evidence-count" class="muted"></span></div>
               <div id="evidence" class="evidence-list"></div>
             </section>
             <section id="panel-checks" class="inspector-panel" role="tabpanel" aria-labelledby="tab-checks" hidden>
-              <div class="inspector-heading"><h2>Verification</h2><span id="checks-count" class="muted"></span></div>
+              <div class="inspector-heading"><h2>输出检查</h2><span id="checks-count" class="muted"></span></div>
               <div id="checks" class="checks-list"></div>
             </section>
             <section id="panel-activity" class="inspector-panel" role="tabpanel" aria-labelledby="tab-activity" hidden>
-              <div class="inspector-heading"><h2>Execution log</h2><span id="activity-count" class="muted"></span></div>
+              <div class="inspector-heading"><h2>执行日志</h2><span id="activity-count" class="muted"></span></div>
               <div id="activity" class="activity-list" role="log" aria-live="polite"></div>
             </section>
           </aside>
@@ -103,24 +105,24 @@
 
   <dialog id="create-dialog" class="create-dialog" aria-labelledby="create-title">
     <form id="edit-form">
-      <div class="dialog-header"><div><p class="kicker">NEW TASK</p><h2 id="create-title">Create edit</h2></div><button id="close-dialog" class="icon-button" type="button" aria-label="Close"><span class="icon icon-x" aria-hidden="true"></span></button></div>
+      <div class="dialog-header"><div><p class="kicker">NEW PROJECT</p><h2 id="create-title">新建剪辑项目</h2></div><button id="close-dialog" class="icon-button" type="button" aria-label="关闭"><span class="icon icon-x" aria-hidden="true"></span></button></div>
       <div class="dialog-body">
-        <label class="field-label" for="files">Source videos <span>1–3 MP4 files</span></label>
-        <div class="file-field"><span class="icon icon-upload" aria-hidden="true"></span><span id="file-summary">Choose video files</span><input id="files" name="files" type="file" accept="video/mp4" multiple required aria-label="Source videos"></div>
+        <label class="field-label" for="files">源视频 <span>1–3 个 MP4 文件</span></label>
+        <div class="file-field"><span class="icon icon-upload" aria-hidden="true"></span><span id="file-summary">选择视频文件</span><input id="files" name="files" type="file" accept="video/mp4" multiple required aria-label="源视频"></div>
 
-        <label class="field-label" for="instruction">Editing brief</label>
-        <textarea id="instruction" name="instruction" rows="4" required placeholder="Make a 30-second recap covering the problem, solution, and result."></textarea>
+        <label class="field-label" for="instruction">剪辑要求</label>
+        <textarea id="instruction" name="instruction" rows="4" required placeholder="剪成 30 秒短片，包含问题、解决方案和结果。"></textarea>
 
-        <label class="field-label" for="topics">Required topics <span>Separate with commas</span></label>
-        <input id="topics" name="topics" type="text" placeholder="problem, solution, result">
+        <label class="field-label" for="topics">必须包含的主题 <span>使用逗号分隔</span></label>
+        <input id="topics" name="topics" type="text" placeholder="问题, 解决方案, 结果">
 
         <div class="form-row">
-          <div><label class="field-label" for="target_seconds">Target length <span>seconds</span></label><input id="target_seconds" name="target_seconds" type="number" min="1" max="600" value="30" required></div>
-          <fieldset class="aspect-field"><legend class="field-label">Frame</legend><div class="segmented"><label><input type="radio" name="aspect" value="16:9"><span>16:9</span></label><label><input type="radio" name="aspect" value="9:16" checked><span>9:16</span></label></div></fieldset>
+          <div><label class="field-label" for="target_seconds">目标时长 <span>秒</span></label><input id="target_seconds" name="target_seconds" type="number" min="1" max="600" value="30" required></div>
+          <fieldset class="aspect-field"><legend class="field-label">画幅</legend><div class="segmented"><label><input type="radio" name="aspect" value="16:9"><span>16:9</span></label><label><input type="radio" name="aspect" value="9:16" checked><span>9:16</span></label></div></fieldset>
         </div>
         <p id="form-error" class="error" role="alert" hidden></p>
       </div>
-      <div class="dialog-footer"><button id="cancel-dialog" class="quiet-button" type="button">Cancel</button><button class="primary-button" type="submit"><span class="icon icon-plus" aria-hidden="true"></span>Create edit</button></div>
+      <div class="dialog-footer"><button id="cancel-dialog" class="quiet-button" type="button">取消</button><button class="primary-button" type="submit"><span class="icon icon-plus" aria-hidden="true"></span>创建项目</button></div>
     </form>
   </dialog>
 </body>
