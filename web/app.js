@@ -1,5 +1,8 @@
 const byId = (id) => document.getElementById(id);
-const state = { job: null, clips: [], original: "", jobs: [], pollTimer: null, activeTab: "evidence" };
+const state = {
+  job: null, clips: [], original: "", jobs: [], pollTimer: null, activeTab: "evidence",
+  selectedAsset: null, monitorMode: "output", pixelsPerSecond: 30, playhead: 0,
+};
 const phases = ["Transcribe", "Plan", "Render", "Verify"];
 const statusNames = { queued: "Queued", running: "Running", complete: "Complete", needs_review: "Needs review", failed: "Failed" };
 
@@ -36,6 +39,65 @@ function setError(message, form = false) {
 
 function draftSignature(clips) {
   return JSON.stringify(clips.map(({ asset_id, start, end }) => ({ asset_id, start, end })));
+}
+
+function timelineDuration() {
+  return state.clips.reduce((sum, clip) => {
+    const duration = clip.end - clip.start;
+    return sum + (Number.isFinite(duration) ? Math.max(0, duration) : 0);
+  }, 0);
+}
+
+function switchMonitor(mode) {
+  state.monitorMode = mode;
+  const output = byId("preview-video");
+  const source = byId("source-video");
+  const sourceReady = Boolean(state.selectedAsset && source.dataset.assetId);
+  output.hidden = mode !== "output" || !output.dataset.url;
+  source.hidden = mode !== "source" || !sourceReady;
+  byId("monitor-output").setAttribute("aria-selected", String(mode === "output"));
+  byId("monitor-source").setAttribute("aria-selected", String(mode === "source"));
+  byId("video-placeholder").hidden = mode === "output" ? Boolean(output.dataset.url) : sourceReady;
+  byId("video-placeholder").textContent = mode === "output" ? "Preview appears when the edit is ready" : "Select source media to preview";
+}
+
+function selectSource(assetId, at = null) {
+  const asset = state.job?.assets.find((item) => item.id === assetId);
+  if (!asset) return;
+  state.selectedAsset = assetId;
+  const source = byId("source-video");
+  const url = `/api/jobs/${state.job.id}/assets/${asset.id}/video`;
+  if (source.dataset.url !== url) {
+    source.src = url;
+    source.dataset.url = url;
+    source.dataset.assetId = asset.id;
+    source.load();
+  }
+  if (at !== null) source.addEventListener("loadedmetadata", () => { source.currentTime = Math.min(at, source.duration || at); }, { once: true });
+  for (const item of byId("source-list").querySelectorAll(".source-item")) item.classList.toggle("selected", item.dataset.assetId === assetId);
+  byId("add-source-clip").disabled = !["complete", "needs_review"].includes(state.job.status);
+  switchMonitor("source");
+}
+
+function renderSources(job) {
+  const list = byId("source-list");
+  list.replaceChildren();
+  byId("source-count").textContent = `${job.assets.length} files`;
+  for (const asset of job.assets) {
+    const item = el("button", `source-item ${state.selectedAsset === asset.id ? "selected" : ""}`);
+    item.type = "button";
+    item.dataset.assetId = asset.id;
+    item.title = `Preview ${asset.name}`;
+    const image = el("img", "source-thumb");
+    image.src = `/api/jobs/${job.id}/assets/${asset.id}/frame?at=${Math.min(1, asset.duration / 2)}`;
+    image.alt = "";
+    image.loading = "lazy";
+    const copy = el("span", "source-copy");
+    copy.append(el("strong", "", asset.name), el("small", "", `${time(asset.duration)} · ${asset.width}×${asset.height}`));
+    item.append(image, copy);
+    item.addEventListener("click", () => selectSource(asset.id));
+    list.append(item);
+  }
 }
 
 function renderHistory() {
@@ -85,6 +147,7 @@ function seekToClip(index, sourceTime = null) {
   const clip = state.clips[index];
   const inside = sourceTime === null ? 0 : Math.max(0, Math.min(sourceTime - clip.start, clip.end - clip.start));
   video.currentTime = offset + inside;
+  switchMonitor("output");
   video.scrollIntoView({ behavior: "smooth", block: "nearest" });
   updatePlayback();
 }
@@ -92,6 +155,7 @@ function seekToClip(index, sourceTime = null) {
 function updatePlayback() {
   const video = byId("preview-video");
   const position = video.currentTime || 0;
+  state.playhead = position;
   let offset = 0;
   let active = -1;
   state.clips.forEach((clip, index) => {
@@ -101,30 +165,99 @@ function updatePlayback() {
   for (const segment of byId("timeline-track").querySelectorAll(".track-segment")) {
     segment.classList.toggle("current", Number(segment.dataset.index) === active);
   }
+  const total = timelineDuration();
+  byId("timeline-playhead").style.left = `${32 + Math.min(position, total) * state.pixelsPerSecond}px`;
+  byId("playhead-time").textContent = `${time(position)} / ${time(total)}`;
 }
 
 function renderTrack() {
   const track = byId("timeline-track");
   track.replaceChildren();
+  const ruler = byId("timeline-ruler");
+  ruler.replaceChildren();
+  const total = Math.max(1, timelineDuration());
+  const scrollerWidth = Math.max(320, byId("timeline-scroller").clientWidth - 34);
+  const trackWidth = Math.max(scrollerWidth, total * state.pixelsPerSecond);
+  byId("timeline-content").style.width = `${trackWidth + 32}px`;
+  const tickStep = state.pixelsPerSecond >= 40 ? 1 : state.pixelsPerSecond >= 25 ? 2 : 5;
+  for (let second = 0; second <= Math.ceil(trackWidth / state.pixelsPerSecond); second += tickStep) {
+    const tick = el("span", `ruler-tick ${second % (tickStep * 5) === 0 ? "major" : ""}`);
+    tick.style.left = `${32 + second * state.pixelsPerSecond}px`;
+    if (tick.classList.contains("major")) tick.append(el("span", "", time(second)));
+    ruler.append(tick);
+  }
   if (!state.clips.length) {
     track.append(el("div", "timeline-empty", "The timeline is being prepared."));
+    updatePlayback();
     return;
   }
-  const assetNames = Object.fromEntries(state.job.assets.map((asset) => [asset.id, asset.name]));
+  const assets = Object.fromEntries(state.job.assets.map((asset) => [asset.id, asset]));
+  let offset = 0;
   state.clips.forEach((clip, index) => {
     const segment = el("button", "track-segment");
     segment.type = "button";
     segment.dataset.index = String(index);
     const duration = clip.end - clip.start;
-    segment.style.flexGrow = String(Number.isFinite(duration) ? Math.max(0.5, duration) : 0.5);
-    segment.style.flexBasis = "0";
+    segment.style.left = `${offset * state.pixelsPerSecond}px`;
+    segment.style.width = `${Math.max(36, (Number.isFinite(duration) ? duration : 0.5) * state.pixelsPerSecond)}px`;
     segment.disabled = !["complete", "needs_review"].includes(state.job.status);
-    segment.title = `${assetNames[clip.asset_id] || clip.asset_id} · ${time(clip.start)}–${time(clip.end)} · Jump to clip`;
-    segment.append(el("strong", "", String(index + 1).padStart(2, "0")), el("small", "", assetNames[clip.asset_id] || clip.asset_id));
-    segment.addEventListener("click", () => seekToClip(index));
+    segment.draggable = !segment.disabled;
+    const asset = assets[clip.asset_id];
+    segment.title = `${asset?.name || clip.asset_id} · ${time(clip.start)}–${time(clip.end)} · Jump to clip`;
+    const media = el("span", "segment-media");
+    for (const ratio of [0.08, 0.5, 0.92]) {
+      const image = el("img");
+      image.src = `/api/jobs/${state.job.id}/assets/${clip.asset_id}/frame?at=${Math.max(0, clip.start + duration * ratio)}`;
+      image.alt = "";
+      image.loading = "lazy";
+      media.append(image);
+    }
+    const overlay = el("span", "segment-overlay");
+    overlay.append(el("strong", "", `${String(index + 1).padStart(2, "0")}  ${asset?.name || clip.asset_id}`), el("small", "", `${clip.start.toFixed(2)}–${clip.end.toFixed(2)}`));
+    const startHandle = el("span", "trim-handle start");
+    const endHandle = el("span", "trim-handle end");
+    startHandle.title = "Trim clip start";
+    endHandle.title = "Trim clip end";
+    startHandle.addEventListener("pointerdown", (event) => beginTrim(event, index, "start"));
+    endHandle.addEventListener("pointerdown", (event) => beginTrim(event, index, "end"));
+    segment.append(media, overlay, startHandle, endHandle);
+    segment.addEventListener("click", (event) => { if (!event.target.closest(".trim-handle")) seekToClip(index); });
+    segment.addEventListener("dragstart", (event) => event.dataTransfer.setData("text/plain", String(index)));
+    segment.addEventListener("dragover", (event) => event.preventDefault());
+    segment.addEventListener("drop", (event) => {
+      event.preventDefault();
+      const from = Number(event.dataTransfer.getData("text/plain"));
+      if (Number.isInteger(from) && from !== index) moveClip(from, index);
+    });
     track.append(segment);
+    offset += Number.isFinite(duration) ? Math.max(0, duration) : 0;
   });
   updatePlayback();
+}
+
+function beginTrim(event, index, key) {
+  if (!state.clips[index]) return;
+  event.preventDefault();
+  event.stopPropagation();
+  const originX = event.clientX;
+  const initial = state.clips[index][key];
+  const asset = state.job.assets.find((item) => item.id === state.clips[index].asset_id);
+  const move = (pointerEvent) => {
+    const delta = (pointerEvent.clientX - originX) / state.pixelsPerSecond;
+    const clip = state.clips[index];
+    clip[key] = key === "start"
+      ? Math.max(0, Math.min(clip.end - 0.1, initial + delta))
+      : Math.min(asset.duration, Math.max(clip.start + 0.1, initial + delta));
+    renderTrack();
+    updateTotal();
+  };
+  const finish = () => {
+    document.removeEventListener("pointermove", move);
+    document.removeEventListener("pointerup", finish);
+    renderTimelineRows();
+  };
+  document.addEventListener("pointermove", move);
+  document.addEventListener("pointerup", finish, { once: true });
 }
 
 function updateTotal() {
@@ -138,6 +271,9 @@ function updateTotal() {
   const save = byId("save-timeline");
   save.hidden = !["complete", "needs_review"].includes(state.job.status) || !dirty;
   save.disabled = !valid;
+  byId("draft-state").textContent = dirty ? (valid ? "Unsaved timeline draft" : "Fix invalid clip bounds") : "Rendered timeline";
+  byId("split-clip").disabled = !valid || !state.clips.length || !["complete", "needs_review"].includes(state.job.status);
+  updatePlayback();
 }
 
 function renderTimelineRows() {
@@ -205,10 +341,35 @@ function swapClip(a, b) {
   renderTimelineRows();
 }
 
+function moveClip(from, to) {
+  if (from < 0 || from >= state.clips.length || to < 0 || to >= state.clips.length) return;
+  const [clip] = state.clips.splice(from, 1);
+  state.clips.splice(to, 0, clip);
+  renderTimelineRows();
+}
+
 function removeClip(index) {
   if (state.clips.length <= 1) return;
   state.clips.splice(index, 1);
   renderTimelineRows();
+}
+
+function splitAtPlayhead() {
+  let offset = 0;
+  for (let index = 0; index < state.clips.length; index += 1) {
+    const clip = state.clips[index];
+    const duration = clip.end - clip.start;
+    if (state.playhead > offset + 0.1 && state.playhead < offset + duration - 0.1) {
+      const sourceCut = clip.start + state.playhead - offset;
+      state.clips.splice(index, 1,
+        { ...clip, end: sourceCut, reason: "Manual split" },
+        { ...clip, start: sourceCut, reason: "Manual split" });
+      renderTimelineRows();
+      return;
+    }
+    offset += duration;
+  }
+  setError("Move the playhead inside a clip before splitting.");
 }
 
 function checkRow(label, value, warning = false) {
@@ -270,13 +431,15 @@ function renderActivity(job) {
   const container = byId("activity");
   container.replaceChildren();
   byId("activity-count").textContent = `${job.events.length} events`;
-  for (const entry of [...job.events].reverse()) {
+  for (const entry of job.events) {
     const item = el("div", "activity-item");
+    const timestamp = el("time", "", new Date(entry.at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }));
     const details = el("div");
-    details.append(el("strong", "", entry.message), el("small", "", `${entry.phase.replaceAll("_", " ")} · ${new Date(entry.at).toLocaleString()}`));
-    item.append(icon("clock-3"), details);
+    details.append(el("strong", "", entry.phase.replaceAll("_", " ")), el("span", "", entry.message));
+    item.append(timestamp, details);
     container.append(item);
   }
+  container.scrollTop = container.scrollHeight;
 }
 
 function renderProgress(job) {
@@ -295,6 +458,7 @@ function renderProgress(job) {
 
 function renderJob(job) {
   const changedJob = state.job?.id !== job.id;
+  if (changedJob) state.selectedAsset = job.assets[0]?.id || null;
   state.job = job;
   byId("empty-state").hidden = true;
   byId("job-view").hidden = false;
@@ -308,7 +472,6 @@ function renderJob(job) {
   const ready = ["complete", "needs_review"].includes(job.status);
   const video = byId("preview-video");
   video.parentElement.classList.toggle("portrait", job.options.aspect === "9:16");
-  video.hidden = !ready;
   if (ready) {
     const url = `/api/jobs/${job.id}/video?v=${job.version}`;
     if (video.dataset.url !== url) {
@@ -321,7 +484,16 @@ function renderJob(job) {
     video.dataset.url = "";
     video.load();
   }
-  byId("video-placeholder").hidden = ready;
+  renderSources(job);
+  if (changedJob && state.selectedAsset) {
+    const source = byId("source-video");
+    const sourceUrl = `/api/jobs/${job.id}/assets/${state.selectedAsset}/video`;
+    source.src = sourceUrl;
+    source.dataset.url = sourceUrl;
+    source.dataset.assetId = state.selectedAsset;
+    source.load();
+  }
+  switchMonitor(state.monitorMode === "source" && state.selectedAsset ? "source" : "output");
   for (const [id, artifact] of [["video-link", "video"], ["subtitle-link", "subtitles"], ["timeline-link", "timeline.json"], ["report-link", "report.json"]]) {
     const link = byId(id);
     link.hidden = !ready;
@@ -338,7 +510,8 @@ function renderJob(job) {
   renderEvidence(job);
   renderActivity(job);
   byId("revise-button").disabled = !ready;
-  if (changedJob) switchTab(job.status === "needs_review" ? "checks" : "evidence");
+  byId("add-source-clip").disabled = !ready || !state.selectedAsset;
+  if (changedJob) switchTab(["queued", "running"].includes(job.status) ? "activity" : job.status === "needs_review" ? "checks" : "evidence");
 }
 
 async function openJob(jobId) {
@@ -369,6 +542,32 @@ byId("files").addEventListener("change", (event) => {
 });
 byId("job-search").addEventListener("input", renderHistory);
 byId("preview-video").addEventListener("timeupdate", updatePlayback);
+byId("monitor-output").addEventListener("click", () => switchMonitor("output"));
+byId("monitor-source").addEventListener("click", () => switchMonitor("source"));
+byId("timeline-zoom").addEventListener("input", (event) => {
+  state.pixelsPerSecond = Number(event.currentTarget.value);
+  renderTrack();
+});
+byId("timeline-ruler").addEventListener("click", (event) => {
+  const video = byId("preview-video");
+  if (!video.dataset.url) return;
+  const bounds = byId("timeline-content").getBoundingClientRect();
+  const next = Math.max(0, Math.min(timelineDuration(), (event.clientX - bounds.left - 32) / state.pixelsPerSecond));
+  video.currentTime = next;
+  switchMonitor("output");
+  updatePlayback();
+});
+byId("split-clip").addEventListener("click", splitAtPlayhead);
+byId("add-source-clip").addEventListener("click", () => {
+  const asset = state.job?.assets.find((item) => item.id === state.selectedAsset);
+  if (!asset) return;
+  const source = byId("source-video");
+  const start = Math.min(Math.max(0, source.currentTime || 0), Math.max(0, asset.duration - 0.1));
+  const end = Math.min(asset.duration, start + Math.min(5, asset.duration));
+  if (end - start < 0.1) return setError("The selected source position is too close to the end.");
+  state.clips.push({ asset_id: asset.id, start, end, evidence_ids: [], reason: "Manual source insert", required: false, score: 0 });
+  renderTimelineRows();
+});
 
 for (const tab of ["evidence", "checks", "activity"]) {
   const button = byId(`tab-${tab}`);

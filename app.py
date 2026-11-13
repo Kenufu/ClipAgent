@@ -3,13 +3,13 @@ import shutil
 import uuid
 from pathlib import Path
 
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from clipagent.config import DEMO, JOBS, MAX_FILES, MAX_TOTAL_SECONDS, MAX_UPLOAD_BYTES, ROOT
-from clipagent.media import probe
+from clipagent.media import preview_frame, probe
 from clipagent.planning import validate_timeline
 from clipagent.service import submit
 from clipagent.storage import create_job, get_job, init_db, list_jobs, update_job
@@ -41,6 +41,14 @@ def _get(job_id):
     if not job:
         raise HTTPException(404, "Job not found")
     return job
+
+
+def _asset(job_id, asset_id):
+    record = _get(job_id)
+    asset = next((item for item in record["assets"] if item["id"] == asset_id), None)
+    if asset is None or not Path(asset["path"]).is_file():
+        raise HTTPException(404, "Source video not found")
+    return asset
 
 
 def _save_sources(job_id, sources):
@@ -83,6 +91,24 @@ def jobs():
 @app.get("/api/jobs/{job_id}")
 def job(job_id: str):
     return _get(job_id)
+
+
+@app.get("/api/jobs/{job_id}/assets/{asset_id}/video")
+def source_video(job_id: str, asset_id: str):
+    asset = _asset(job_id, asset_id)
+    return FileResponse(asset["path"], media_type="video/mp4")
+
+
+@app.get("/api/jobs/{job_id}/assets/{asset_id}/frame")
+def source_frame(job_id: str, asset_id: str, at: float = Query(default=0, ge=0)):
+    asset = _asset(job_id, asset_id)
+    moment = min(round(at * 2) / 2, max(0, asset["duration"] - 0.1))
+    frame = JOBS / job_id / "previews" / f"{asset_id}_{round(moment * 2):05d}.jpg"
+    try:
+        preview_frame(asset["path"], moment, frame)
+    except RuntimeError as exc:
+        raise HTTPException(500, f"Could not create preview frame: {exc}") from exc
+    return FileResponse(frame, media_type="image/jpeg")
 
 
 @app.post("/api/jobs")

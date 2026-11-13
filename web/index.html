@@ -10,7 +10,7 @@
 <body>
   <header class="app-header">
     <div class="brand"><span class="brand-mark"><span class="icon icon-clapperboard" aria-hidden="true"></span></span><span>ClipAgent</span></div>
-    <span class="header-context">Editing workspace</span>
+    <span class="header-context">Editor</span>
     <span class="connection"><span class="connection-dot"></span> Local</span>
   </header>
 
@@ -43,23 +43,31 @@
         </div>
         <div class="workbench">
           <div class="canvas-column">
-            <section class="preview-section" aria-labelledby="preview-title">
-              <div class="section-heading"><h2 id="preview-title">Preview</h2><span id="preview-meta" class="muted"></span></div>
-              <div class="preview-stage"><div class="video-shell"><video id="preview-video" controls playsinline preload="metadata"></video><div id="video-placeholder">Preview appears when the edit is ready</div></div></div>
-              <div class="output-bar">
-                <span id="output-summary" class="output-summary"></span>
-                <div class="output-actions">
-                  <a id="video-link" class="export-button" hidden><span class="icon icon-download" aria-hidden="true"></span>MP4</a>
-                  <a id="subtitle-link" class="text-action" hidden><span class="icon icon-captions" aria-hidden="true"></span>SRT</a>
-                  <a id="timeline-link" class="text-action" hidden><span class="icon icon-layers-3" aria-hidden="true"></span>Timeline</a>
-                  <a id="report-link" class="text-action" hidden><span class="icon icon-file-text" aria-hidden="true"></span>Report</a>
+            <div class="editor-top">
+              <section class="source-bin" aria-labelledby="source-title">
+                <div class="section-heading"><h2 id="source-title">Media</h2><span id="source-count" class="muted"></span></div>
+                <div id="source-list" class="source-list"></div>
+                <div class="source-bin-footer"><button id="add-source-clip" class="secondary-button" type="button" disabled><span class="icon icon-plus" aria-hidden="true"></span>Add clip</button></div>
+              </section>
+              <section class="preview-section" aria-labelledby="preview-title">
+                <div class="section-heading monitor-heading"><h2 id="preview-title">Monitor</h2><div class="monitor-modes" role="tablist" aria-label="Monitor mode"><button id="monitor-output" type="button" role="tab" aria-selected="true">Output</button><button id="monitor-source" type="button" role="tab" aria-selected="false">Source</button></div><span id="preview-meta" class="muted"></span></div>
+                <div class="preview-stage"><div class="video-shell"><video id="preview-video" controls playsinline preload="metadata"></video><video id="source-video" controls playsinline preload="metadata" hidden></video><div id="video-placeholder">Preview appears when the edit is ready</div></div></div>
+                <div class="output-bar">
+                  <span id="output-summary" class="output-summary"></span>
+                  <div class="output-actions">
+                    <a id="video-link" class="export-button" hidden><span class="icon icon-download" aria-hidden="true"></span>MP4</a>
+                    <a id="subtitle-link" class="text-action" hidden><span class="icon icon-captions" aria-hidden="true"></span>SRT</a>
+                    <a id="timeline-link" class="text-action" hidden><span class="icon icon-layers-3" aria-hidden="true"></span>Timeline</a>
+                    <a id="report-link" class="text-action" hidden><span class="icon icon-file-text" aria-hidden="true"></span>Report</a>
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </div>
 
             <section class="timeline-section" aria-labelledby="timeline-title">
-              <div class="section-heading timeline-heading"><div><h2 id="timeline-title">Timeline</h2><span id="timeline-total" class="muted"></span></div><button id="save-timeline" class="secondary-button" type="button" hidden>Render changes</button></div>
-              <div id="timeline-track" class="timeline-track" aria-label="Selected clip sequence"></div>
+              <div class="section-heading timeline-heading"><div><h2 id="timeline-title">Timeline</h2><span id="timeline-total" class="muted"></span></div><div class="timeline-tools"><button id="split-clip" class="secondary-button" type="button" disabled>Split at playhead</button><div class="zoom-control"><span class="icon icon-search" aria-hidden="true"></span><input id="timeline-zoom" type="range" min="18" max="60" value="30" aria-label="Timeline zoom"></div><button id="save-timeline" class="secondary-button" type="button" hidden>Render changes</button></div></div>
+              <div id="timeline-scroller" class="timeline-scroller"><div id="timeline-content" class="timeline-content"><div id="timeline-ruler" class="timeline-ruler" aria-label="Timeline ruler"></div><div class="timeline-lane"><div class="lane-label">V1</div><div id="timeline-track" class="timeline-track" aria-label="Selected clip sequence"></div></div><div id="timeline-playhead" class="timeline-playhead" aria-hidden="true"></div></div></div>
+              <div class="timeline-state"><span id="playhead-time">00:00 / 00:00</span><span id="draft-state"></span></div>
               <div id="timeline" class="timeline-list"></div>
             </section>
 
@@ -73,7 +81,7 @@
             <div class="inspector-tabs" role="tablist" aria-label="Edit details">
               <button id="tab-evidence" role="tab" aria-controls="panel-evidence" aria-selected="true" type="button">Evidence</button>
               <button id="tab-checks" role="tab" aria-controls="panel-checks" aria-selected="false" type="button">Checks</button>
-              <button id="tab-activity" role="tab" aria-controls="panel-activity" aria-selected="false" type="button">Activity</button>
+              <button id="tab-activity" role="tab" aria-controls="panel-activity" aria-selected="false" type="button">Console</button>
             </div>
             <section id="panel-evidence" class="inspector-panel" role="tabpanel" aria-labelledby="tab-evidence">
               <div class="inspector-heading"><h2>Source evidence</h2><span id="evidence-count" class="muted"></span></div>
@@ -84,8 +92,8 @@
               <div id="checks" class="checks-list"></div>
             </section>
             <section id="panel-activity" class="inspector-panel" role="tabpanel" aria-labelledby="tab-activity" hidden>
-              <div class="inspector-heading"><h2>Activity</h2><span id="activity-count" class="muted"></span></div>
-              <div id="activity" class="activity-list"></div>
+              <div class="inspector-heading"><h2>Execution log</h2><span id="activity-count" class="muted"></span></div>
+              <div id="activity" class="activity-list" role="log" aria-live="polite"></div>
             </section>
           </aside>
         </div>

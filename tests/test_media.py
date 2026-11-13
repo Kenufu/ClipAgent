@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from clipagent.media import FFMPEG, probe, render, verify
+from clipagent.media import FFMPEG, preview_frame, probe, render, verify
 
 
 class MediaTests(unittest.TestCase):
@@ -32,6 +32,10 @@ class MediaTests(unittest.TestCase):
             self.assertEqual((checks["width"], checks["height"]), (720, 1280))
             self.assertAlmostEqual(checks["duration"], 2.5, delta=0.25)
             self.assertTrue(srt.exists())
+
+            frame = preview_frame(sources[0]["path"], 0.5, root / "previews" / "frame.jpg")
+            self.assertTrue(frame.is_file())
+            self.assertGreater(frame.stat().st_size, 0)
 
 
 if __name__ == "__main__":

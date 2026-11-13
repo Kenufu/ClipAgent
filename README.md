@@ -1,6 +1,6 @@
 # ClipAgent
 
-Local demo for evidence-grounded video editing. It accepts 1–3 MP4 files, transcribes English speech, selects source-linked clips for requested topics, exports an MP4 and SRT, and checks the finished file. The timeline can be edited and follow-up instructions reuse cached source analysis.
+Local demo for evidence-grounded video editing. It accepts 1–3 MP4 files, transcribes English speech, selects source-linked clips for requested topics, exports an MP4 and SRT, and checks the finished file. The editor includes source monitoring, frame thumbnails, a zoomable timeline, manual clip insertion/splitting/trimming/reordering, and a live execution console. Follow-up instructions reuse cached source analysis.
 
 The verification report lists each requested topic and the speech evidence still present in the final timeline. Manual trims trigger a fresh evidence check; missing topics remain flagged for review. The browser workbench keeps edits, preview, clip timeline, evidence, checks and activity in one responsive view.
 

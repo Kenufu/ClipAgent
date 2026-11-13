@@ -106,6 +106,17 @@ def _run(args, timeout=240, cwd=None):
     return completed
 
 
+def preview_frame(path, at, destination):
+    destination = Path(destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if not destination.exists():
+        _run([
+            "-ss", str(at), "-i", str(path), "-map", "0:v:0", "-frames:v", "1",
+            "-vf", "scale=320:-2", "-q:v", "4", str(destination),
+        ], timeout=30)
+    return destination
+
+
 def render(assets, timeline, subtitles, aspect, output_dir):
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
