@@ -1,0 +1,217 @@
+{
+  "case": {
+    "id": "ordinary_multiple",
+    "category": "ordinary",
+    "description": "Two separate required statements.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [
+      {
+        "id": "intro",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "Welcome to our session.",
+        "words": []
+      },
+      {
+        "id": "problem",
+        "asset_id": "a",
+        "start": 8,
+        "end": 12,
+        "text": "The problem is slow search.",
+        "words": []
+      },
+      {
+        "id": "solution",
+        "asset_id": "a",
+        "start": 16,
+        "end": 20,
+        "text": "The solution is an indexed catalogue.",
+        "words": []
+      },
+      {
+        "id": "result",
+        "asset_id": "a",
+        "start": 24,
+        "end": 28,
+        "text": "The result is faster retrieval.",
+        "words": []
+      }
+    ],
+    "instruction": "Create an 8-10 seconds recap covering problem and solution.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "problem",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 8,
+              "end": 12
+            }
+          ]
+        },
+        {
+          "label": "solution",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 16,
+              "end": 20
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        8,
+        10
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": true
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 8,
+      "max_seconds": 10,
+      "topics": [
+        "problem",
+        "solution"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 7.82,
+        "end": 12.22,
+        "evidence_ids": [
+          "problem"
+        ],
+        "reason": "Required topic: problem",
+        "required": true,
+        "score": 1.5
+      },
+      {
+        "asset_id": "a",
+        "start": 15.82,
+        "end": 20.22,
+        "evidence_ids": [
+          "solution"
+        ],
+        "reason": "Required topic: solution",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 7.82,
+            "end": 12.22,
+            "evidence_ids": [
+              "problem"
+            ],
+            "reason": "Required topic: problem",
+            "required": true,
+            "score": 1.5
+          },
+          {
+            "asset_id": "a",
+            "start": 15.82,
+            "end": 20.22,
+            "evidence_ids": [
+              "solution"
+            ],
+            "reason": "Required topic: solution",
+            "required": true,
+            "score": 1.5
+          }
+        ],
+        "predicted_duration": 8.8,
+        "simulated_observed_duration": 8.8,
+        "repair_reason": "Duration already satisfies the brief",
+        "repair_applied": false
+      }
+    ],
+    "issues": [],
+    "production_topic_self_report": [
+      {
+        "topic": "problem",
+        "evidence_ids": [
+          "problem"
+        ],
+        "verified": true
+      },
+      {
+        "topic": "solution",
+        "evidence_ids": [
+          "solution"
+        ],
+        "verified": true
+      }
+    ],
+    "simulated_observed_duration": 8.8,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 2,
+    "requirements_total": 2,
+    "coverage": 1.0,
+    "requirement_positions": {
+      "problem": [
+        0.17999999999999972,
+        0
+      ],
+      "solution": [
+        4.579999999999998,
+        1
+      ]
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": true,
+    "feasible": true,
+    "expected_failure_flagged": null,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.058291,
+    0.058458,
+    0.058667,
+    0.05875,
+    0.058792,
+    0.058834,
+    0.058875,
+    0.058875,
+    0.058875,
+    0.059,
+    0.059292,
+    0.059459,
+    0.0595,
+    0.059583,
+    0.059708,
+    0.0615,
+    0.062792,
+    0.062834,
+    0.064209,
+    0.0655
+  ]
+}

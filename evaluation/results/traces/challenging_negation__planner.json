@@ -1,0 +1,152 @@
+{
+  "case": {
+    "id": "challenging_negation",
+    "category": "challenging",
+    "description": "Keyword hit explicitly does not give the requested answer.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [
+      {
+        "id": "decoy",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "No solution is presented here.",
+        "words": []
+      },
+      {
+        "id": "answer",
+        "asset_id": "a",
+        "start": 16,
+        "end": 20,
+        "text": "The solution is an indexed catalogue.",
+        "words": []
+      }
+    ],
+    "instruction": "Create a 4-6 seconds recap covering solution.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "solution",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 16,
+              "end": 20
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        4,
+        6
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": true
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 4,
+      "max_seconds": 6,
+      "topics": [
+        "solution"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.82,
+        "end": 5.22,
+        "evidence_ids": [
+          "decoy"
+        ],
+        "reason": "Required topic: solution",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.82,
+            "end": 5.22,
+            "evidence_ids": [
+              "decoy"
+            ],
+            "reason": "Required topic: solution",
+            "required": true,
+            "score": 1.5
+          }
+        ],
+        "predicted_duration": 4.4,
+        "simulated_observed_duration": 4.4
+      }
+    ],
+    "issues": [],
+    "production_topic_self_report": [
+      {
+        "topic": "solution",
+        "evidence_ids": [
+          "decoy"
+        ],
+        "verified": true
+      }
+    ],
+    "simulated_observed_duration": 4.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 0,
+    "requirements_total": 1,
+    "coverage": 0.0,
+    "requirement_positions": {
+      "solution": null
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": true,
+    "expected_failure_flagged": null,
+    "false_complete": true
+  },
+  "latency_ms": [
+    0.029875,
+    0.030042,
+    0.030042,
+    0.030167,
+    0.030416,
+    0.030417,
+    0.030459,
+    0.0305,
+    0.0305,
+    0.030542,
+    0.030708,
+    0.030791,
+    0.030792,
+    0.030917,
+    0.031125,
+    0.031375,
+    0.0315,
+    0.031625,
+    0.034,
+    0.034959
+  ]
+}

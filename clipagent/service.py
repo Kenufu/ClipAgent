@@ -1,5 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from .config import JOBS
 from .media import render, transcribe, verify
@@ -10,12 +11,16 @@ _workers = ThreadPoolExecutor(max_workers=1, thread_name_prefix="clipagent")
 
 
 def submit(job_id, *, revision=False, manual_timeline=None):
-    _workers.submit(_process, job_id, revision, manual_timeline)
+    return _workers.submit(_process, job_id, revision, manual_timeline)
 
 
 def _process(job_id, revision, manual_timeline):
+    staging = None
     try:
         job = get_job(job_id)
+        if job is None:
+            raise ValueError("Job not found")
+        update_job(job_id, status="running", report={}, error=None)
         assets = job["assets"]
         options = parse_request(job["instruction"], job["options"])
         update_job(job_id, status="running", options=options, error=None)
@@ -43,14 +48,19 @@ def _process(job_id, revision, manual_timeline):
         predicted = validate_timeline(timeline, assets)
         version = job["version"] + 1
         update_job(job_id, timeline=timeline, version=version)
-        output_dir = JOBS / job_id / "output"
+        job_dir = JOBS / job_id
+        job_dir.mkdir(parents=True, exist_ok=True)
+        staging = TemporaryDirectory(prefix="render-", dir=job_dir)
+        output_dir = Path(staging.name)
         repairs = []
         for attempt in range(3):
-            event(job_id, "rendering", f"Rendering timeline version {version}")
+            event(job_id, "rendering", f"Rendering timeline version {version} (attempt {attempt + 1}/3)")
             srt = make_srt(timeline, transcript) if options["subtitles"] else ""
             final, captions = render(assets, timeline, srt, options["aspect"], output_dir)
             event(job_id, "verifying", "Decoding and checking the finished video")
             checks = verify(final, options["aspect"])
+            if not checks.get("decodable"):
+                raise RuntimeError("Rendered output did not pass decoding verification")
             if manual_timeline is not None or attempt == 2:
                 break
             revised, reason = repair_duration(timeline, transcript, assets, options, checks["duration"])
@@ -96,10 +106,18 @@ def _process(job_id, revision, manual_timeline):
             "topic_evidence": topic_evidence,
             "timeline_version": version,
             "repairs": repairs,
+            "render_attempts": attempt + 1,
             "outputs": {"video": final.name, "subtitles": captions.name},
         }
+        published = job_dir / "output"
+        published.mkdir(exist_ok=True)
+        final.replace(published / final.name)
+        captions.replace(published / captions.name)
         update_job(job_id, status=status, report=report)
         event(job_id, status, "Export verified" if status == "complete" else "Export needs review")
     except Exception as exc:
-        update_job(job_id, status="failed", error=str(exc))
+        update_job(job_id, status="failed", report={}, error=str(exc))
         event(job_id, "failed", str(exc))
+    finally:
+        if staging is not None:
+            staging.cleanup()

@@ -1,0 +1,25 @@
+[
+  {
+    "asset_id": "public-speech",
+    "start": 0,
+    "end": 11.54,
+    "evidence_ids": [
+      "public-speech:t1"
+    ],
+    "reason": "Supporting context",
+    "required": false,
+    "score": 0.0
+  },
+  {
+    "asset_id": "public-speech",
+    "start": 11.7,
+    "end": 23.1,
+    "evidence_ids": [
+      "public-speech:t2",
+      "public-speech:t3"
+    ],
+    "reason": "Supporting context",
+    "required": false,
+    "score": 0.0
+  }
+]

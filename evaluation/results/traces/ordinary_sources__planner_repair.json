@@ -1,0 +1,161 @@
+{
+  "case": {
+    "id": "ordinary_sources",
+    "category": "ordinary",
+    "description": "Evidence is in the second source.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 10
+      },
+      {
+        "id": "b",
+        "duration": 10
+      }
+    ],
+    "transcript": [
+      {
+        "id": "intro",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "Welcome to our session.",
+        "words": []
+      },
+      {
+        "id": "b-result",
+        "asset_id": "b",
+        "start": 2,
+        "end": 6,
+        "text": "The result is faster retrieval.",
+        "words": []
+      }
+    ],
+    "instruction": "Create a 4-6 seconds recap covering result.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "result",
+          "acceptable_spans": [
+            {
+              "asset_id": "b",
+              "start": 2,
+              "end": 6
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        4,
+        6
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": true
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 4,
+      "max_seconds": 6,
+      "topics": [
+        "result"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "b",
+        "start": 1.82,
+        "end": 6.22,
+        "evidence_ids": [
+          "b-result"
+        ],
+        "reason": "Required topic: result",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "b",
+            "start": 1.82,
+            "end": 6.22,
+            "evidence_ids": [
+              "b-result"
+            ],
+            "reason": "Required topic: result",
+            "required": true,
+            "score": 1.5
+          }
+        ],
+        "predicted_duration": 4.4,
+        "simulated_observed_duration": 4.4,
+        "repair_reason": "Duration already satisfies the brief",
+        "repair_applied": false
+      }
+    ],
+    "issues": [],
+    "production_topic_self_report": [
+      {
+        "topic": "result",
+        "evidence_ids": [
+          "b-result"
+        ],
+        "verified": true
+      }
+    ],
+    "simulated_observed_duration": 4.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 1,
+    "requirements_total": 1,
+    "coverage": 1.0,
+    "requirement_positions": {
+      "result": [
+        0.17999999999999994,
+        0
+      ]
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": true,
+    "feasible": true,
+    "expected_failure_flagged": null,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.030208,
+    0.030417,
+    0.0305,
+    0.031375,
+    0.031917,
+    0.031958,
+    0.032083,
+    0.032292,
+    0.032375,
+    0.03275,
+    0.033542,
+    0.033958,
+    0.034667,
+    0.034875,
+    0.035292,
+    0.035375,
+    0.035625,
+    0.035916,
+    0.036125,
+    0.04475
+  ]
+}

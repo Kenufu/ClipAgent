@@ -1,0 +1,145 @@
+{
+  "case": {
+    "id": "failure_minimum",
+    "category": "failure",
+    "description": "Insufficient total source material.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 6
+      }
+    ],
+    "transcript": [
+      {
+        "id": "s",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "The solution is indexing.",
+        "words": []
+      }
+    ],
+    "instruction": "Create a 20-25 seconds recap covering solution.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "solution",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 1,
+              "end": 5
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        20,
+        25
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": false
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 20,
+      "max_seconds": 25,
+      "topics": [
+        "solution"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.82,
+        "end": 5.22,
+        "evidence_ids": [
+          "s"
+        ],
+        "required": false
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.82,
+            "end": 5.22,
+            "evidence_ids": [
+              "s"
+            ],
+            "required": false
+          }
+        ],
+        "predicted_duration": 4.4,
+        "simulated_observed_duration": 4.4
+      }
+    ],
+    "issues": [
+      "Rendered duration is outside the requested range"
+    ],
+    "production_topic_self_report": [
+      {
+        "topic": "solution",
+        "evidence_ids": [
+          "s"
+        ],
+        "verified": true
+      }
+    ],
+    "simulated_observed_duration": 4.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 1,
+    "requirements_total": 1,
+    "coverage": 1.0,
+    "requirement_positions": {
+      "solution": [
+        0.18000000000000005,
+        0
+      ]
+    },
+    "valid_timeline": true,
+    "duration_ok": false,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": false,
+    "expected_failure_flagged": true,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.020167,
+    0.020291,
+    0.020333,
+    0.020541,
+    0.020542,
+    0.020583,
+    0.020625,
+    0.020666,
+    0.020667,
+    0.020667,
+    0.020792,
+    0.020833,
+    0.020875,
+    0.020958,
+    0.020958,
+    0.021459,
+    0.021583,
+    0.023333,
+    0.023833,
+    0.055833
+  ]
+}

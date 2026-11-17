@@ -1,0 +1,15 @@
+{
+  "tests_run": 9,
+  "successful": true,
+  "elapsed_seconds": 5.446,
+  "failures": [],
+  "errors": [],
+  "skipped": [
+    {
+      "test": "test_real_generated_speech_cached_model (test_service.ServiceTests.test_real_generated_speech_cached_model)",
+      "reason": "Installed macOS say produced an empty AIFF in this environment; speech synthesis E2E not exercised"
+    }
+  ],
+  "scope": "Actual in-process ASGI requests, SQLite, worker, generated media, FFmpeg rendering and full decode. Injected cases explicitly labelled. No browser or external-server coverage.",
+  "offline": "No network/model downloads; speech test uses only an existing model and local speech synthesis, or skips."
+}

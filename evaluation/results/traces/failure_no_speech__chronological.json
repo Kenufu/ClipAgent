@@ -1,0 +1,121 @@
+{
+  "case": {
+    "id": "failure_no_speech",
+    "category": "failure",
+    "description": "Preview fallback cannot establish spoken evidence.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [],
+    "instruction": "Create a 4-6 seconds recap covering solution.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "solution",
+          "acceptable_spans": []
+        }
+      ],
+      "duration_seconds": [
+        4,
+        6
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": false
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 4,
+      "max_seconds": 6,
+      "topics": [
+        "solution"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0,
+        "end": 5,
+        "evidence_ids": [],
+        "required": false
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0,
+            "end": 5,
+            "evidence_ids": [],
+            "required": false
+          }
+        ],
+        "predicted_duration": 5.0,
+        "simulated_observed_duration": 5.0
+      }
+    ],
+    "issues": [
+      "No selected spoken evidence found for: solution"
+    ],
+    "production_topic_self_report": [
+      {
+        "topic": "solution",
+        "evidence_ids": [],
+        "verified": false
+      }
+    ],
+    "simulated_observed_duration": 5.0,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 0,
+    "requirements_total": 1,
+    "coverage": 0.0,
+    "requirement_positions": {
+      "solution": null
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": false,
+    "expected_failure_flagged": true,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.012916,
+    0.012917,
+    0.012917,
+    0.013042,
+    0.013083,
+    0.013083,
+    0.013125,
+    0.013125,
+    0.013167,
+    0.013208,
+    0.013209,
+    0.013292,
+    0.013333,
+    0.013333,
+    0.013375,
+    0.0135,
+    0.013542,
+    0.014333,
+    0.014709,
+    0.015542
+  ]
+}

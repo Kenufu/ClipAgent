@@ -1,0 +1,14 @@
+{
+  "tests": 27,
+  "passed": 26,
+  "skipped": [
+    {
+      "test": "test_real_generated_speech_cached_model (test_service.ServiceTests.test_real_generated_speech_cached_model)",
+      "reason": "Installed macOS say produced an empty AIFF in this environment; speech synthesis E2E not exercised"
+    }
+  ],
+  "failures": 0,
+  "errors": 0,
+  "python": "3.12.10",
+  "platform": "macOS-26.6.2-arm64-arm-64bit"
+}

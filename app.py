@@ -2,6 +2,8 @@ import re
 import shutil
 import uuid
 from pathlib import Path
+from threading import RLock
+from functools import wraps
 
 from fastapi import FastAPI, File, Form, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
@@ -13,10 +15,30 @@ from clipagent.media import preview_frame, probe
 from clipagent.planning import validate_timeline
 from clipagent.service import submit
 from clipagent.storage import create_job, get_job, init_db, list_jobs, update_job
+from clipagent.storage import event
 
 init_db()
 app = FastAPI(title="ClipAgent", version="0.1.0")
 app.mount("/static", StaticFiles(directory=ROOT / "web"), name="static")
+_revision_lock = RLock()
+
+
+def _serialized_revision(function):
+    # Serialize the ready-check and queued transition across request threads.
+    @wraps(function)
+    def wrapped(*args, **kwargs):
+        with _revision_lock:
+            return function(*args, **kwargs)
+    return wrapped
+
+
+def _submit(job_id, **kwargs):
+    try:
+        submit(job_id, **kwargs)
+    except Exception as exc:
+        update_job(job_id, status="failed", report={}, error=str(exc))
+        event(job_id, "failed", f"Could not queue processing: {exc}")
+        raise HTTPException(503, "Could not queue processing") from exc
 
 
 class Revision(BaseModel):
@@ -28,8 +50,8 @@ class Revision(BaseModel):
 
 class ClipEdit(BaseModel):
     asset_id: str
-    start: float
-    end: float
+    start: float = Field(allow_inf_nan=False)
+    end: float = Field(allow_inf_nan=False)
 
 
 class TimelineEdit(BaseModel):
@@ -69,7 +91,7 @@ def _queue(job_id, instruction, options, assets):
     if sum(asset["duration"] for asset in assets) > MAX_TOTAL_SECONDS:
         raise HTTPException(400, "Combined video duration exceeds 15 minutes")
     create_job(job_id, instruction, options, assets)
-    submit(job_id)
+    _submit(job_id)
     return {"id": job_id, "status": "queued"}
 
 
@@ -100,7 +122,7 @@ def source_video(job_id: str, asset_id: str):
 
 
 @app.get("/api/jobs/{job_id}/assets/{asset_id}/frame")
-def source_frame(job_id: str, asset_id: str, at: float = Query(default=0, ge=0)):
+def source_frame(job_id: str, asset_id: str, at: float = Query(default=0, ge=0, allow_inf_nan=False)):
     asset = _asset(job_id, asset_id)
     moment = min(round(at * 2) / 2, max(0, asset["duration"] - 0.1))
     frame = JOBS / job_id / "previews" / f"{asset_id}_{round(moment * 2):05d}.jpg"
@@ -169,6 +191,7 @@ def demo():
 
 
 @app.post("/api/jobs/{job_id}/revise")
+@_serialized_revision
 def revise(job_id: str, body: Revision):
     current = _get(job_id)
     if current["status"] not in {"complete", "needs_review"}:
@@ -186,12 +209,13 @@ def revise(job_id: str, body: Revision):
         options["topics"] = body.topics
     elif re.search(r"\b(?:cover(?:ing)?|include|including|about)\b", body.instruction, re.I):
         options["topics"] = []
-    update_job(job_id, instruction=body.instruction, options=options, status="queued")
-    submit(job_id, revision=True)
+    update_job(job_id, instruction=body.instruction, options=options, status="queued", report={}, error=None)
+    _submit(job_id, revision=True)
     return {"id": job_id, "status": "queued"}
 
 
 @app.post("/api/jobs/{job_id}/timeline")
+@_serialized_revision
 def edit_timeline(job_id: str, body: TimelineEdit):
     current = _get(job_id)
     if current["status"] not in {"complete", "needs_review"}:
@@ -211,8 +235,8 @@ def edit_timeline(job_id: str, body: TimelineEdit):
         validate_timeline(clips, current["assets"])
     except ValueError as exc:
         raise HTTPException(400, str(exc)) from exc
-    update_job(job_id, status="queued")
-    submit(job_id, revision=True, manual_timeline=clips)
+    update_job(job_id, status="queued", report={}, error=None)
+    _submit(job_id, revision=True, manual_timeline=clips)
     return {"id": job_id, "status": "queued"}
 
 
@@ -240,6 +264,8 @@ def artifact(job_id: str, artifact: str):
     names = {"video": "final.mp4", "subtitles": "captions.srt"}
     if artifact not in names:
         raise HTTPException(404, "Artifact not found")
+    if record["status"] not in {"complete", "needs_review"} or not record["report"].get("outputs"):
+        raise HTTPException(409, "Current export is not ready")
     path = JOBS / job_id / "output" / names[artifact]
     if not path.is_file():
         raise HTTPException(404, "Artifact is not ready")

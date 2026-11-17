@@ -1,0 +1,164 @@
+{
+  "case": {
+    "id": "failure_missing",
+    "category": "failure",
+    "description": "Requested topic does not occur; empty alternatives are deliberate.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [
+      {
+        "id": "intro",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "Welcome to our session.",
+        "words": []
+      },
+      {
+        "id": "problem",
+        "asset_id": "a",
+        "start": 8,
+        "end": 12,
+        "text": "The problem is slow search.",
+        "words": []
+      },
+      {
+        "id": "solution",
+        "asset_id": "a",
+        "start": 16,
+        "end": 20,
+        "text": "The solution is an indexed catalogue.",
+        "words": []
+      },
+      {
+        "id": "result",
+        "asset_id": "a",
+        "start": 24,
+        "end": 28,
+        "text": "The result is faster retrieval.",
+        "words": []
+      }
+    ],
+    "instruction": "Create a 4-6 seconds recap covering warranty.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "warranty",
+          "acceptable_spans": []
+        }
+      ],
+      "duration_seconds": [
+        4,
+        6
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": false
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 4,
+      "max_seconds": 6,
+      "topics": [
+        "warranty"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.82,
+        "end": 5.22,
+        "evidence_ids": [
+          "intro"
+        ],
+        "reason": "Supporting context",
+        "required": false,
+        "score": 0.0
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.82,
+            "end": 5.22,
+            "evidence_ids": [
+              "intro"
+            ],
+            "reason": "Supporting context",
+            "required": false,
+            "score": 0.0
+          }
+        ],
+        "predicted_duration": 4.4,
+        "simulated_observed_duration": 4.4,
+        "repair_reason": "Duration already satisfies the brief",
+        "repair_applied": false
+      }
+    ],
+    "issues": [
+      "No selected spoken evidence found for: warranty"
+    ],
+    "production_topic_self_report": [
+      {
+        "topic": "warranty",
+        "evidence_ids": [],
+        "verified": false
+      }
+    ],
+    "simulated_observed_duration": 4.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 0,
+    "requirements_total": 1,
+    "coverage": 0.0,
+    "requirement_positions": {
+      "warranty": null
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": false,
+    "expected_failure_flagged": true,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.03725,
+    0.037458,
+    0.037625,
+    0.03775,
+    0.037792,
+    0.037875,
+    0.037916,
+    0.037959,
+    0.038041,
+    0.038166,
+    0.038167,
+    0.038167,
+    0.038208,
+    0.038208,
+    0.038375,
+    0.038625,
+    0.03925,
+    0.039667,
+    0.039959,
+    0.041292
+  ]
+}

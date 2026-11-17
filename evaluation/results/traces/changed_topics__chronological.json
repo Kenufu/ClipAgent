@@ -1,0 +1,169 @@
+{
+  "case": {
+    "id": "changed_topics",
+    "category": "changed",
+    "description": "Follow-up clears prior topics like the revise route.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [
+      {
+        "id": "intro",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "Welcome to our session.",
+        "words": []
+      },
+      {
+        "id": "problem",
+        "asset_id": "a",
+        "start": 8,
+        "end": 12,
+        "text": "The problem is slow search.",
+        "words": []
+      },
+      {
+        "id": "solution",
+        "asset_id": "a",
+        "start": 16,
+        "end": 20,
+        "text": "The solution is an indexed catalogue.",
+        "words": []
+      },
+      {
+        "id": "result",
+        "asset_id": "a",
+        "start": 24,
+        "end": 28,
+        "text": "The result is faster retrieval.",
+        "words": []
+      }
+    ],
+    "instruction": "Create a 4-6 seconds recap covering result.",
+    "options": {},
+    "prior_request": {
+      "instruction": "Create an 8-10 seconds recap covering problem and solution.",
+      "options": {}
+    },
+    "revision_options": {
+      "topics": []
+    },
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "result",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 24,
+              "end": 28
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        4,
+        6
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": true
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 4,
+      "max_seconds": 6,
+      "topics": [
+        "result"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.82,
+        "end": 5.22,
+        "evidence_ids": [
+          "intro"
+        ],
+        "required": false
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.82,
+            "end": 5.22,
+            "evidence_ids": [
+              "intro"
+            ],
+            "required": false
+          }
+        ],
+        "predicted_duration": 4.4,
+        "simulated_observed_duration": 4.4
+      }
+    ],
+    "issues": [
+      "No selected spoken evidence found for: result"
+    ],
+    "production_topic_self_report": [
+      {
+        "topic": "result",
+        "evidence_ids": [],
+        "verified": false
+      }
+    ],
+    "simulated_observed_duration": 4.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 0,
+    "requirements_total": 1,
+    "coverage": 0.0,
+    "requirement_positions": {
+      "result": null
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": true,
+    "expected_failure_flagged": null,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.031084,
+    0.031458,
+    0.0315,
+    0.0315,
+    0.031541,
+    0.031625,
+    0.031875,
+    0.031917,
+    0.032,
+    0.032042,
+    0.032541,
+    0.032541,
+    0.033041,
+    0.033125,
+    0.033958,
+    0.034084,
+    0.034167,
+    0.035083,
+    0.035667,
+    0.035959
+  ]
+}

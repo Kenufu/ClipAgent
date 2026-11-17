@@ -268,6 +268,16 @@ def repair_duration(timeline, transcript, assets, options, rendered_duration):
             })
             order = {asset["id"]: index for index, asset in enumerate(assets)}
             clips.sort(key=lambda clip: (order[clip["asset_id"]], clip["start"]))
+            # Duration repair must preserve an explicit first-topic constraint.
+            first_topic = options.get("first_topic")
+            if first_topic:
+                cues = {cue["id"]: cue for cue in transcript}
+                first = next((i for i, clip in enumerate(clips) if any(
+                    first_topic.lower() in cues[eid]["text"].lower()
+                    for eid in clip.get("evidence_ids", []) if eid in cues
+                )), None)
+                if first is not None:
+                    clips.insert(0, clips.pop(first))
             return clips, f"Added source evidence at {cue['start']:.1f}s to meet duration"
         return None, "No suitable source evidence remains to lengthen the recap"
     return None, "Duration already satisfies the brief"

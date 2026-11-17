@@ -1,0 +1,152 @@
+{
+  "case": {
+    "id": "challenging_synonym",
+    "category": "challenging",
+    "description": "Semantic requirement expressed without the query keyword.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [
+      {
+        "id": "intro",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "Welcome to our session.",
+        "words": []
+      },
+      {
+        "id": "price",
+        "asset_id": "a",
+        "start": 16,
+        "end": 20,
+        "text": "The price is ten dollars.",
+        "words": []
+      }
+    ],
+    "instruction": "Create a 4-6 seconds recap covering cost.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "cost",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 16,
+              "end": 20
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        4,
+        6
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": true
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 4,
+      "max_seconds": 6,
+      "topics": [
+        "cost"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.82,
+        "end": 5.22,
+        "evidence_ids": [
+          "intro"
+        ],
+        "reason": "Supporting context",
+        "required": false,
+        "score": 0.0
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.82,
+            "end": 5.22,
+            "evidence_ids": [
+              "intro"
+            ],
+            "reason": "Supporting context",
+            "required": false,
+            "score": 0.0
+          }
+        ],
+        "predicted_duration": 4.4,
+        "simulated_observed_duration": 4.4
+      }
+    ],
+    "issues": [
+      "No selected spoken evidence found for: cost"
+    ],
+    "production_topic_self_report": [
+      {
+        "topic": "cost",
+        "evidence_ids": [],
+        "verified": false
+      }
+    ],
+    "simulated_observed_duration": 4.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 0,
+    "requirements_total": 1,
+    "coverage": 0.0,
+    "requirement_positions": {
+      "cost": null
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": true,
+    "expected_failure_flagged": null,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.027417,
+    0.027583,
+    0.02775,
+    0.027834,
+    0.027917,
+    0.028,
+    0.028042,
+    0.028042,
+    0.028208,
+    0.02825,
+    0.028291,
+    0.028292,
+    0.028333,
+    0.0285,
+    0.028666,
+    0.02925,
+    0.031708,
+    0.031709,
+    0.032084,
+    0.033875
+  ]
+}

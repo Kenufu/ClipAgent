@@ -1,0 +1,208 @@
+{
+  "case": {
+    "id": "changed_order",
+    "category": "changed",
+    "description": "Follow-up reuses transcript and prior parsed topics.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [
+      {
+        "id": "intro",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "Welcome to our session.",
+        "words": []
+      },
+      {
+        "id": "problem",
+        "asset_id": "a",
+        "start": 8,
+        "end": 12,
+        "text": "The problem is slow search.",
+        "words": []
+      },
+      {
+        "id": "solution",
+        "asset_id": "a",
+        "start": 16,
+        "end": 20,
+        "text": "The solution is an indexed catalogue.",
+        "words": []
+      },
+      {
+        "id": "result",
+        "asset_id": "a",
+        "start": 24,
+        "end": 28,
+        "text": "The result is faster retrieval.",
+        "words": []
+      }
+    ],
+    "instruction": "Put solution first.",
+    "options": {},
+    "prior_request": {
+      "instruction": "Create an 8-10 seconds recap covering problem and solution.",
+      "options": {}
+    },
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "problem",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 8,
+              "end": 12
+            }
+          ]
+        },
+        {
+          "label": "solution",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 16,
+              "end": 20
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        8,
+        10
+      ],
+      "first_requirement": "solution",
+      "aspect": "16:9",
+      "feasible": true
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 8,
+      "max_seconds": 10,
+      "topics": [
+        "problem",
+        "solution"
+      ],
+      "first_topic": "solution"
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.82,
+        "end": 5.22,
+        "evidence_ids": [
+          "intro"
+        ],
+        "required": false
+      },
+      {
+        "asset_id": "a",
+        "start": 7.82,
+        "end": 12.22,
+        "evidence_ids": [
+          "problem"
+        ],
+        "required": false
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.82,
+            "end": 5.22,
+            "evidence_ids": [
+              "intro"
+            ],
+            "required": false
+          },
+          {
+            "asset_id": "a",
+            "start": 7.82,
+            "end": 12.22,
+            "evidence_ids": [
+              "problem"
+            ],
+            "required": false
+          }
+        ],
+        "predicted_duration": 8.8,
+        "simulated_observed_duration": 8.8
+      }
+    ],
+    "issues": [
+      "No selected spoken evidence found for: solution"
+    ],
+    "production_topic_self_report": [
+      {
+        "topic": "problem",
+        "evidence_ids": [
+          "problem"
+        ],
+        "verified": true
+      },
+      {
+        "topic": "solution",
+        "evidence_ids": [],
+        "verified": false
+      }
+    ],
+    "simulated_observed_duration": 8.8,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 1,
+    "requirements_total": 2,
+    "coverage": 0.5,
+    "requirement_positions": {
+      "problem": [
+        4.579999999999998,
+        1
+      ],
+      "solution": null
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": false,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": true,
+    "expected_failure_flagged": null,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.041417,
+    0.041542,
+    0.041583,
+    0.041709,
+    0.041792,
+    0.041834,
+    0.042166,
+    0.042166,
+    0.042375,
+    0.042375,
+    0.042458,
+    0.042583,
+    0.042667,
+    0.042917,
+    0.043042,
+    0.043167,
+    0.043208,
+    0.044334,
+    0.046834,
+    0.04725
+  ]
+}

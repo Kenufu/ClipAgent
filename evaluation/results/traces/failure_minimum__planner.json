@@ -1,0 +1,149 @@
+{
+  "case": {
+    "id": "failure_minimum",
+    "category": "failure",
+    "description": "Insufficient total source material.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 6
+      }
+    ],
+    "transcript": [
+      {
+        "id": "s",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "The solution is indexing.",
+        "words": []
+      }
+    ],
+    "instruction": "Create a 20-25 seconds recap covering solution.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "solution",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 1,
+              "end": 5
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        20,
+        25
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": false
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 20,
+      "max_seconds": 25,
+      "topics": [
+        "solution"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.82,
+        "end": 5.22,
+        "evidence_ids": [
+          "s"
+        ],
+        "reason": "Required topic: solution",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.82,
+            "end": 5.22,
+            "evidence_ids": [
+              "s"
+            ],
+            "reason": "Required topic: solution",
+            "required": true,
+            "score": 1.5
+          }
+        ],
+        "predicted_duration": 4.4,
+        "simulated_observed_duration": 4.4
+      }
+    ],
+    "issues": [
+      "Not enough relevant speech to meet the minimum duration"
+    ],
+    "production_topic_self_report": [
+      {
+        "topic": "solution",
+        "evidence_ids": [
+          "s"
+        ],
+        "verified": true
+      }
+    ],
+    "simulated_observed_duration": 4.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 1,
+    "requirements_total": 1,
+    "coverage": 1.0,
+    "requirement_positions": {
+      "solution": [
+        0.18000000000000005,
+        0
+      ]
+    },
+    "valid_timeline": true,
+    "duration_ok": false,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": false,
+    "expected_failure_flagged": true,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.024084,
+    0.024125,
+    0.024333,
+    0.024459,
+    0.02475,
+    0.024917,
+    0.025,
+    0.025166,
+    0.025416,
+    0.025583,
+    0.025959,
+    0.026083,
+    0.026334,
+    0.026916,
+    0.027208,
+    0.028667,
+    0.029458,
+    0.02975,
+    0.029917,
+    0.0485
+  ]
+}

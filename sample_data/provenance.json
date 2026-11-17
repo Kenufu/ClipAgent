@@ -1,0 +1,13 @@
+{
+  "dataset": "LibriSpeech test-clean",
+  "utterance": "6930-75918-0003",
+  "audio_sha256": "166d138dc95c706e4eedbebb48f4ac4c8cb1b77ea796c0bc650da518308657e2",
+  "duration_seconds": 23.315,
+  "source_url": "https://raw.githubusercontent.com/NVIDIA/TensorRT-Model-Connect/main/families/whisper/tests/data/librispeech-test-clean-6930-75918-0003.wav",
+  "attribution_url": "https://github.com/NVIDIA/TensorRT-Model-Connect/blob/main/ASSET_LICENSES.md",
+  "original_dataset_url": "https://www.openslr.org/12/",
+  "license": "CC BY 4.0",
+  "creators": "Vassil Panayotov, Guoguo Chen, Daniel Povey, Sanjeev Khudanpur; LibriVox readers",
+  "modifications": "WAV fixture supplied by NVIDIA; ClipAgent wraps audio in a generated static title-card MP4. Not an original video dataset.",
+  "reference_status": "Independent complete reference not retrieved; no word error rate claim."
+}

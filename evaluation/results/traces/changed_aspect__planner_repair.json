@@ -1,0 +1,176 @@
+{
+  "case": {
+    "id": "changed_aspect",
+    "category": "changed",
+    "description": "Follow-up retains content and changes parsed aspect.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [
+      {
+        "id": "intro",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "Welcome to our session.",
+        "words": []
+      },
+      {
+        "id": "problem",
+        "asset_id": "a",
+        "start": 8,
+        "end": 12,
+        "text": "The problem is slow search.",
+        "words": []
+      },
+      {
+        "id": "solution",
+        "asset_id": "a",
+        "start": 16,
+        "end": 20,
+        "text": "The solution is an indexed catalogue.",
+        "words": []
+      },
+      {
+        "id": "result",
+        "asset_id": "a",
+        "start": 24,
+        "end": 28,
+        "text": "The result is faster retrieval.",
+        "words": []
+      }
+    ],
+    "instruction": "Export vertically.",
+    "options": {},
+    "prior_request": {
+      "instruction": "Create a 4-6 seconds recap covering solution.",
+      "options": {}
+    },
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "solution",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 16,
+              "end": 20
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        4,
+        6
+      ],
+      "first_requirement": null,
+      "aspect": "9:16",
+      "feasible": true
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "9:16",
+      "subtitles": true,
+      "min_seconds": 4,
+      "max_seconds": 6,
+      "topics": [
+        "solution"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 15.82,
+        "end": 20.22,
+        "evidence_ids": [
+          "solution"
+        ],
+        "reason": "Required topic: solution",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 15.82,
+            "end": 20.22,
+            "evidence_ids": [
+              "solution"
+            ],
+            "reason": "Required topic: solution",
+            "required": true,
+            "score": 1.5
+          }
+        ],
+        "predicted_duration": 4.4,
+        "simulated_observed_duration": 4.4,
+        "repair_reason": "Duration already satisfies the brief",
+        "repair_applied": false
+      }
+    ],
+    "issues": [],
+    "production_topic_self_report": [
+      {
+        "topic": "solution",
+        "evidence_ids": [
+          "solution"
+        ],
+        "verified": true
+      }
+    ],
+    "simulated_observed_duration": 4.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 1,
+    "requirements_total": 1,
+    "coverage": 1.0,
+    "requirement_positions": {
+      "solution": [
+        0.17999999999999972,
+        0
+      ]
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": true,
+    "feasible": true,
+    "expected_failure_flagged": null,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.04125,
+    0.041459,
+    0.041583,
+    0.041666,
+    0.041917,
+    0.041958,
+    0.042042,
+    0.042125,
+    0.042125,
+    0.042333,
+    0.042416,
+    0.042583,
+    0.042667,
+    0.042709,
+    0.042834,
+    0.042875,
+    0.04375,
+    0.043833,
+    0.046708,
+    0.049
+  ]
+}

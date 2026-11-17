@@ -1,0 +1,182 @@
+{
+  "case": {
+    "id": "challenging_merged_order",
+    "category": "challenging",
+    "description": "Merged adjacent cues put the requested first statement after another one.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [
+      {
+        "id": "p",
+        "asset_id": "a",
+        "start": 1,
+        "end": 5,
+        "text": "The problem is slow search.",
+        "words": []
+      },
+      {
+        "id": "s",
+        "asset_id": "a",
+        "start": 5,
+        "end": 9,
+        "text": "The solution is indexing.",
+        "words": []
+      }
+    ],
+    "instruction": "Create an 8-10 seconds recap covering problem and solution; put solution first.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "problem",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 1,
+              "end": 5
+            }
+          ]
+        },
+        {
+          "label": "solution",
+          "acceptable_spans": [
+            {
+              "asset_id": "a",
+              "start": 5,
+              "end": 9
+            }
+          ]
+        }
+      ],
+      "duration_seconds": [
+        8,
+        10
+      ],
+      "first_requirement": "solution",
+      "aspect": "16:9",
+      "feasible": true
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 8,
+      "max_seconds": 10,
+      "topics": [
+        "problem",
+        "solution"
+      ],
+      "first_topic": "solution"
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.82,
+        "end": 9.22,
+        "evidence_ids": [
+          "p",
+          "s"
+        ],
+        "reason": "Required topic: problem",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.82,
+            "end": 9.22,
+            "evidence_ids": [
+              "p",
+              "s"
+            ],
+            "reason": "Required topic: problem",
+            "required": true,
+            "score": 1.5
+          }
+        ],
+        "predicted_duration": 8.4,
+        "simulated_observed_duration": 8.4,
+        "repair_reason": "Duration already satisfies the brief",
+        "repair_applied": false
+      }
+    ],
+    "issues": [],
+    "production_topic_self_report": [
+      {
+        "topic": "problem",
+        "evidence_ids": [
+          "p"
+        ],
+        "verified": true
+      },
+      {
+        "topic": "solution",
+        "evidence_ids": [
+          "s"
+        ],
+        "verified": true
+      }
+    ],
+    "simulated_observed_duration": 8.4,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 2,
+    "requirements_total": 2,
+    "coverage": 1.0,
+    "requirement_positions": {
+      "problem": [
+        0.18000000000000005,
+        0
+      ],
+      "solution": [
+        4.18,
+        0
+      ]
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": false,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": true,
+    "expected_failure_flagged": null,
+    "false_complete": true
+  },
+  "latency_ms": [
+    0.041625,
+    0.042458,
+    0.042666,
+    0.042833,
+    0.042875,
+    0.042958,
+    0.042958,
+    0.04325,
+    0.043291,
+    0.043334,
+    0.043458,
+    0.043542,
+    0.043834,
+    0.044042,
+    0.044083,
+    0.044584,
+    0.045625,
+    0.047583,
+    0.050542,
+    0.051
+  ]
+}

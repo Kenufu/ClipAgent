@@ -1,0 +1,128 @@
+{
+  "case": {
+    "id": "failure_no_speech",
+    "category": "failure",
+    "description": "Preview fallback cannot establish spoken evidence.",
+    "provenance": "Developer-authored by the coding agent; curated synthetic transcript and labels; no independent human check; not sampled user data.",
+    "assets": [
+      {
+        "id": "a",
+        "duration": 40
+      }
+    ],
+    "transcript": [],
+    "instruction": "Create a 4-6 seconds recap covering solution.",
+    "options": {},
+    "prior_request": null,
+    "revision_options": {},
+    "simulated_duration_offset_seconds": 0,
+    "expected": {
+      "requirements": [
+        {
+          "label": "solution",
+          "acceptable_spans": []
+        }
+      ],
+      "duration_seconds": [
+        4,
+        6
+      ],
+      "first_requirement": null,
+      "aspect": "16:9",
+      "feasible": false
+    }
+  },
+  "result": {
+    "options": {
+      "aspect": "16:9",
+      "subtitles": true,
+      "min_seconds": 4,
+      "max_seconds": 6,
+      "topics": [
+        "solution"
+      ]
+    },
+    "timeline": [
+      {
+        "asset_id": "a",
+        "start": 0.0,
+        "end": 5.0,
+        "evidence_ids": [],
+        "reason": "Unverified visual preview",
+        "required": false,
+        "score": 0.0
+      }
+    ],
+    "steps": [
+      {
+        "attempt": 0,
+        "timeline": [
+          {
+            "asset_id": "a",
+            "start": 0.0,
+            "end": 5.0,
+            "evidence_ids": [],
+            "reason": "Unverified visual preview",
+            "required": false,
+            "score": 0.0
+          }
+        ],
+        "predicted_duration": 5.0,
+        "simulated_observed_duration": 5.0,
+        "repair_reason": "Duration already satisfies the brief",
+        "repair_applied": false
+      }
+    ],
+    "issues": [
+      "No speech was detected; using source previews as a fallback",
+      "No selected spoken evidence found for: solution"
+    ],
+    "production_topic_self_report": [
+      {
+        "topic": "solution",
+        "evidence_ids": [],
+        "verified": false
+      }
+    ],
+    "simulated_observed_duration": 5.0,
+    "error": null
+  },
+  "metrics": {
+    "requirements_met": 0,
+    "requirements_total": 1,
+    "coverage": 0.0,
+    "requirement_positions": {
+      "solution": null
+    },
+    "valid_timeline": true,
+    "duration_ok": true,
+    "order_ok": true,
+    "aspect_ok": true,
+    "all_requirements_met": false,
+    "feasible": false,
+    "expected_failure_flagged": true,
+    "false_complete": false
+  },
+  "latency_ms": [
+    0.01525,
+    0.015416,
+    0.0155,
+    0.015542,
+    0.015542,
+    0.015625,
+    0.015625,
+    0.015667,
+    0.015667,
+    0.015708,
+    0.015708,
+    0.015708,
+    0.015833,
+    0.015875,
+    0.015875,
+    0.015958,
+    0.016,
+    0.016166,
+    0.016417,
+    0.017875
+  ]
+}

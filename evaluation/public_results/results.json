@@ -1,0 +1,75 @@
+{
+  "evaluation_kind": "single public speech sample in synthetic static video; integration smoke test",
+  "status": "complete",
+  "instruction": "Create a landscape recap lasting 20-25 seconds with subtitles.",
+  "reference_used_by_pipeline": false,
+  "human_labeled_or_reviewed": false,
+  "topic_coverage_tested": false,
+  "source_audio_sha256": "166d138dc95c706e4eedbebb48f4ac4c8cb1b77ea796c0bc650da518308657e2",
+  "wrapper_sha256": "1b5341bbcb1abc7ae1b0ef070c6150c6ca24e3ffe1702bc734a38300c9d25057",
+  "model": "Systran/faster-whisper-tiny.en",
+  "device": "cpu",
+  "compute_type": "int8",
+  "beam_size": 5,
+  "language": "en",
+  "word_timestamps": true,
+  "model_revision": "0d3d19a32d3338f10357c0889762bd8d64bbdeba",
+  "versions": {
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.2",
+    "av": "18.1.0",
+    "imageio-ffmpeg": "0.6.0"
+  },
+  "source_hashes": {
+    "clipagent/__init__.py": "303addd01af02e2177072a75b45ac67a84b9b3f496799ba7f53e6a0c708032f6",
+    "clipagent/config.py": "2e95d5ad01f5004a0386ddbe438f522ef3ac891c25721e3e8a10545d282f84d1",
+    "clipagent/media.py": "6a678be2e2ec3701f47cb8927d3cdf0b77be8f8a3fa7ce7143c014a968c1591b",
+    "clipagent/planning.py": "ff4cecfebcc0906dfa5e502a43d1f1e4505a74c739be8b02b4ea5512ea5ddc91",
+    "clipagent/service.py": "def0f40861d7cc42e10b2cc51f9e7c9b74ad8bda276d5d2858289932d3c83151",
+    "clipagent/storage.py": "4d2c1c56298b84978b8d18d8c53589bf5fc54c5f39c13cdcbd3262b9a9e2450f"
+  },
+  "pipeline_wall_seconds": 1.901,
+  "report": {
+    "unresolved": [],
+    "checks": {
+      "decodable": true,
+      "has_audio": true,
+      "duration": 22.966,
+      "width": 1280,
+      "height": 720,
+      "aspect_ok": true,
+      "predicted_duration": 22.94,
+      "subtitle_cues": 11,
+      "subtitle_within_video": true,
+      "duration_ok": true
+    },
+    "evidence_count": 3,
+    "topic_evidence": [],
+    "timeline_version": 1,
+    "repairs": [],
+    "render_attempts": 1,
+    "outputs": {
+      "video": "final.mp4",
+      "subtitles": "captions.srt"
+    }
+  },
+  "reference": "",
+  "hypothesis": "From the respect paid her on all sides, she seemed like a queen, and from the adoration with which she was treated by two or three, she appeared an object of worship. The queen mother gave the French the most affectionate reception. France was her native country, and she had suffered too much unhappiness in England for England to have made her forget France.",
+  "scoring": {
+    "normalization": "lowercase; regex [a-z0-9]+ with internal apostrophes retained",
+    "reference_words": 0,
+    "word_edit_distance": null,
+    "wer": null,
+    "rendered_audio_wer_vs_full_reference": null,
+    "rendered_audio_wer_note": "Diagnostic only: editing can intentionally omit words; same ASR model is reused."
+  },
+  "limitations": [
+    "One clean read-English utterance; no statistical generalization or held-out training-contamination guarantee.",
+    "Synthetic static title card, not original video; visual semantics and scene selection untested.",
+    "Generic duration brief with no topic requirements; semantic retrieval and multi-source ordering untested.",
+    "No complete independent reference was retrieved; WER is unavailable. No manual listening or subjective quality assessment.",
+    "Built-in verification checks media properties and transcript-linked evidence, not independent semantic truth.",
+    "Direct service execution bypasses HTTP/UI; only this local CPU/model configuration was exercised.",
+    "Audio provenance relies on NVIDIA fixture documentation; full OpenSLR archive was not downloaded for byte comparison."
+  ]
+}
