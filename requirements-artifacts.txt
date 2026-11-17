@@ -1,0 +1,3 @@
+# Optional PDF build dependencies; not needed to run the application.
+reportlab==4.4.9
+pypdf==6.21.4

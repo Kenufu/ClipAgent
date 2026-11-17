@@ -8,6 +8,10 @@ data/
 outputs/
 *.sqlite3
 *.db
+deliverables/
+.artifact-build/
+.presentation-build/
+scripts/node_modules
 
 # The local proposal contains group members' personal information.
 [[]Group 59[]] ClipAgent Evidence-Grounded Video Editing with Stateful Planning and Verified Tool Execution.pdf
