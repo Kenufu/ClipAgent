@@ -1,0 +1,23 @@
+{
+  "movie": "ClipAgent-real-demo.mp4",
+  "duration": 128.168,
+  "width": 1440,
+  "height": 1000,
+  "fps": 30.0,
+  "has_audio": true,
+  "video_codec": "h264",
+  "size_bytes": 8364668,
+  "sha256": "8a0b0ed020c8fca7aa95e43828880b5b75d96d0ac74a13d33093735a8c5530d0",
+  "screen_recording_seconds": 111.48,
+  "exported_result": {
+    "duration": 16.666,
+    "width": 1280,
+    "height": 720,
+    "fps": 30.0,
+    "has_audio": true,
+    "video_codec": "h264",
+    "size_bytes": 2712167
+  },
+  "editing": "Continuous real-time browser recording, Chinese chapter captions added below UI; actual downloaded export appended with original audio. No processing wait time removed.",
+  "full_decode": "passed"
+}
