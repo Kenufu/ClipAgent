@@ -65,6 +65,10 @@ Use supported explicit English topic names and duration phrases for the evaluati
 
 ## Evaluation and submission
 
+A real NASA-video walkthrough, reproducible browser checks, and downloadable output are documented in [the real video demo guide](docs/REAL_VIDEO_DEMO.md). The 61-second input is included under `sample_data/nasa/`; source attribution and preparation are explicit. The recording is an actual browser session with Chinese instructional captions, not a simulated product animation.
+
+Watch the [recorded walkthrough](deliverables/demo/ClipAgent-real-demo.mp4), play the [actual exported result](deliverables/demo/NASA-edited.mp4), or read the [test results overview](docs/TEST_RESULTS.md). The application must be opened through its running local server, not by opening `web/index.html` as a file.
+
 Evaluation scripts and their actual outputs live in `evaluation/`; its README documents commands, denominators, and limitations. Unit tests, curated transcript cases, real media checks, and the public speech sample are reported separately. Synthetic cases are not a held-out natural-video benchmark. The report includes unimplemented proposal items and pending human review.
 
 Build a distributable source snapshot with:

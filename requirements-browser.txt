@@ -1,0 +1,2 @@
+# Optional: real-browser regression checks and demonstration recording.
+playwright==1.56.0

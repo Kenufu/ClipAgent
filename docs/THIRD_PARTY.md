@@ -16,5 +16,7 @@ The project integrates existing tools rather than implementing their model train
 | https://lucide.dev/ | Icons; license preserved in web/icons/LICENSE |
 | https://www.openslr.org/12/ | LibriSpeech sample; creators, CC BY 4.0 text and redistribution provenance in sample_data |
 | Codex bundled artifact tooling and ReportLab | Optional deck/report authoring, separate from runtime app |
+| https://www.nasa.gov/nasa-brand-center/images-and-media/ | Real interview excerpt for educational demonstration; exact source and hashes in sample_data/nasa/provenance.json |
+| https://playwright.dev/python/ | Optional real-browser assertions and recording; installed separately through requirements-browser.txt |
 
-Synthetic evaluation transcripts and interval labels were authored during AI-assisted development. Demo narration scripts are project-created and rendered through macOS speech synthesis; these are not consented participant recordings. No externally authored video benchmark or human evaluation dataset is claimed. The included demo MP4s come from scripts/make_demo.py and use generated title cards and system speech.
+Synthetic evaluation transcripts and interval labels were authored during AI-assisted development. The three generated MP4s in sample_data/demo come from scripts/make_demo.py, using project narration, title cards and macOS speech synthesis. The separate sample_data/nasa clip is real public NASA footage, prepared and attributed as described in its README. Neither is a held-out video benchmark or a human evaluation dataset.

@@ -1,0 +1,6675 @@
+{
+  "01_initial": {
+    "id": "14ad45bf0e7547ae886e57ce0ddb308d",
+    "created_at": "2026-11-18T01:49:13.030267+00:00",
+    "updated_at": "2026-11-18T01:49:18.219901+00:00",
+    "status": "complete",
+    "phase": "complete",
+    "instruction": "Create a 20-30 second recap covering training and spacewalks; export landscape with subtitles.",
+    "version": 1,
+    "error": null,
+    "options": {
+      "target_seconds": 25,
+      "aspect": "16:9",
+      "topics": [
+        "training",
+        "spacewalks"
+      ],
+      "subtitles": true,
+      "min_seconds": 20,
+      "max_seconds": 30
+    },
+    "assets": [
+      {
+        "id": "source_01",
+        "name": "astronaut-training.mp4",
+        "path": "<PROJECT>/data/recording-demo/jobs/14ad45bf0e7547ae886e57ce0ddb308d/inputs/source_01.mp4",
+        "duration": 61.0,
+        "width": 640,
+        "height": 360,
+        "fps": 30.0,
+        "has_audio": true,
+        "video_codec": "h264",
+        "size_bytes": 4015389
+      }
+    ],
+    "transcript": [
+      {
+        "id": "source_01:t1",
+        "asset_id": "source_01",
+        "start": 0.0,
+        "end": 2.34,
+        "text": "So we're constantly working on training.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.8,
+            "text": " So"
+          },
+          {
+            "start": 0.8,
+            "end": 1.04,
+            "text": " we're"
+          },
+          {
+            "start": 1.04,
+            "end": 1.32,
+            "text": " constantly"
+          },
+          {
+            "start": 1.32,
+            "end": 1.72,
+            "text": " working"
+          },
+          {
+            "start": 1.72,
+            "end": 1.96,
+            "text": " on"
+          },
+          {
+            "start": 1.96,
+            "end": 2.34,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t2",
+        "asset_id": "source_01",
+        "start": 2.4,
+        "end": 4.7,
+        "text": "Our first two years were purely training.",
+        "words": [
+          {
+            "start": 2.4,
+            "end": 2.56,
+            "text": " Our"
+          },
+          {
+            "start": 2.56,
+            "end": 2.86,
+            "text": " first"
+          },
+          {
+            "start": 2.86,
+            "end": 3.12,
+            "text": " two"
+          },
+          {
+            "start": 3.12,
+            "end": 3.42,
+            "text": " years"
+          },
+          {
+            "start": 3.42,
+            "end": 3.68,
+            "text": " were"
+          },
+          {
+            "start": 3.68,
+            "end": 4.12,
+            "text": " purely"
+          },
+          {
+            "start": 4.12,
+            "end": 4.7,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t3",
+        "asset_id": "source_01",
+        "start": 5.0,
+        "end": 8.04,
+        "text": "Tomorrow I'm getting in the neutral point to lab to practice the spacewalk.",
+        "words": [
+          {
+            "start": 5.0,
+            "end": 5.04,
+            "text": " Tomorrow"
+          },
+          {
+            "start": 5.04,
+            "end": 5.2,
+            "text": " I'm"
+          },
+          {
+            "start": 5.2,
+            "end": 5.42,
+            "text": " getting"
+          },
+          {
+            "start": 5.42,
+            "end": 5.64,
+            "text": " in"
+          },
+          {
+            "start": 5.64,
+            "end": 5.8,
+            "text": " the"
+          },
+          {
+            "start": 5.8,
+            "end": 5.9,
+            "text": " neutral"
+          },
+          {
+            "start": 5.9,
+            "end": 6.3,
+            "text": " point"
+          },
+          {
+            "start": 6.3,
+            "end": 6.5,
+            "text": " to"
+          },
+          {
+            "start": 6.5,
+            "end": 6.68,
+            "text": " lab"
+          },
+          {
+            "start": 6.68,
+            "end": 6.92,
+            "text": " to"
+          },
+          {
+            "start": 6.92,
+            "end": 7.16,
+            "text": " practice"
+          },
+          {
+            "start": 7.16,
+            "end": 7.42,
+            "text": " the"
+          },
+          {
+            "start": 7.42,
+            "end": 8.04,
+            "text": " spacewalk."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t4",
+        "asset_id": "source_01",
+        "start": 8.48,
+        "end": 10.02,
+        "text": "Friday I'm getting in C38.",
+        "words": [
+          {
+            "start": 8.48,
+            "end": 8.68,
+            "text": " Friday"
+          },
+          {
+            "start": 8.68,
+            "end": 8.9,
+            "text": " I'm"
+          },
+          {
+            "start": 8.9,
+            "end": 9.14,
+            "text": " getting"
+          },
+          {
+            "start": 9.14,
+            "end": 9.38,
+            "text": " in"
+          },
+          {
+            "start": 9.38,
+            "end": 10.02,
+            "text": " C38."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t5",
+        "asset_id": "source_01",
+        "start": 10.52,
+        "end": 12.7,
+        "text": "So it's a continuous process every day.",
+        "words": [
+          {
+            "start": 10.52,
+            "end": 10.62,
+            "text": " So"
+          },
+          {
+            "start": 10.62,
+            "end": 10.82,
+            "text": " it's"
+          },
+          {
+            "start": 10.82,
+            "end": 11.08,
+            "text": " a"
+          },
+          {
+            "start": 11.08,
+            "end": 11.36,
+            "text": " continuous"
+          },
+          {
+            "start": 11.36,
+            "end": 11.94,
+            "text": " process"
+          },
+          {
+            "start": 11.94,
+            "end": 12.2,
+            "text": " every"
+          },
+          {
+            "start": 12.2,
+            "end": 12.7,
+            "text": " day."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t6",
+        "asset_id": "source_01",
+        "start": 12.86,
+        "end": 14.64,
+        "text": "Yeah, let's move on to our next question.",
+        "words": [
+          {
+            "start": 12.86,
+            "end": 13.04,
+            "text": " Yeah,"
+          },
+          {
+            "start": 13.08,
+            "end": 13.26,
+            "text": " let's"
+          },
+          {
+            "start": 13.26,
+            "end": 13.44,
+            "text": " move"
+          },
+          {
+            "start": 13.44,
+            "end": 13.6,
+            "text": " on"
+          },
+          {
+            "start": 13.6,
+            "end": 13.68,
+            "text": " to"
+          },
+          {
+            "start": 13.68,
+            "end": 13.94,
+            "text": " our"
+          },
+          {
+            "start": 13.94,
+            "end": 14.02,
+            "text": " next"
+          },
+          {
+            "start": 14.02,
+            "end": 14.64,
+            "text": " question."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t7",
+        "asset_id": "source_01",
+        "start": 15.58,
+        "end": 17.96,
+        "text": "Why do astronauts need to pass a physical?",
+        "words": [
+          {
+            "start": 15.58,
+            "end": 15.58,
+            "text": " Why"
+          },
+          {
+            "start": 15.58,
+            "end": 15.78,
+            "text": " do"
+          },
+          {
+            "start": 15.78,
+            "end": 16.3,
+            "text": " astronauts"
+          },
+          {
+            "start": 16.3,
+            "end": 16.92,
+            "text": " need"
+          },
+          {
+            "start": 16.92,
+            "end": 17.14,
+            "text": " to"
+          },
+          {
+            "start": 17.14,
+            "end": 17.42,
+            "text": " pass"
+          },
+          {
+            "start": 17.42,
+            "end": 17.78,
+            "text": " a"
+          },
+          {
+            "start": 17.78,
+            "end": 17.96,
+            "text": " physical?"
+          }
+        ]
+      },
+      {
+        "id": "source_01:t8",
+        "asset_id": "source_01",
+        "start": 18.96,
+        "end": 22.88,
+        "text": "So there are actually lots of physical aspects to our astronaut training.",
+        "words": [
+          {
+            "start": 18.96,
+            "end": 19.36,
+            "text": " So"
+          },
+          {
+            "start": 19.36,
+            "end": 19.9,
+            "text": " there"
+          },
+          {
+            "start": 19.9,
+            "end": 19.9,
+            "text": " are"
+          },
+          {
+            "start": 19.9,
+            "end": 20.14,
+            "text": " actually"
+          },
+          {
+            "start": 20.14,
+            "end": 20.38,
+            "text": " lots"
+          },
+          {
+            "start": 20.38,
+            "end": 20.68,
+            "text": " of"
+          },
+          {
+            "start": 20.68,
+            "end": 20.88,
+            "text": " physical"
+          },
+          {
+            "start": 20.88,
+            "end": 21.38,
+            "text": " aspects"
+          },
+          {
+            "start": 21.38,
+            "end": 21.68,
+            "text": " to"
+          },
+          {
+            "start": 21.68,
+            "end": 21.88,
+            "text": " our"
+          },
+          {
+            "start": 21.88,
+            "end": 22.34,
+            "text": " astronaut"
+          },
+          {
+            "start": 22.34,
+            "end": 22.88,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t9",
+        "asset_id": "source_01",
+        "start": 23.06,
+        "end": 27.0,
+        "text": "And I can tell you that from the last two years, I've constantly been working out.",
+        "words": [
+          {
+            "start": 23.06,
+            "end": 23.42,
+            "text": " And"
+          },
+          {
+            "start": 23.42,
+            "end": 23.56,
+            "text": " I"
+          },
+          {
+            "start": 23.56,
+            "end": 23.74,
+            "text": " can"
+          },
+          {
+            "start": 23.74,
+            "end": 23.86,
+            "text": " tell"
+          },
+          {
+            "start": 23.86,
+            "end": 24.0,
+            "text": " you"
+          },
+          {
+            "start": 24.0,
+            "end": 24.2,
+            "text": " that"
+          },
+          {
+            "start": 24.2,
+            "end": 24.36,
+            "text": " from"
+          },
+          {
+            "start": 24.36,
+            "end": 24.54,
+            "text": " the"
+          },
+          {
+            "start": 24.54,
+            "end": 24.8,
+            "text": " last"
+          },
+          {
+            "start": 24.8,
+            "end": 24.98,
+            "text": " two"
+          },
+          {
+            "start": 24.98,
+            "end": 25.22,
+            "text": " years,"
+          },
+          {
+            "start": 25.22,
+            "end": 25.76,
+            "text": " I've"
+          },
+          {
+            "start": 25.76,
+            "end": 25.8,
+            "text": " constantly"
+          },
+          {
+            "start": 25.8,
+            "end": 26.14,
+            "text": " been"
+          },
+          {
+            "start": 26.14,
+            "end": 26.46,
+            "text": " working"
+          },
+          {
+            "start": 26.46,
+            "end": 27.0,
+            "text": " out."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t10",
+        "asset_id": "source_01",
+        "start": 27.0,
+        "end": 30.3,
+        "text": "but you need to be able to one do the spacewalks.",
+        "words": [
+          {
+            "start": 27.0,
+            "end": 27.52,
+            "text": " but"
+          },
+          {
+            "start": 27.52,
+            "end": 27.72,
+            "text": " you"
+          },
+          {
+            "start": 27.72,
+            "end": 27.94,
+            "text": " need"
+          },
+          {
+            "start": 27.94,
+            "end": 28.1,
+            "text": " to"
+          },
+          {
+            "start": 28.1,
+            "end": 28.1,
+            "text": " be"
+          },
+          {
+            "start": 28.1,
+            "end": 28.36,
+            "text": " able"
+          },
+          {
+            "start": 28.36,
+            "end": 28.66,
+            "text": " to"
+          },
+          {
+            "start": 28.66,
+            "end": 29.08,
+            "text": " one"
+          },
+          {
+            "start": 29.08,
+            "end": 29.38,
+            "text": " do"
+          },
+          {
+            "start": 29.38,
+            "end": 29.64,
+            "text": " the"
+          },
+          {
+            "start": 29.64,
+            "end": 30.3,
+            "text": " spacewalks."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t11",
+        "asset_id": "source_01",
+        "start": 30.64,
+        "end": 37.3,
+        "text": "You also need to be able to launch the space, fly and jet, so we need to make sure everyone's in their best physical condition.",
+        "words": [
+          {
+            "start": 30.64,
+            "end": 30.64,
+            "text": " You"
+          },
+          {
+            "start": 30.64,
+            "end": 30.94,
+            "text": " also"
+          },
+          {
+            "start": 30.94,
+            "end": 31.12,
+            "text": " need"
+          },
+          {
+            "start": 31.12,
+            "end": 31.3,
+            "text": " to"
+          },
+          {
+            "start": 31.3,
+            "end": 31.32,
+            "text": " be"
+          },
+          {
+            "start": 31.32,
+            "end": 31.56,
+            "text": " able"
+          },
+          {
+            "start": 31.56,
+            "end": 32.12,
+            "text": " to"
+          },
+          {
+            "start": 32.12,
+            "end": 32.42,
+            "text": " launch"
+          },
+          {
+            "start": 32.42,
+            "end": 32.76,
+            "text": " the"
+          },
+          {
+            "start": 32.76,
+            "end": 33.3,
+            "text": " space,"
+          },
+          {
+            "start": 33.34,
+            "end": 33.58,
+            "text": " fly"
+          },
+          {
+            "start": 33.58,
+            "end": 33.82,
+            "text": " and"
+          },
+          {
+            "start": 33.82,
+            "end": 34.12,
+            "text": " jet,"
+          },
+          {
+            "start": 34.56,
+            "end": 34.84,
+            "text": " so"
+          },
+          {
+            "start": 34.84,
+            "end": 34.92,
+            "text": " we"
+          },
+          {
+            "start": 34.92,
+            "end": 35.12,
+            "text": " need"
+          },
+          {
+            "start": 35.12,
+            "end": 35.18,
+            "text": " to"
+          },
+          {
+            "start": 35.18,
+            "end": 35.36,
+            "text": " make"
+          },
+          {
+            "start": 35.36,
+            "end": 35.52,
+            "text": " sure"
+          },
+          {
+            "start": 35.52,
+            "end": 35.96,
+            "text": " everyone's"
+          },
+          {
+            "start": 35.96,
+            "end": 35.98,
+            "text": " in"
+          },
+          {
+            "start": 35.98,
+            "end": 36.14,
+            "text": " their"
+          },
+          {
+            "start": 36.14,
+            "end": 36.38,
+            "text": " best"
+          },
+          {
+            "start": 36.38,
+            "end": 36.76,
+            "text": " physical"
+          },
+          {
+            "start": 36.76,
+            "end": 37.3,
+            "text": " condition."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t12",
+        "asset_id": "source_01",
+        "start": 38.88,
+        "end": 43.12,
+        "text": "Well, the first time I got on the suit, it was a lot harder than I thought it was going to be.",
+        "words": [
+          {
+            "start": 38.88,
+            "end": 39.06,
+            "text": " Well,"
+          },
+          {
+            "start": 39.16,
+            "end": 39.24,
+            "text": " the"
+          },
+          {
+            "start": 39.24,
+            "end": 39.5,
+            "text": " first"
+          },
+          {
+            "start": 39.5,
+            "end": 39.7,
+            "text": " time"
+          },
+          {
+            "start": 39.7,
+            "end": 39.82,
+            "text": " I"
+          },
+          {
+            "start": 39.82,
+            "end": 39.92,
+            "text": " got"
+          },
+          {
+            "start": 39.92,
+            "end": 40.04,
+            "text": " on"
+          },
+          {
+            "start": 40.04,
+            "end": 40.2,
+            "text": " the"
+          },
+          {
+            "start": 40.2,
+            "end": 40.56,
+            "text": " suit,"
+          },
+          {
+            "start": 41.04,
+            "end": 41.14,
+            "text": " it"
+          },
+          {
+            "start": 41.14,
+            "end": 41.3,
+            "text": " was"
+          },
+          {
+            "start": 41.3,
+            "end": 41.42,
+            "text": " a"
+          },
+          {
+            "start": 41.42,
+            "end": 41.64,
+            "text": " lot"
+          },
+          {
+            "start": 41.64,
+            "end": 41.9,
+            "text": " harder"
+          },
+          {
+            "start": 41.9,
+            "end": 42.08,
+            "text": " than"
+          },
+          {
+            "start": 42.08,
+            "end": 42.24,
+            "text": " I"
+          },
+          {
+            "start": 42.24,
+            "end": 42.42,
+            "text": " thought"
+          },
+          {
+            "start": 42.42,
+            "end": 42.52,
+            "text": " it"
+          },
+          {
+            "start": 42.52,
+            "end": 42.68,
+            "text": " was"
+          },
+          {
+            "start": 42.68,
+            "end": 42.82,
+            "text": " going"
+          },
+          {
+            "start": 42.82,
+            "end": 42.94,
+            "text": " to"
+          },
+          {
+            "start": 42.94,
+            "end": 43.12,
+            "text": " be."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t13",
+        "asset_id": "source_01",
+        "start": 43.34,
+        "end": 45.36,
+        "text": "You're working within this whole spacesuit.",
+        "words": [
+          {
+            "start": 43.34,
+            "end": 43.52,
+            "text": " You're"
+          },
+          {
+            "start": 43.52,
+            "end": 43.66,
+            "text": " working"
+          },
+          {
+            "start": 43.66,
+            "end": 44.06,
+            "text": " within"
+          },
+          {
+            "start": 44.06,
+            "end": 44.32,
+            "text": " this"
+          },
+          {
+            "start": 44.32,
+            "end": 44.76,
+            "text": " whole"
+          },
+          {
+            "start": 44.76,
+            "end": 45.36,
+            "text": " spacesuit."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t14",
+        "asset_id": "source_01",
+        "start": 45.64,
+        "end": 48.84,
+        "text": "It's really your own spacecraft and it's really tiring.",
+        "words": [
+          {
+            "start": 45.64,
+            "end": 45.68,
+            "text": " It's"
+          },
+          {
+            "start": 45.68,
+            "end": 46.24,
+            "text": " really"
+          },
+          {
+            "start": 46.24,
+            "end": 46.46,
+            "text": " your"
+          },
+          {
+            "start": 46.46,
+            "end": 46.82,
+            "text": " own"
+          },
+          {
+            "start": 46.82,
+            "end": 47.38,
+            "text": " spacecraft"
+          },
+          {
+            "start": 47.38,
+            "end": 47.9,
+            "text": " and"
+          },
+          {
+            "start": 47.9,
+            "end": 48.1,
+            "text": " it's"
+          },
+          {
+            "start": 48.1,
+            "end": 48.4,
+            "text": " really"
+          },
+          {
+            "start": 48.4,
+            "end": 48.84,
+            "text": " tiring."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t15",
+        "asset_id": "source_01",
+        "start": 49.1,
+        "end": 51.16,
+        "text": "You walk with your hands, not your feet.",
+        "words": [
+          {
+            "start": 49.1,
+            "end": 49.34,
+            "text": " You"
+          },
+          {
+            "start": 49.34,
+            "end": 49.6,
+            "text": " walk"
+          },
+          {
+            "start": 49.6,
+            "end": 49.76,
+            "text": " with"
+          },
+          {
+            "start": 49.76,
+            "end": 49.96,
+            "text": " your"
+          },
+          {
+            "start": 49.96,
+            "end": 50.3,
+            "text": " hands,"
+          },
+          {
+            "start": 50.34,
+            "end": 50.52,
+            "text": " not"
+          },
+          {
+            "start": 50.52,
+            "end": 50.78,
+            "text": " your"
+          },
+          {
+            "start": 50.78,
+            "end": 51.16,
+            "text": " feet."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t16",
+        "asset_id": "source_01",
+        "start": 51.46,
+        "end": 55.9,
+        "text": "Everything you do, you're much bigger than you expect to be, so you have to make sure you're not running into things.",
+        "words": [
+          {
+            "start": 51.46,
+            "end": 51.78,
+            "text": " Everything"
+          },
+          {
+            "start": 51.78,
+            "end": 52.02,
+            "text": " you"
+          },
+          {
+            "start": 52.02,
+            "end": 52.16,
+            "text": " do,"
+          },
+          {
+            "start": 52.28,
+            "end": 52.36,
+            "text": " you're"
+          },
+          {
+            "start": 52.36,
+            "end": 52.56,
+            "text": " much"
+          },
+          {
+            "start": 52.56,
+            "end": 52.84,
+            "text": " bigger"
+          },
+          {
+            "start": 52.84,
+            "end": 53.06,
+            "text": " than"
+          },
+          {
+            "start": 53.06,
+            "end": 53.3,
+            "text": " you"
+          },
+          {
+            "start": 53.3,
+            "end": 53.54,
+            "text": " expect"
+          },
+          {
+            "start": 53.54,
+            "end": 53.78,
+            "text": " to"
+          },
+          {
+            "start": 53.78,
+            "end": 53.96,
+            "text": " be,"
+          },
+          {
+            "start": 54.08,
+            "end": 54.14,
+            "text": " so"
+          },
+          {
+            "start": 54.14,
+            "end": 54.22,
+            "text": " you"
+          },
+          {
+            "start": 54.22,
+            "end": 54.34,
+            "text": " have"
+          },
+          {
+            "start": 54.34,
+            "end": 54.44,
+            "text": " to"
+          },
+          {
+            "start": 54.44,
+            "end": 54.62,
+            "text": " make"
+          },
+          {
+            "start": 54.62,
+            "end": 54.8,
+            "text": " sure"
+          },
+          {
+            "start": 54.8,
+            "end": 54.94,
+            "text": " you're"
+          },
+          {
+            "start": 54.94,
+            "end": 55.08,
+            "text": " not"
+          },
+          {
+            "start": 55.08,
+            "end": 55.32,
+            "text": " running"
+          },
+          {
+            "start": 55.32,
+            "end": 55.6,
+            "text": " into"
+          },
+          {
+            "start": 55.6,
+            "end": 55.9,
+            "text": " things."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t17",
+        "asset_id": "source_01",
+        "start": 55.9,
+        "end": 59.9,
+        "text": "My first thought was this is awesome, but this is also really hard.",
+        "words": [
+          {
+            "start": 55.9,
+            "end": 56.36,
+            "text": " My"
+          },
+          {
+            "start": 56.36,
+            "end": 56.64,
+            "text": " first"
+          },
+          {
+            "start": 56.64,
+            "end": 56.9,
+            "text": " thought"
+          },
+          {
+            "start": 56.9,
+            "end": 57.58,
+            "text": " was"
+          },
+          {
+            "start": 57.58,
+            "end": 57.82,
+            "text": " this"
+          },
+          {
+            "start": 57.82,
+            "end": 58.06,
+            "text": " is"
+          },
+          {
+            "start": 58.06,
+            "end": 58.24,
+            "text": " awesome,"
+          },
+          {
+            "start": 58.58,
+            "end": 58.66,
+            "text": " but"
+          },
+          {
+            "start": 58.66,
+            "end": 58.9,
+            "text": " this"
+          },
+          {
+            "start": 58.9,
+            "end": 58.98,
+            "text": " is"
+          },
+          {
+            "start": 58.98,
+            "end": 59.18,
+            "text": " also"
+          },
+          {
+            "start": 59.18,
+            "end": 59.48,
+            "text": " really"
+          },
+          {
+            "start": 59.48,
+            "end": 59.9,
+            "text": " hard."
+          }
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "asset_id": "source_01",
+        "start": 0,
+        "end": 14.86,
+        "evidence_ids": [
+          "source_01:t1",
+          "source_01:t2",
+          "source_01:t3",
+          "source_01:t4",
+          "source_01:t5",
+          "source_01:t6"
+        ],
+        "reason": "Required topic: training",
+        "required": true,
+        "score": 1.5
+      },
+      {
+        "asset_id": "source_01",
+        "start": 15.4,
+        "end": 18.18,
+        "evidence_ids": [
+          "source_01:t7"
+        ],
+        "reason": "Supporting context",
+        "required": false,
+        "score": 0.0
+      },
+      {
+        "asset_id": "source_01",
+        "start": 26.82,
+        "end": 30.52,
+        "evidence_ids": [
+          "source_01:t10"
+        ],
+        "reason": "Required topic: spacewalks",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "report": {
+      "unresolved": [],
+      "checks": {
+        "decodable": true,
+        "has_audio": true,
+        "duration": 21.368,
+        "width": 1280,
+        "height": 720,
+        "aspect_ok": true,
+        "predicted_duration": 21.34,
+        "subtitle_cues": 13,
+        "subtitle_within_video": true,
+        "duration_ok": true
+      },
+      "evidence_count": 17,
+      "topic_evidence": [
+        {
+          "topic": "training",
+          "evidence_ids": [
+            "source_01:t1",
+            "source_01:t2"
+          ],
+          "verified": true
+        },
+        {
+          "topic": "spacewalks",
+          "evidence_ids": [
+            "source_01:t10"
+          ],
+          "verified": true
+        }
+      ],
+      "timeline_version": 1,
+      "repairs": [],
+      "render_attempts": 1,
+      "outputs": {
+        "video": "final.mp4",
+        "subtitles": "captions.srt"
+      }
+    },
+    "events": [
+      {
+        "at": "2026-11-18T01:49:13.031760+00:00",
+        "phase": "queued",
+        "message": "Job created"
+      },
+      {
+        "at": "2026-11-18T01:49:13.033736+00:00",
+        "phase": "transcribing",
+        "message": "Transcribing spoken evidence"
+      },
+      {
+        "at": "2026-11-18T01:49:15.946452+00:00",
+        "phase": "transcribing",
+        "message": "Analyzed astronaut-training.mp4"
+      },
+      {
+        "at": "2026-11-18T01:49:15.947411+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:15.948264+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 1 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:18.090440+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:18.219743+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      }
+    ]
+  },
+  "02_manual_edit": {
+    "id": "14ad45bf0e7547ae886e57ce0ddb308d",
+    "created_at": "2026-11-18T01:49:13.030267+00:00",
+    "updated_at": "2026-11-18T01:49:56.839043+00:00",
+    "status": "complete",
+    "phase": "complete",
+    "instruction": "Create a 20-30 second recap covering training and spacewalks; export landscape with subtitles.",
+    "version": 2,
+    "error": null,
+    "options": {
+      "target_seconds": 25,
+      "aspect": "16:9",
+      "topics": [
+        "training",
+        "spacewalks"
+      ],
+      "subtitles": true,
+      "min_seconds": 20,
+      "max_seconds": 30
+    },
+    "assets": [
+      {
+        "id": "source_01",
+        "name": "astronaut-training.mp4",
+        "path": "<PROJECT>/data/recording-demo/jobs/14ad45bf0e7547ae886e57ce0ddb308d/inputs/source_01.mp4",
+        "duration": 61.0,
+        "width": 640,
+        "height": 360,
+        "fps": 30.0,
+        "has_audio": true,
+        "video_codec": "h264",
+        "size_bytes": 4015389
+      }
+    ],
+    "transcript": [
+      {
+        "id": "source_01:t1",
+        "asset_id": "source_01",
+        "start": 0.0,
+        "end": 2.34,
+        "text": "So we're constantly working on training.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.8,
+            "text": " So"
+          },
+          {
+            "start": 0.8,
+            "end": 1.04,
+            "text": " we're"
+          },
+          {
+            "start": 1.04,
+            "end": 1.32,
+            "text": " constantly"
+          },
+          {
+            "start": 1.32,
+            "end": 1.72,
+            "text": " working"
+          },
+          {
+            "start": 1.72,
+            "end": 1.96,
+            "text": " on"
+          },
+          {
+            "start": 1.96,
+            "end": 2.34,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t2",
+        "asset_id": "source_01",
+        "start": 2.4,
+        "end": 4.7,
+        "text": "Our first two years were purely training.",
+        "words": [
+          {
+            "start": 2.4,
+            "end": 2.56,
+            "text": " Our"
+          },
+          {
+            "start": 2.56,
+            "end": 2.86,
+            "text": " first"
+          },
+          {
+            "start": 2.86,
+            "end": 3.12,
+            "text": " two"
+          },
+          {
+            "start": 3.12,
+            "end": 3.42,
+            "text": " years"
+          },
+          {
+            "start": 3.42,
+            "end": 3.68,
+            "text": " were"
+          },
+          {
+            "start": 3.68,
+            "end": 4.12,
+            "text": " purely"
+          },
+          {
+            "start": 4.12,
+            "end": 4.7,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t3",
+        "asset_id": "source_01",
+        "start": 5.0,
+        "end": 8.04,
+        "text": "Tomorrow I'm getting in the neutral point to lab to practice the spacewalk.",
+        "words": [
+          {
+            "start": 5.0,
+            "end": 5.04,
+            "text": " Tomorrow"
+          },
+          {
+            "start": 5.04,
+            "end": 5.2,
+            "text": " I'm"
+          },
+          {
+            "start": 5.2,
+            "end": 5.42,
+            "text": " getting"
+          },
+          {
+            "start": 5.42,
+            "end": 5.64,
+            "text": " in"
+          },
+          {
+            "start": 5.64,
+            "end": 5.8,
+            "text": " the"
+          },
+          {
+            "start": 5.8,
+            "end": 5.9,
+            "text": " neutral"
+          },
+          {
+            "start": 5.9,
+            "end": 6.3,
+            "text": " point"
+          },
+          {
+            "start": 6.3,
+            "end": 6.5,
+            "text": " to"
+          },
+          {
+            "start": 6.5,
+            "end": 6.68,
+            "text": " lab"
+          },
+          {
+            "start": 6.68,
+            "end": 6.92,
+            "text": " to"
+          },
+          {
+            "start": 6.92,
+            "end": 7.16,
+            "text": " practice"
+          },
+          {
+            "start": 7.16,
+            "end": 7.42,
+            "text": " the"
+          },
+          {
+            "start": 7.42,
+            "end": 8.04,
+            "text": " spacewalk."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t4",
+        "asset_id": "source_01",
+        "start": 8.48,
+        "end": 10.02,
+        "text": "Friday I'm getting in C38.",
+        "words": [
+          {
+            "start": 8.48,
+            "end": 8.68,
+            "text": " Friday"
+          },
+          {
+            "start": 8.68,
+            "end": 8.9,
+            "text": " I'm"
+          },
+          {
+            "start": 8.9,
+            "end": 9.14,
+            "text": " getting"
+          },
+          {
+            "start": 9.14,
+            "end": 9.38,
+            "text": " in"
+          },
+          {
+            "start": 9.38,
+            "end": 10.02,
+            "text": " C38."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t5",
+        "asset_id": "source_01",
+        "start": 10.52,
+        "end": 12.7,
+        "text": "So it's a continuous process every day.",
+        "words": [
+          {
+            "start": 10.52,
+            "end": 10.62,
+            "text": " So"
+          },
+          {
+            "start": 10.62,
+            "end": 10.82,
+            "text": " it's"
+          },
+          {
+            "start": 10.82,
+            "end": 11.08,
+            "text": " a"
+          },
+          {
+            "start": 11.08,
+            "end": 11.36,
+            "text": " continuous"
+          },
+          {
+            "start": 11.36,
+            "end": 11.94,
+            "text": " process"
+          },
+          {
+            "start": 11.94,
+            "end": 12.2,
+            "text": " every"
+          },
+          {
+            "start": 12.2,
+            "end": 12.7,
+            "text": " day."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t6",
+        "asset_id": "source_01",
+        "start": 12.86,
+        "end": 14.64,
+        "text": "Yeah, let's move on to our next question.",
+        "words": [
+          {
+            "start": 12.86,
+            "end": 13.04,
+            "text": " Yeah,"
+          },
+          {
+            "start": 13.08,
+            "end": 13.26,
+            "text": " let's"
+          },
+          {
+            "start": 13.26,
+            "end": 13.44,
+            "text": " move"
+          },
+          {
+            "start": 13.44,
+            "end": 13.6,
+            "text": " on"
+          },
+          {
+            "start": 13.6,
+            "end": 13.68,
+            "text": " to"
+          },
+          {
+            "start": 13.68,
+            "end": 13.94,
+            "text": " our"
+          },
+          {
+            "start": 13.94,
+            "end": 14.02,
+            "text": " next"
+          },
+          {
+            "start": 14.02,
+            "end": 14.64,
+            "text": " question."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t7",
+        "asset_id": "source_01",
+        "start": 15.58,
+        "end": 17.96,
+        "text": "Why do astronauts need to pass a physical?",
+        "words": [
+          {
+            "start": 15.58,
+            "end": 15.58,
+            "text": " Why"
+          },
+          {
+            "start": 15.58,
+            "end": 15.78,
+            "text": " do"
+          },
+          {
+            "start": 15.78,
+            "end": 16.3,
+            "text": " astronauts"
+          },
+          {
+            "start": 16.3,
+            "end": 16.92,
+            "text": " need"
+          },
+          {
+            "start": 16.92,
+            "end": 17.14,
+            "text": " to"
+          },
+          {
+            "start": 17.14,
+            "end": 17.42,
+            "text": " pass"
+          },
+          {
+            "start": 17.42,
+            "end": 17.78,
+            "text": " a"
+          },
+          {
+            "start": 17.78,
+            "end": 17.96,
+            "text": " physical?"
+          }
+        ]
+      },
+      {
+        "id": "source_01:t8",
+        "asset_id": "source_01",
+        "start": 18.96,
+        "end": 22.88,
+        "text": "So there are actually lots of physical aspects to our astronaut training.",
+        "words": [
+          {
+            "start": 18.96,
+            "end": 19.36,
+            "text": " So"
+          },
+          {
+            "start": 19.36,
+            "end": 19.9,
+            "text": " there"
+          },
+          {
+            "start": 19.9,
+            "end": 19.9,
+            "text": " are"
+          },
+          {
+            "start": 19.9,
+            "end": 20.14,
+            "text": " actually"
+          },
+          {
+            "start": 20.14,
+            "end": 20.38,
+            "text": " lots"
+          },
+          {
+            "start": 20.38,
+            "end": 20.68,
+            "text": " of"
+          },
+          {
+            "start": 20.68,
+            "end": 20.88,
+            "text": " physical"
+          },
+          {
+            "start": 20.88,
+            "end": 21.38,
+            "text": " aspects"
+          },
+          {
+            "start": 21.38,
+            "end": 21.68,
+            "text": " to"
+          },
+          {
+            "start": 21.68,
+            "end": 21.88,
+            "text": " our"
+          },
+          {
+            "start": 21.88,
+            "end": 22.34,
+            "text": " astronaut"
+          },
+          {
+            "start": 22.34,
+            "end": 22.88,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t9",
+        "asset_id": "source_01",
+        "start": 23.06,
+        "end": 27.0,
+        "text": "And I can tell you that from the last two years, I've constantly been working out.",
+        "words": [
+          {
+            "start": 23.06,
+            "end": 23.42,
+            "text": " And"
+          },
+          {
+            "start": 23.42,
+            "end": 23.56,
+            "text": " I"
+          },
+          {
+            "start": 23.56,
+            "end": 23.74,
+            "text": " can"
+          },
+          {
+            "start": 23.74,
+            "end": 23.86,
+            "text": " tell"
+          },
+          {
+            "start": 23.86,
+            "end": 24.0,
+            "text": " you"
+          },
+          {
+            "start": 24.0,
+            "end": 24.2,
+            "text": " that"
+          },
+          {
+            "start": 24.2,
+            "end": 24.36,
+            "text": " from"
+          },
+          {
+            "start": 24.36,
+            "end": 24.54,
+            "text": " the"
+          },
+          {
+            "start": 24.54,
+            "end": 24.8,
+            "text": " last"
+          },
+          {
+            "start": 24.8,
+            "end": 24.98,
+            "text": " two"
+          },
+          {
+            "start": 24.98,
+            "end": 25.22,
+            "text": " years,"
+          },
+          {
+            "start": 25.22,
+            "end": 25.76,
+            "text": " I've"
+          },
+          {
+            "start": 25.76,
+            "end": 25.8,
+            "text": " constantly"
+          },
+          {
+            "start": 25.8,
+            "end": 26.14,
+            "text": " been"
+          },
+          {
+            "start": 26.14,
+            "end": 26.46,
+            "text": " working"
+          },
+          {
+            "start": 26.46,
+            "end": 27.0,
+            "text": " out."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t10",
+        "asset_id": "source_01",
+        "start": 27.0,
+        "end": 30.3,
+        "text": "but you need to be able to one do the spacewalks.",
+        "words": [
+          {
+            "start": 27.0,
+            "end": 27.52,
+            "text": " but"
+          },
+          {
+            "start": 27.52,
+            "end": 27.72,
+            "text": " you"
+          },
+          {
+            "start": 27.72,
+            "end": 27.94,
+            "text": " need"
+          },
+          {
+            "start": 27.94,
+            "end": 28.1,
+            "text": " to"
+          },
+          {
+            "start": 28.1,
+            "end": 28.1,
+            "text": " be"
+          },
+          {
+            "start": 28.1,
+            "end": 28.36,
+            "text": " able"
+          },
+          {
+            "start": 28.36,
+            "end": 28.66,
+            "text": " to"
+          },
+          {
+            "start": 28.66,
+            "end": 29.08,
+            "text": " one"
+          },
+          {
+            "start": 29.08,
+            "end": 29.38,
+            "text": " do"
+          },
+          {
+            "start": 29.38,
+            "end": 29.64,
+            "text": " the"
+          },
+          {
+            "start": 29.64,
+            "end": 30.3,
+            "text": " spacewalks."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t11",
+        "asset_id": "source_01",
+        "start": 30.64,
+        "end": 37.3,
+        "text": "You also need to be able to launch the space, fly and jet, so we need to make sure everyone's in their best physical condition.",
+        "words": [
+          {
+            "start": 30.64,
+            "end": 30.64,
+            "text": " You"
+          },
+          {
+            "start": 30.64,
+            "end": 30.94,
+            "text": " also"
+          },
+          {
+            "start": 30.94,
+            "end": 31.12,
+            "text": " need"
+          },
+          {
+            "start": 31.12,
+            "end": 31.3,
+            "text": " to"
+          },
+          {
+            "start": 31.3,
+            "end": 31.32,
+            "text": " be"
+          },
+          {
+            "start": 31.32,
+            "end": 31.56,
+            "text": " able"
+          },
+          {
+            "start": 31.56,
+            "end": 32.12,
+            "text": " to"
+          },
+          {
+            "start": 32.12,
+            "end": 32.42,
+            "text": " launch"
+          },
+          {
+            "start": 32.42,
+            "end": 32.76,
+            "text": " the"
+          },
+          {
+            "start": 32.76,
+            "end": 33.3,
+            "text": " space,"
+          },
+          {
+            "start": 33.34,
+            "end": 33.58,
+            "text": " fly"
+          },
+          {
+            "start": 33.58,
+            "end": 33.82,
+            "text": " and"
+          },
+          {
+            "start": 33.82,
+            "end": 34.12,
+            "text": " jet,"
+          },
+          {
+            "start": 34.56,
+            "end": 34.84,
+            "text": " so"
+          },
+          {
+            "start": 34.84,
+            "end": 34.92,
+            "text": " we"
+          },
+          {
+            "start": 34.92,
+            "end": 35.12,
+            "text": " need"
+          },
+          {
+            "start": 35.12,
+            "end": 35.18,
+            "text": " to"
+          },
+          {
+            "start": 35.18,
+            "end": 35.36,
+            "text": " make"
+          },
+          {
+            "start": 35.36,
+            "end": 35.52,
+            "text": " sure"
+          },
+          {
+            "start": 35.52,
+            "end": 35.96,
+            "text": " everyone's"
+          },
+          {
+            "start": 35.96,
+            "end": 35.98,
+            "text": " in"
+          },
+          {
+            "start": 35.98,
+            "end": 36.14,
+            "text": " their"
+          },
+          {
+            "start": 36.14,
+            "end": 36.38,
+            "text": " best"
+          },
+          {
+            "start": 36.38,
+            "end": 36.76,
+            "text": " physical"
+          },
+          {
+            "start": 36.76,
+            "end": 37.3,
+            "text": " condition."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t12",
+        "asset_id": "source_01",
+        "start": 38.88,
+        "end": 43.12,
+        "text": "Well, the first time I got on the suit, it was a lot harder than I thought it was going to be.",
+        "words": [
+          {
+            "start": 38.88,
+            "end": 39.06,
+            "text": " Well,"
+          },
+          {
+            "start": 39.16,
+            "end": 39.24,
+            "text": " the"
+          },
+          {
+            "start": 39.24,
+            "end": 39.5,
+            "text": " first"
+          },
+          {
+            "start": 39.5,
+            "end": 39.7,
+            "text": " time"
+          },
+          {
+            "start": 39.7,
+            "end": 39.82,
+            "text": " I"
+          },
+          {
+            "start": 39.82,
+            "end": 39.92,
+            "text": " got"
+          },
+          {
+            "start": 39.92,
+            "end": 40.04,
+            "text": " on"
+          },
+          {
+            "start": 40.04,
+            "end": 40.2,
+            "text": " the"
+          },
+          {
+            "start": 40.2,
+            "end": 40.56,
+            "text": " suit,"
+          },
+          {
+            "start": 41.04,
+            "end": 41.14,
+            "text": " it"
+          },
+          {
+            "start": 41.14,
+            "end": 41.3,
+            "text": " was"
+          },
+          {
+            "start": 41.3,
+            "end": 41.42,
+            "text": " a"
+          },
+          {
+            "start": 41.42,
+            "end": 41.64,
+            "text": " lot"
+          },
+          {
+            "start": 41.64,
+            "end": 41.9,
+            "text": " harder"
+          },
+          {
+            "start": 41.9,
+            "end": 42.08,
+            "text": " than"
+          },
+          {
+            "start": 42.08,
+            "end": 42.24,
+            "text": " I"
+          },
+          {
+            "start": 42.24,
+            "end": 42.42,
+            "text": " thought"
+          },
+          {
+            "start": 42.42,
+            "end": 42.52,
+            "text": " it"
+          },
+          {
+            "start": 42.52,
+            "end": 42.68,
+            "text": " was"
+          },
+          {
+            "start": 42.68,
+            "end": 42.82,
+            "text": " going"
+          },
+          {
+            "start": 42.82,
+            "end": 42.94,
+            "text": " to"
+          },
+          {
+            "start": 42.94,
+            "end": 43.12,
+            "text": " be."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t13",
+        "asset_id": "source_01",
+        "start": 43.34,
+        "end": 45.36,
+        "text": "You're working within this whole spacesuit.",
+        "words": [
+          {
+            "start": 43.34,
+            "end": 43.52,
+            "text": " You're"
+          },
+          {
+            "start": 43.52,
+            "end": 43.66,
+            "text": " working"
+          },
+          {
+            "start": 43.66,
+            "end": 44.06,
+            "text": " within"
+          },
+          {
+            "start": 44.06,
+            "end": 44.32,
+            "text": " this"
+          },
+          {
+            "start": 44.32,
+            "end": 44.76,
+            "text": " whole"
+          },
+          {
+            "start": 44.76,
+            "end": 45.36,
+            "text": " spacesuit."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t14",
+        "asset_id": "source_01",
+        "start": 45.64,
+        "end": 48.84,
+        "text": "It's really your own spacecraft and it's really tiring.",
+        "words": [
+          {
+            "start": 45.64,
+            "end": 45.68,
+            "text": " It's"
+          },
+          {
+            "start": 45.68,
+            "end": 46.24,
+            "text": " really"
+          },
+          {
+            "start": 46.24,
+            "end": 46.46,
+            "text": " your"
+          },
+          {
+            "start": 46.46,
+            "end": 46.82,
+            "text": " own"
+          },
+          {
+            "start": 46.82,
+            "end": 47.38,
+            "text": " spacecraft"
+          },
+          {
+            "start": 47.38,
+            "end": 47.9,
+            "text": " and"
+          },
+          {
+            "start": 47.9,
+            "end": 48.1,
+            "text": " it's"
+          },
+          {
+            "start": 48.1,
+            "end": 48.4,
+            "text": " really"
+          },
+          {
+            "start": 48.4,
+            "end": 48.84,
+            "text": " tiring."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t15",
+        "asset_id": "source_01",
+        "start": 49.1,
+        "end": 51.16,
+        "text": "You walk with your hands, not your feet.",
+        "words": [
+          {
+            "start": 49.1,
+            "end": 49.34,
+            "text": " You"
+          },
+          {
+            "start": 49.34,
+            "end": 49.6,
+            "text": " walk"
+          },
+          {
+            "start": 49.6,
+            "end": 49.76,
+            "text": " with"
+          },
+          {
+            "start": 49.76,
+            "end": 49.96,
+            "text": " your"
+          },
+          {
+            "start": 49.96,
+            "end": 50.3,
+            "text": " hands,"
+          },
+          {
+            "start": 50.34,
+            "end": 50.52,
+            "text": " not"
+          },
+          {
+            "start": 50.52,
+            "end": 50.78,
+            "text": " your"
+          },
+          {
+            "start": 50.78,
+            "end": 51.16,
+            "text": " feet."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t16",
+        "asset_id": "source_01",
+        "start": 51.46,
+        "end": 55.9,
+        "text": "Everything you do, you're much bigger than you expect to be, so you have to make sure you're not running into things.",
+        "words": [
+          {
+            "start": 51.46,
+            "end": 51.78,
+            "text": " Everything"
+          },
+          {
+            "start": 51.78,
+            "end": 52.02,
+            "text": " you"
+          },
+          {
+            "start": 52.02,
+            "end": 52.16,
+            "text": " do,"
+          },
+          {
+            "start": 52.28,
+            "end": 52.36,
+            "text": " you're"
+          },
+          {
+            "start": 52.36,
+            "end": 52.56,
+            "text": " much"
+          },
+          {
+            "start": 52.56,
+            "end": 52.84,
+            "text": " bigger"
+          },
+          {
+            "start": 52.84,
+            "end": 53.06,
+            "text": " than"
+          },
+          {
+            "start": 53.06,
+            "end": 53.3,
+            "text": " you"
+          },
+          {
+            "start": 53.3,
+            "end": 53.54,
+            "text": " expect"
+          },
+          {
+            "start": 53.54,
+            "end": 53.78,
+            "text": " to"
+          },
+          {
+            "start": 53.78,
+            "end": 53.96,
+            "text": " be,"
+          },
+          {
+            "start": 54.08,
+            "end": 54.14,
+            "text": " so"
+          },
+          {
+            "start": 54.14,
+            "end": 54.22,
+            "text": " you"
+          },
+          {
+            "start": 54.22,
+            "end": 54.34,
+            "text": " have"
+          },
+          {
+            "start": 54.34,
+            "end": 54.44,
+            "text": " to"
+          },
+          {
+            "start": 54.44,
+            "end": 54.62,
+            "text": " make"
+          },
+          {
+            "start": 54.62,
+            "end": 54.8,
+            "text": " sure"
+          },
+          {
+            "start": 54.8,
+            "end": 54.94,
+            "text": " you're"
+          },
+          {
+            "start": 54.94,
+            "end": 55.08,
+            "text": " not"
+          },
+          {
+            "start": 55.08,
+            "end": 55.32,
+            "text": " running"
+          },
+          {
+            "start": 55.32,
+            "end": 55.6,
+            "text": " into"
+          },
+          {
+            "start": 55.6,
+            "end": 55.9,
+            "text": " things."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t17",
+        "asset_id": "source_01",
+        "start": 55.9,
+        "end": 59.9,
+        "text": "My first thought was this is awesome, but this is also really hard.",
+        "words": [
+          {
+            "start": 55.9,
+            "end": 56.36,
+            "text": " My"
+          },
+          {
+            "start": 56.36,
+            "end": 56.64,
+            "text": " first"
+          },
+          {
+            "start": 56.64,
+            "end": 56.9,
+            "text": " thought"
+          },
+          {
+            "start": 56.9,
+            "end": 57.58,
+            "text": " was"
+          },
+          {
+            "start": 57.58,
+            "end": 57.82,
+            "text": " this"
+          },
+          {
+            "start": 57.82,
+            "end": 58.06,
+            "text": " is"
+          },
+          {
+            "start": 58.06,
+            "end": 58.24,
+            "text": " awesome,"
+          },
+          {
+            "start": 58.58,
+            "end": 58.66,
+            "text": " but"
+          },
+          {
+            "start": 58.66,
+            "end": 58.9,
+            "text": " this"
+          },
+          {
+            "start": 58.9,
+            "end": 58.98,
+            "text": " is"
+          },
+          {
+            "start": 58.98,
+            "end": 59.18,
+            "text": " also"
+          },
+          {
+            "start": 59.18,
+            "end": 59.48,
+            "text": " really"
+          },
+          {
+            "start": 59.48,
+            "end": 59.9,
+            "text": " hard."
+          }
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "asset_id": "source_01",
+        "start": 0.12,
+        "end": 2.0,
+        "evidence_ids": [
+          "source_01:t1"
+        ],
+        "reason": "Manual timeline edit",
+        "required": false,
+        "score": 0.0
+      },
+      {
+        "asset_id": "source_01",
+        "start": 2.0,
+        "end": 14.86,
+        "evidence_ids": [
+          "source_01:t1",
+          "source_01:t2",
+          "source_01:t3",
+          "source_01:t4",
+          "source_01:t5",
+          "source_01:t6"
+        ],
+        "reason": "Required topic: training",
+        "required": true,
+        "score": 1.5
+      },
+      {
+        "asset_id": "source_01",
+        "start": 15.4,
+        "end": 18.18,
+        "evidence_ids": [
+          "source_01:t7"
+        ],
+        "reason": "Manual timeline edit",
+        "required": false,
+        "score": 0.0
+      },
+      {
+        "asset_id": "source_01",
+        "start": 26.82,
+        "end": 30.52,
+        "evidence_ids": [
+          "source_01:t10"
+        ],
+        "reason": "Required topic: spacewalks",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "report": {
+      "unresolved": [],
+      "checks": {
+        "decodable": true,
+        "has_audio": true,
+        "duration": 21.248,
+        "width": 1280,
+        "height": 720,
+        "aspect_ok": true,
+        "predicted_duration": 21.22,
+        "subtitle_cues": 14,
+        "subtitle_within_video": true,
+        "duration_ok": true
+      },
+      "evidence_count": 17,
+      "topic_evidence": [
+        {
+          "topic": "training",
+          "evidence_ids": [
+            "source_01:t1",
+            "source_01:t2"
+          ],
+          "verified": true
+        },
+        {
+          "topic": "spacewalks",
+          "evidence_ids": [
+            "source_01:t10"
+          ],
+          "verified": true
+        }
+      ],
+      "timeline_version": 2,
+      "repairs": [],
+      "render_attempts": 1,
+      "outputs": {
+        "video": "final.mp4",
+        "subtitles": "captions.srt"
+      }
+    },
+    "events": [
+      {
+        "at": "2026-11-18T01:49:13.031760+00:00",
+        "phase": "queued",
+        "message": "Job created"
+      },
+      {
+        "at": "2026-11-18T01:49:13.033736+00:00",
+        "phase": "transcribing",
+        "message": "Transcribing spoken evidence"
+      },
+      {
+        "at": "2026-11-18T01:49:15.946452+00:00",
+        "phase": "transcribing",
+        "message": "Analyzed astronaut-training.mp4"
+      },
+      {
+        "at": "2026-11-18T01:49:15.947411+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:15.948264+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 1 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:18.090440+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:18.219743+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:49:54.727877+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:49:54.728482+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:54.730188+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 2 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:56.711093+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:56.838893+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      }
+    ]
+  },
+  "03_revision": {
+    "id": "14ad45bf0e7547ae886e57ce0ddb308d",
+    "created_at": "2026-11-18T01:49:13.030267+00:00",
+    "updated_at": "2026-11-18T01:50:12.556380+00:00",
+    "status": "complete",
+    "phase": "complete",
+    "instruction": "Create a 15-25 second recap covering only spacewalks; export landscape.",
+    "version": 3,
+    "error": null,
+    "options": {
+      "target_seconds": 25,
+      "aspect": "16:9",
+      "topics": [
+        "spacewalks"
+      ],
+      "subtitles": true,
+      "min_seconds": 15,
+      "max_seconds": 25
+    },
+    "assets": [
+      {
+        "id": "source_01",
+        "name": "astronaut-training.mp4",
+        "path": "<PROJECT>/data/recording-demo/jobs/14ad45bf0e7547ae886e57ce0ddb308d/inputs/source_01.mp4",
+        "duration": 61.0,
+        "width": 640,
+        "height": 360,
+        "fps": 30.0,
+        "has_audio": true,
+        "video_codec": "h264",
+        "size_bytes": 4015389
+      }
+    ],
+    "transcript": [
+      {
+        "id": "source_01:t1",
+        "asset_id": "source_01",
+        "start": 0.0,
+        "end": 2.34,
+        "text": "So we're constantly working on training.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.8,
+            "text": " So"
+          },
+          {
+            "start": 0.8,
+            "end": 1.04,
+            "text": " we're"
+          },
+          {
+            "start": 1.04,
+            "end": 1.32,
+            "text": " constantly"
+          },
+          {
+            "start": 1.32,
+            "end": 1.72,
+            "text": " working"
+          },
+          {
+            "start": 1.72,
+            "end": 1.96,
+            "text": " on"
+          },
+          {
+            "start": 1.96,
+            "end": 2.34,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t2",
+        "asset_id": "source_01",
+        "start": 2.4,
+        "end": 4.7,
+        "text": "Our first two years were purely training.",
+        "words": [
+          {
+            "start": 2.4,
+            "end": 2.56,
+            "text": " Our"
+          },
+          {
+            "start": 2.56,
+            "end": 2.86,
+            "text": " first"
+          },
+          {
+            "start": 2.86,
+            "end": 3.12,
+            "text": " two"
+          },
+          {
+            "start": 3.12,
+            "end": 3.42,
+            "text": " years"
+          },
+          {
+            "start": 3.42,
+            "end": 3.68,
+            "text": " were"
+          },
+          {
+            "start": 3.68,
+            "end": 4.12,
+            "text": " purely"
+          },
+          {
+            "start": 4.12,
+            "end": 4.7,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t3",
+        "asset_id": "source_01",
+        "start": 5.0,
+        "end": 8.04,
+        "text": "Tomorrow I'm getting in the neutral point to lab to practice the spacewalk.",
+        "words": [
+          {
+            "start": 5.0,
+            "end": 5.04,
+            "text": " Tomorrow"
+          },
+          {
+            "start": 5.04,
+            "end": 5.2,
+            "text": " I'm"
+          },
+          {
+            "start": 5.2,
+            "end": 5.42,
+            "text": " getting"
+          },
+          {
+            "start": 5.42,
+            "end": 5.64,
+            "text": " in"
+          },
+          {
+            "start": 5.64,
+            "end": 5.8,
+            "text": " the"
+          },
+          {
+            "start": 5.8,
+            "end": 5.9,
+            "text": " neutral"
+          },
+          {
+            "start": 5.9,
+            "end": 6.3,
+            "text": " point"
+          },
+          {
+            "start": 6.3,
+            "end": 6.5,
+            "text": " to"
+          },
+          {
+            "start": 6.5,
+            "end": 6.68,
+            "text": " lab"
+          },
+          {
+            "start": 6.68,
+            "end": 6.92,
+            "text": " to"
+          },
+          {
+            "start": 6.92,
+            "end": 7.16,
+            "text": " practice"
+          },
+          {
+            "start": 7.16,
+            "end": 7.42,
+            "text": " the"
+          },
+          {
+            "start": 7.42,
+            "end": 8.04,
+            "text": " spacewalk."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t4",
+        "asset_id": "source_01",
+        "start": 8.48,
+        "end": 10.02,
+        "text": "Friday I'm getting in C38.",
+        "words": [
+          {
+            "start": 8.48,
+            "end": 8.68,
+            "text": " Friday"
+          },
+          {
+            "start": 8.68,
+            "end": 8.9,
+            "text": " I'm"
+          },
+          {
+            "start": 8.9,
+            "end": 9.14,
+            "text": " getting"
+          },
+          {
+            "start": 9.14,
+            "end": 9.38,
+            "text": " in"
+          },
+          {
+            "start": 9.38,
+            "end": 10.02,
+            "text": " C38."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t5",
+        "asset_id": "source_01",
+        "start": 10.52,
+        "end": 12.7,
+        "text": "So it's a continuous process every day.",
+        "words": [
+          {
+            "start": 10.52,
+            "end": 10.62,
+            "text": " So"
+          },
+          {
+            "start": 10.62,
+            "end": 10.82,
+            "text": " it's"
+          },
+          {
+            "start": 10.82,
+            "end": 11.08,
+            "text": " a"
+          },
+          {
+            "start": 11.08,
+            "end": 11.36,
+            "text": " continuous"
+          },
+          {
+            "start": 11.36,
+            "end": 11.94,
+            "text": " process"
+          },
+          {
+            "start": 11.94,
+            "end": 12.2,
+            "text": " every"
+          },
+          {
+            "start": 12.2,
+            "end": 12.7,
+            "text": " day."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t6",
+        "asset_id": "source_01",
+        "start": 12.86,
+        "end": 14.64,
+        "text": "Yeah, let's move on to our next question.",
+        "words": [
+          {
+            "start": 12.86,
+            "end": 13.04,
+            "text": " Yeah,"
+          },
+          {
+            "start": 13.08,
+            "end": 13.26,
+            "text": " let's"
+          },
+          {
+            "start": 13.26,
+            "end": 13.44,
+            "text": " move"
+          },
+          {
+            "start": 13.44,
+            "end": 13.6,
+            "text": " on"
+          },
+          {
+            "start": 13.6,
+            "end": 13.68,
+            "text": " to"
+          },
+          {
+            "start": 13.68,
+            "end": 13.94,
+            "text": " our"
+          },
+          {
+            "start": 13.94,
+            "end": 14.02,
+            "text": " next"
+          },
+          {
+            "start": 14.02,
+            "end": 14.64,
+            "text": " question."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t7",
+        "asset_id": "source_01",
+        "start": 15.58,
+        "end": 17.96,
+        "text": "Why do astronauts need to pass a physical?",
+        "words": [
+          {
+            "start": 15.58,
+            "end": 15.58,
+            "text": " Why"
+          },
+          {
+            "start": 15.58,
+            "end": 15.78,
+            "text": " do"
+          },
+          {
+            "start": 15.78,
+            "end": 16.3,
+            "text": " astronauts"
+          },
+          {
+            "start": 16.3,
+            "end": 16.92,
+            "text": " need"
+          },
+          {
+            "start": 16.92,
+            "end": 17.14,
+            "text": " to"
+          },
+          {
+            "start": 17.14,
+            "end": 17.42,
+            "text": " pass"
+          },
+          {
+            "start": 17.42,
+            "end": 17.78,
+            "text": " a"
+          },
+          {
+            "start": 17.78,
+            "end": 17.96,
+            "text": " physical?"
+          }
+        ]
+      },
+      {
+        "id": "source_01:t8",
+        "asset_id": "source_01",
+        "start": 18.96,
+        "end": 22.88,
+        "text": "So there are actually lots of physical aspects to our astronaut training.",
+        "words": [
+          {
+            "start": 18.96,
+            "end": 19.36,
+            "text": " So"
+          },
+          {
+            "start": 19.36,
+            "end": 19.9,
+            "text": " there"
+          },
+          {
+            "start": 19.9,
+            "end": 19.9,
+            "text": " are"
+          },
+          {
+            "start": 19.9,
+            "end": 20.14,
+            "text": " actually"
+          },
+          {
+            "start": 20.14,
+            "end": 20.38,
+            "text": " lots"
+          },
+          {
+            "start": 20.38,
+            "end": 20.68,
+            "text": " of"
+          },
+          {
+            "start": 20.68,
+            "end": 20.88,
+            "text": " physical"
+          },
+          {
+            "start": 20.88,
+            "end": 21.38,
+            "text": " aspects"
+          },
+          {
+            "start": 21.38,
+            "end": 21.68,
+            "text": " to"
+          },
+          {
+            "start": 21.68,
+            "end": 21.88,
+            "text": " our"
+          },
+          {
+            "start": 21.88,
+            "end": 22.34,
+            "text": " astronaut"
+          },
+          {
+            "start": 22.34,
+            "end": 22.88,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t9",
+        "asset_id": "source_01",
+        "start": 23.06,
+        "end": 27.0,
+        "text": "And I can tell you that from the last two years, I've constantly been working out.",
+        "words": [
+          {
+            "start": 23.06,
+            "end": 23.42,
+            "text": " And"
+          },
+          {
+            "start": 23.42,
+            "end": 23.56,
+            "text": " I"
+          },
+          {
+            "start": 23.56,
+            "end": 23.74,
+            "text": " can"
+          },
+          {
+            "start": 23.74,
+            "end": 23.86,
+            "text": " tell"
+          },
+          {
+            "start": 23.86,
+            "end": 24.0,
+            "text": " you"
+          },
+          {
+            "start": 24.0,
+            "end": 24.2,
+            "text": " that"
+          },
+          {
+            "start": 24.2,
+            "end": 24.36,
+            "text": " from"
+          },
+          {
+            "start": 24.36,
+            "end": 24.54,
+            "text": " the"
+          },
+          {
+            "start": 24.54,
+            "end": 24.8,
+            "text": " last"
+          },
+          {
+            "start": 24.8,
+            "end": 24.98,
+            "text": " two"
+          },
+          {
+            "start": 24.98,
+            "end": 25.22,
+            "text": " years,"
+          },
+          {
+            "start": 25.22,
+            "end": 25.76,
+            "text": " I've"
+          },
+          {
+            "start": 25.76,
+            "end": 25.8,
+            "text": " constantly"
+          },
+          {
+            "start": 25.8,
+            "end": 26.14,
+            "text": " been"
+          },
+          {
+            "start": 26.14,
+            "end": 26.46,
+            "text": " working"
+          },
+          {
+            "start": 26.46,
+            "end": 27.0,
+            "text": " out."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t10",
+        "asset_id": "source_01",
+        "start": 27.0,
+        "end": 30.3,
+        "text": "but you need to be able to one do the spacewalks.",
+        "words": [
+          {
+            "start": 27.0,
+            "end": 27.52,
+            "text": " but"
+          },
+          {
+            "start": 27.52,
+            "end": 27.72,
+            "text": " you"
+          },
+          {
+            "start": 27.72,
+            "end": 27.94,
+            "text": " need"
+          },
+          {
+            "start": 27.94,
+            "end": 28.1,
+            "text": " to"
+          },
+          {
+            "start": 28.1,
+            "end": 28.1,
+            "text": " be"
+          },
+          {
+            "start": 28.1,
+            "end": 28.36,
+            "text": " able"
+          },
+          {
+            "start": 28.36,
+            "end": 28.66,
+            "text": " to"
+          },
+          {
+            "start": 28.66,
+            "end": 29.08,
+            "text": " one"
+          },
+          {
+            "start": 29.08,
+            "end": 29.38,
+            "text": " do"
+          },
+          {
+            "start": 29.38,
+            "end": 29.64,
+            "text": " the"
+          },
+          {
+            "start": 29.64,
+            "end": 30.3,
+            "text": " spacewalks."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t11",
+        "asset_id": "source_01",
+        "start": 30.64,
+        "end": 37.3,
+        "text": "You also need to be able to launch the space, fly and jet, so we need to make sure everyone's in their best physical condition.",
+        "words": [
+          {
+            "start": 30.64,
+            "end": 30.64,
+            "text": " You"
+          },
+          {
+            "start": 30.64,
+            "end": 30.94,
+            "text": " also"
+          },
+          {
+            "start": 30.94,
+            "end": 31.12,
+            "text": " need"
+          },
+          {
+            "start": 31.12,
+            "end": 31.3,
+            "text": " to"
+          },
+          {
+            "start": 31.3,
+            "end": 31.32,
+            "text": " be"
+          },
+          {
+            "start": 31.32,
+            "end": 31.56,
+            "text": " able"
+          },
+          {
+            "start": 31.56,
+            "end": 32.12,
+            "text": " to"
+          },
+          {
+            "start": 32.12,
+            "end": 32.42,
+            "text": " launch"
+          },
+          {
+            "start": 32.42,
+            "end": 32.76,
+            "text": " the"
+          },
+          {
+            "start": 32.76,
+            "end": 33.3,
+            "text": " space,"
+          },
+          {
+            "start": 33.34,
+            "end": 33.58,
+            "text": " fly"
+          },
+          {
+            "start": 33.58,
+            "end": 33.82,
+            "text": " and"
+          },
+          {
+            "start": 33.82,
+            "end": 34.12,
+            "text": " jet,"
+          },
+          {
+            "start": 34.56,
+            "end": 34.84,
+            "text": " so"
+          },
+          {
+            "start": 34.84,
+            "end": 34.92,
+            "text": " we"
+          },
+          {
+            "start": 34.92,
+            "end": 35.12,
+            "text": " need"
+          },
+          {
+            "start": 35.12,
+            "end": 35.18,
+            "text": " to"
+          },
+          {
+            "start": 35.18,
+            "end": 35.36,
+            "text": " make"
+          },
+          {
+            "start": 35.36,
+            "end": 35.52,
+            "text": " sure"
+          },
+          {
+            "start": 35.52,
+            "end": 35.96,
+            "text": " everyone's"
+          },
+          {
+            "start": 35.96,
+            "end": 35.98,
+            "text": " in"
+          },
+          {
+            "start": 35.98,
+            "end": 36.14,
+            "text": " their"
+          },
+          {
+            "start": 36.14,
+            "end": 36.38,
+            "text": " best"
+          },
+          {
+            "start": 36.38,
+            "end": 36.76,
+            "text": " physical"
+          },
+          {
+            "start": 36.76,
+            "end": 37.3,
+            "text": " condition."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t12",
+        "asset_id": "source_01",
+        "start": 38.88,
+        "end": 43.12,
+        "text": "Well, the first time I got on the suit, it was a lot harder than I thought it was going to be.",
+        "words": [
+          {
+            "start": 38.88,
+            "end": 39.06,
+            "text": " Well,"
+          },
+          {
+            "start": 39.16,
+            "end": 39.24,
+            "text": " the"
+          },
+          {
+            "start": 39.24,
+            "end": 39.5,
+            "text": " first"
+          },
+          {
+            "start": 39.5,
+            "end": 39.7,
+            "text": " time"
+          },
+          {
+            "start": 39.7,
+            "end": 39.82,
+            "text": " I"
+          },
+          {
+            "start": 39.82,
+            "end": 39.92,
+            "text": " got"
+          },
+          {
+            "start": 39.92,
+            "end": 40.04,
+            "text": " on"
+          },
+          {
+            "start": 40.04,
+            "end": 40.2,
+            "text": " the"
+          },
+          {
+            "start": 40.2,
+            "end": 40.56,
+            "text": " suit,"
+          },
+          {
+            "start": 41.04,
+            "end": 41.14,
+            "text": " it"
+          },
+          {
+            "start": 41.14,
+            "end": 41.3,
+            "text": " was"
+          },
+          {
+            "start": 41.3,
+            "end": 41.42,
+            "text": " a"
+          },
+          {
+            "start": 41.42,
+            "end": 41.64,
+            "text": " lot"
+          },
+          {
+            "start": 41.64,
+            "end": 41.9,
+            "text": " harder"
+          },
+          {
+            "start": 41.9,
+            "end": 42.08,
+            "text": " than"
+          },
+          {
+            "start": 42.08,
+            "end": 42.24,
+            "text": " I"
+          },
+          {
+            "start": 42.24,
+            "end": 42.42,
+            "text": " thought"
+          },
+          {
+            "start": 42.42,
+            "end": 42.52,
+            "text": " it"
+          },
+          {
+            "start": 42.52,
+            "end": 42.68,
+            "text": " was"
+          },
+          {
+            "start": 42.68,
+            "end": 42.82,
+            "text": " going"
+          },
+          {
+            "start": 42.82,
+            "end": 42.94,
+            "text": " to"
+          },
+          {
+            "start": 42.94,
+            "end": 43.12,
+            "text": " be."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t13",
+        "asset_id": "source_01",
+        "start": 43.34,
+        "end": 45.36,
+        "text": "You're working within this whole spacesuit.",
+        "words": [
+          {
+            "start": 43.34,
+            "end": 43.52,
+            "text": " You're"
+          },
+          {
+            "start": 43.52,
+            "end": 43.66,
+            "text": " working"
+          },
+          {
+            "start": 43.66,
+            "end": 44.06,
+            "text": " within"
+          },
+          {
+            "start": 44.06,
+            "end": 44.32,
+            "text": " this"
+          },
+          {
+            "start": 44.32,
+            "end": 44.76,
+            "text": " whole"
+          },
+          {
+            "start": 44.76,
+            "end": 45.36,
+            "text": " spacesuit."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t14",
+        "asset_id": "source_01",
+        "start": 45.64,
+        "end": 48.84,
+        "text": "It's really your own spacecraft and it's really tiring.",
+        "words": [
+          {
+            "start": 45.64,
+            "end": 45.68,
+            "text": " It's"
+          },
+          {
+            "start": 45.68,
+            "end": 46.24,
+            "text": " really"
+          },
+          {
+            "start": 46.24,
+            "end": 46.46,
+            "text": " your"
+          },
+          {
+            "start": 46.46,
+            "end": 46.82,
+            "text": " own"
+          },
+          {
+            "start": 46.82,
+            "end": 47.38,
+            "text": " spacecraft"
+          },
+          {
+            "start": 47.38,
+            "end": 47.9,
+            "text": " and"
+          },
+          {
+            "start": 47.9,
+            "end": 48.1,
+            "text": " it's"
+          },
+          {
+            "start": 48.1,
+            "end": 48.4,
+            "text": " really"
+          },
+          {
+            "start": 48.4,
+            "end": 48.84,
+            "text": " tiring."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t15",
+        "asset_id": "source_01",
+        "start": 49.1,
+        "end": 51.16,
+        "text": "You walk with your hands, not your feet.",
+        "words": [
+          {
+            "start": 49.1,
+            "end": 49.34,
+            "text": " You"
+          },
+          {
+            "start": 49.34,
+            "end": 49.6,
+            "text": " walk"
+          },
+          {
+            "start": 49.6,
+            "end": 49.76,
+            "text": " with"
+          },
+          {
+            "start": 49.76,
+            "end": 49.96,
+            "text": " your"
+          },
+          {
+            "start": 49.96,
+            "end": 50.3,
+            "text": " hands,"
+          },
+          {
+            "start": 50.34,
+            "end": 50.52,
+            "text": " not"
+          },
+          {
+            "start": 50.52,
+            "end": 50.78,
+            "text": " your"
+          },
+          {
+            "start": 50.78,
+            "end": 51.16,
+            "text": " feet."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t16",
+        "asset_id": "source_01",
+        "start": 51.46,
+        "end": 55.9,
+        "text": "Everything you do, you're much bigger than you expect to be, so you have to make sure you're not running into things.",
+        "words": [
+          {
+            "start": 51.46,
+            "end": 51.78,
+            "text": " Everything"
+          },
+          {
+            "start": 51.78,
+            "end": 52.02,
+            "text": " you"
+          },
+          {
+            "start": 52.02,
+            "end": 52.16,
+            "text": " do,"
+          },
+          {
+            "start": 52.28,
+            "end": 52.36,
+            "text": " you're"
+          },
+          {
+            "start": 52.36,
+            "end": 52.56,
+            "text": " much"
+          },
+          {
+            "start": 52.56,
+            "end": 52.84,
+            "text": " bigger"
+          },
+          {
+            "start": 52.84,
+            "end": 53.06,
+            "text": " than"
+          },
+          {
+            "start": 53.06,
+            "end": 53.3,
+            "text": " you"
+          },
+          {
+            "start": 53.3,
+            "end": 53.54,
+            "text": " expect"
+          },
+          {
+            "start": 53.54,
+            "end": 53.78,
+            "text": " to"
+          },
+          {
+            "start": 53.78,
+            "end": 53.96,
+            "text": " be,"
+          },
+          {
+            "start": 54.08,
+            "end": 54.14,
+            "text": " so"
+          },
+          {
+            "start": 54.14,
+            "end": 54.22,
+            "text": " you"
+          },
+          {
+            "start": 54.22,
+            "end": 54.34,
+            "text": " have"
+          },
+          {
+            "start": 54.34,
+            "end": 54.44,
+            "text": " to"
+          },
+          {
+            "start": 54.44,
+            "end": 54.62,
+            "text": " make"
+          },
+          {
+            "start": 54.62,
+            "end": 54.8,
+            "text": " sure"
+          },
+          {
+            "start": 54.8,
+            "end": 54.94,
+            "text": " you're"
+          },
+          {
+            "start": 54.94,
+            "end": 55.08,
+            "text": " not"
+          },
+          {
+            "start": 55.08,
+            "end": 55.32,
+            "text": " running"
+          },
+          {
+            "start": 55.32,
+            "end": 55.6,
+            "text": " into"
+          },
+          {
+            "start": 55.6,
+            "end": 55.9,
+            "text": " things."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t17",
+        "asset_id": "source_01",
+        "start": 55.9,
+        "end": 59.9,
+        "text": "My first thought was this is awesome, but this is also really hard.",
+        "words": [
+          {
+            "start": 55.9,
+            "end": 56.36,
+            "text": " My"
+          },
+          {
+            "start": 56.36,
+            "end": 56.64,
+            "text": " first"
+          },
+          {
+            "start": 56.64,
+            "end": 56.9,
+            "text": " thought"
+          },
+          {
+            "start": 56.9,
+            "end": 57.58,
+            "text": " was"
+          },
+          {
+            "start": 57.58,
+            "end": 57.82,
+            "text": " this"
+          },
+          {
+            "start": 57.82,
+            "end": 58.06,
+            "text": " is"
+          },
+          {
+            "start": 58.06,
+            "end": 58.24,
+            "text": " awesome,"
+          },
+          {
+            "start": 58.58,
+            "end": 58.66,
+            "text": " but"
+          },
+          {
+            "start": 58.66,
+            "end": 58.9,
+            "text": " this"
+          },
+          {
+            "start": 58.9,
+            "end": 58.98,
+            "text": " is"
+          },
+          {
+            "start": 58.98,
+            "end": 59.18,
+            "text": " also"
+          },
+          {
+            "start": 59.18,
+            "end": 59.48,
+            "text": " really"
+          },
+          {
+            "start": 59.48,
+            "end": 59.9,
+            "text": " hard."
+          }
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "asset_id": "source_01",
+        "start": 0,
+        "end": 12.92,
+        "evidence_ids": [
+          "source_01:t1",
+          "source_01:t2",
+          "source_01:t3",
+          "source_01:t4",
+          "source_01:t5"
+        ],
+        "reason": "Supporting context",
+        "required": false,
+        "score": 0.0
+      },
+      {
+        "asset_id": "source_01",
+        "start": 26.82,
+        "end": 30.52,
+        "evidence_ids": [
+          "source_01:t10"
+        ],
+        "reason": "Required topic: spacewalks",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "report": {
+      "unresolved": [],
+      "checks": {
+        "decodable": true,
+        "has_audio": true,
+        "duration": 16.666,
+        "width": 1280,
+        "height": 720,
+        "aspect_ok": true,
+        "predicted_duration": 16.62,
+        "subtitle_cues": 10,
+        "subtitle_within_video": true,
+        "duration_ok": true
+      },
+      "evidence_count": 17,
+      "topic_evidence": [
+        {
+          "topic": "spacewalks",
+          "evidence_ids": [
+            "source_01:t10"
+          ],
+          "verified": true
+        }
+      ],
+      "timeline_version": 3,
+      "repairs": [],
+      "render_attempts": 1,
+      "outputs": {
+        "video": "final.mp4",
+        "subtitles": "captions.srt"
+      }
+    },
+    "events": [
+      {
+        "at": "2026-11-18T01:49:13.031760+00:00",
+        "phase": "queued",
+        "message": "Job created"
+      },
+      {
+        "at": "2026-11-18T01:49:13.033736+00:00",
+        "phase": "transcribing",
+        "message": "Transcribing spoken evidence"
+      },
+      {
+        "at": "2026-11-18T01:49:15.946452+00:00",
+        "phase": "transcribing",
+        "message": "Analyzed astronaut-training.mp4"
+      },
+      {
+        "at": "2026-11-18T01:49:15.947411+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:15.948264+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 1 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:18.090440+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:18.219743+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:49:54.727877+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:49:54.728482+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:54.730188+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 2 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:56.711093+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:56.838893+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:50:10.789175+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:50:10.789719+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:50:10.790796+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 3 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:50:12.448556+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:50:12.556051+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      }
+    ]
+  },
+  "04_missing_topic": {
+    "id": "14ad45bf0e7547ae886e57ce0ddb308d",
+    "created_at": "2026-11-18T01:49:13.030267+00:00",
+    "updated_at": "2026-11-18T01:50:29.731276+00:00",
+    "status": "needs_review",
+    "phase": "needs_review",
+    "instruction": "Create a 15-25 second recap covering quantum teleportation; export landscape.",
+    "version": 4,
+    "error": null,
+    "options": {
+      "target_seconds": 25,
+      "aspect": "16:9",
+      "topics": [
+        "quantum teleportation"
+      ],
+      "subtitles": true,
+      "min_seconds": 15,
+      "max_seconds": 25
+    },
+    "assets": [
+      {
+        "id": "source_01",
+        "name": "astronaut-training.mp4",
+        "path": "<PROJECT>/data/recording-demo/jobs/14ad45bf0e7547ae886e57ce0ddb308d/inputs/source_01.mp4",
+        "duration": 61.0,
+        "width": 640,
+        "height": 360,
+        "fps": 30.0,
+        "has_audio": true,
+        "video_codec": "h264",
+        "size_bytes": 4015389
+      }
+    ],
+    "transcript": [
+      {
+        "id": "source_01:t1",
+        "asset_id": "source_01",
+        "start": 0.0,
+        "end": 2.34,
+        "text": "So we're constantly working on training.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.8,
+            "text": " So"
+          },
+          {
+            "start": 0.8,
+            "end": 1.04,
+            "text": " we're"
+          },
+          {
+            "start": 1.04,
+            "end": 1.32,
+            "text": " constantly"
+          },
+          {
+            "start": 1.32,
+            "end": 1.72,
+            "text": " working"
+          },
+          {
+            "start": 1.72,
+            "end": 1.96,
+            "text": " on"
+          },
+          {
+            "start": 1.96,
+            "end": 2.34,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t2",
+        "asset_id": "source_01",
+        "start": 2.4,
+        "end": 4.7,
+        "text": "Our first two years were purely training.",
+        "words": [
+          {
+            "start": 2.4,
+            "end": 2.56,
+            "text": " Our"
+          },
+          {
+            "start": 2.56,
+            "end": 2.86,
+            "text": " first"
+          },
+          {
+            "start": 2.86,
+            "end": 3.12,
+            "text": " two"
+          },
+          {
+            "start": 3.12,
+            "end": 3.42,
+            "text": " years"
+          },
+          {
+            "start": 3.42,
+            "end": 3.68,
+            "text": " were"
+          },
+          {
+            "start": 3.68,
+            "end": 4.12,
+            "text": " purely"
+          },
+          {
+            "start": 4.12,
+            "end": 4.7,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t3",
+        "asset_id": "source_01",
+        "start": 5.0,
+        "end": 8.04,
+        "text": "Tomorrow I'm getting in the neutral point to lab to practice the spacewalk.",
+        "words": [
+          {
+            "start": 5.0,
+            "end": 5.04,
+            "text": " Tomorrow"
+          },
+          {
+            "start": 5.04,
+            "end": 5.2,
+            "text": " I'm"
+          },
+          {
+            "start": 5.2,
+            "end": 5.42,
+            "text": " getting"
+          },
+          {
+            "start": 5.42,
+            "end": 5.64,
+            "text": " in"
+          },
+          {
+            "start": 5.64,
+            "end": 5.8,
+            "text": " the"
+          },
+          {
+            "start": 5.8,
+            "end": 5.9,
+            "text": " neutral"
+          },
+          {
+            "start": 5.9,
+            "end": 6.3,
+            "text": " point"
+          },
+          {
+            "start": 6.3,
+            "end": 6.5,
+            "text": " to"
+          },
+          {
+            "start": 6.5,
+            "end": 6.68,
+            "text": " lab"
+          },
+          {
+            "start": 6.68,
+            "end": 6.92,
+            "text": " to"
+          },
+          {
+            "start": 6.92,
+            "end": 7.16,
+            "text": " practice"
+          },
+          {
+            "start": 7.16,
+            "end": 7.42,
+            "text": " the"
+          },
+          {
+            "start": 7.42,
+            "end": 8.04,
+            "text": " spacewalk."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t4",
+        "asset_id": "source_01",
+        "start": 8.48,
+        "end": 10.02,
+        "text": "Friday I'm getting in C38.",
+        "words": [
+          {
+            "start": 8.48,
+            "end": 8.68,
+            "text": " Friday"
+          },
+          {
+            "start": 8.68,
+            "end": 8.9,
+            "text": " I'm"
+          },
+          {
+            "start": 8.9,
+            "end": 9.14,
+            "text": " getting"
+          },
+          {
+            "start": 9.14,
+            "end": 9.38,
+            "text": " in"
+          },
+          {
+            "start": 9.38,
+            "end": 10.02,
+            "text": " C38."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t5",
+        "asset_id": "source_01",
+        "start": 10.52,
+        "end": 12.7,
+        "text": "So it's a continuous process every day.",
+        "words": [
+          {
+            "start": 10.52,
+            "end": 10.62,
+            "text": " So"
+          },
+          {
+            "start": 10.62,
+            "end": 10.82,
+            "text": " it's"
+          },
+          {
+            "start": 10.82,
+            "end": 11.08,
+            "text": " a"
+          },
+          {
+            "start": 11.08,
+            "end": 11.36,
+            "text": " continuous"
+          },
+          {
+            "start": 11.36,
+            "end": 11.94,
+            "text": " process"
+          },
+          {
+            "start": 11.94,
+            "end": 12.2,
+            "text": " every"
+          },
+          {
+            "start": 12.2,
+            "end": 12.7,
+            "text": " day."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t6",
+        "asset_id": "source_01",
+        "start": 12.86,
+        "end": 14.64,
+        "text": "Yeah, let's move on to our next question.",
+        "words": [
+          {
+            "start": 12.86,
+            "end": 13.04,
+            "text": " Yeah,"
+          },
+          {
+            "start": 13.08,
+            "end": 13.26,
+            "text": " let's"
+          },
+          {
+            "start": 13.26,
+            "end": 13.44,
+            "text": " move"
+          },
+          {
+            "start": 13.44,
+            "end": 13.6,
+            "text": " on"
+          },
+          {
+            "start": 13.6,
+            "end": 13.68,
+            "text": " to"
+          },
+          {
+            "start": 13.68,
+            "end": 13.94,
+            "text": " our"
+          },
+          {
+            "start": 13.94,
+            "end": 14.02,
+            "text": " next"
+          },
+          {
+            "start": 14.02,
+            "end": 14.64,
+            "text": " question."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t7",
+        "asset_id": "source_01",
+        "start": 15.58,
+        "end": 17.96,
+        "text": "Why do astronauts need to pass a physical?",
+        "words": [
+          {
+            "start": 15.58,
+            "end": 15.58,
+            "text": " Why"
+          },
+          {
+            "start": 15.58,
+            "end": 15.78,
+            "text": " do"
+          },
+          {
+            "start": 15.78,
+            "end": 16.3,
+            "text": " astronauts"
+          },
+          {
+            "start": 16.3,
+            "end": 16.92,
+            "text": " need"
+          },
+          {
+            "start": 16.92,
+            "end": 17.14,
+            "text": " to"
+          },
+          {
+            "start": 17.14,
+            "end": 17.42,
+            "text": " pass"
+          },
+          {
+            "start": 17.42,
+            "end": 17.78,
+            "text": " a"
+          },
+          {
+            "start": 17.78,
+            "end": 17.96,
+            "text": " physical?"
+          }
+        ]
+      },
+      {
+        "id": "source_01:t8",
+        "asset_id": "source_01",
+        "start": 18.96,
+        "end": 22.88,
+        "text": "So there are actually lots of physical aspects to our astronaut training.",
+        "words": [
+          {
+            "start": 18.96,
+            "end": 19.36,
+            "text": " So"
+          },
+          {
+            "start": 19.36,
+            "end": 19.9,
+            "text": " there"
+          },
+          {
+            "start": 19.9,
+            "end": 19.9,
+            "text": " are"
+          },
+          {
+            "start": 19.9,
+            "end": 20.14,
+            "text": " actually"
+          },
+          {
+            "start": 20.14,
+            "end": 20.38,
+            "text": " lots"
+          },
+          {
+            "start": 20.38,
+            "end": 20.68,
+            "text": " of"
+          },
+          {
+            "start": 20.68,
+            "end": 20.88,
+            "text": " physical"
+          },
+          {
+            "start": 20.88,
+            "end": 21.38,
+            "text": " aspects"
+          },
+          {
+            "start": 21.38,
+            "end": 21.68,
+            "text": " to"
+          },
+          {
+            "start": 21.68,
+            "end": 21.88,
+            "text": " our"
+          },
+          {
+            "start": 21.88,
+            "end": 22.34,
+            "text": " astronaut"
+          },
+          {
+            "start": 22.34,
+            "end": 22.88,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t9",
+        "asset_id": "source_01",
+        "start": 23.06,
+        "end": 27.0,
+        "text": "And I can tell you that from the last two years, I've constantly been working out.",
+        "words": [
+          {
+            "start": 23.06,
+            "end": 23.42,
+            "text": " And"
+          },
+          {
+            "start": 23.42,
+            "end": 23.56,
+            "text": " I"
+          },
+          {
+            "start": 23.56,
+            "end": 23.74,
+            "text": " can"
+          },
+          {
+            "start": 23.74,
+            "end": 23.86,
+            "text": " tell"
+          },
+          {
+            "start": 23.86,
+            "end": 24.0,
+            "text": " you"
+          },
+          {
+            "start": 24.0,
+            "end": 24.2,
+            "text": " that"
+          },
+          {
+            "start": 24.2,
+            "end": 24.36,
+            "text": " from"
+          },
+          {
+            "start": 24.36,
+            "end": 24.54,
+            "text": " the"
+          },
+          {
+            "start": 24.54,
+            "end": 24.8,
+            "text": " last"
+          },
+          {
+            "start": 24.8,
+            "end": 24.98,
+            "text": " two"
+          },
+          {
+            "start": 24.98,
+            "end": 25.22,
+            "text": " years,"
+          },
+          {
+            "start": 25.22,
+            "end": 25.76,
+            "text": " I've"
+          },
+          {
+            "start": 25.76,
+            "end": 25.8,
+            "text": " constantly"
+          },
+          {
+            "start": 25.8,
+            "end": 26.14,
+            "text": " been"
+          },
+          {
+            "start": 26.14,
+            "end": 26.46,
+            "text": " working"
+          },
+          {
+            "start": 26.46,
+            "end": 27.0,
+            "text": " out."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t10",
+        "asset_id": "source_01",
+        "start": 27.0,
+        "end": 30.3,
+        "text": "but you need to be able to one do the spacewalks.",
+        "words": [
+          {
+            "start": 27.0,
+            "end": 27.52,
+            "text": " but"
+          },
+          {
+            "start": 27.52,
+            "end": 27.72,
+            "text": " you"
+          },
+          {
+            "start": 27.72,
+            "end": 27.94,
+            "text": " need"
+          },
+          {
+            "start": 27.94,
+            "end": 28.1,
+            "text": " to"
+          },
+          {
+            "start": 28.1,
+            "end": 28.1,
+            "text": " be"
+          },
+          {
+            "start": 28.1,
+            "end": 28.36,
+            "text": " able"
+          },
+          {
+            "start": 28.36,
+            "end": 28.66,
+            "text": " to"
+          },
+          {
+            "start": 28.66,
+            "end": 29.08,
+            "text": " one"
+          },
+          {
+            "start": 29.08,
+            "end": 29.38,
+            "text": " do"
+          },
+          {
+            "start": 29.38,
+            "end": 29.64,
+            "text": " the"
+          },
+          {
+            "start": 29.64,
+            "end": 30.3,
+            "text": " spacewalks."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t11",
+        "asset_id": "source_01",
+        "start": 30.64,
+        "end": 37.3,
+        "text": "You also need to be able to launch the space, fly and jet, so we need to make sure everyone's in their best physical condition.",
+        "words": [
+          {
+            "start": 30.64,
+            "end": 30.64,
+            "text": " You"
+          },
+          {
+            "start": 30.64,
+            "end": 30.94,
+            "text": " also"
+          },
+          {
+            "start": 30.94,
+            "end": 31.12,
+            "text": " need"
+          },
+          {
+            "start": 31.12,
+            "end": 31.3,
+            "text": " to"
+          },
+          {
+            "start": 31.3,
+            "end": 31.32,
+            "text": " be"
+          },
+          {
+            "start": 31.32,
+            "end": 31.56,
+            "text": " able"
+          },
+          {
+            "start": 31.56,
+            "end": 32.12,
+            "text": " to"
+          },
+          {
+            "start": 32.12,
+            "end": 32.42,
+            "text": " launch"
+          },
+          {
+            "start": 32.42,
+            "end": 32.76,
+            "text": " the"
+          },
+          {
+            "start": 32.76,
+            "end": 33.3,
+            "text": " space,"
+          },
+          {
+            "start": 33.34,
+            "end": 33.58,
+            "text": " fly"
+          },
+          {
+            "start": 33.58,
+            "end": 33.82,
+            "text": " and"
+          },
+          {
+            "start": 33.82,
+            "end": 34.12,
+            "text": " jet,"
+          },
+          {
+            "start": 34.56,
+            "end": 34.84,
+            "text": " so"
+          },
+          {
+            "start": 34.84,
+            "end": 34.92,
+            "text": " we"
+          },
+          {
+            "start": 34.92,
+            "end": 35.12,
+            "text": " need"
+          },
+          {
+            "start": 35.12,
+            "end": 35.18,
+            "text": " to"
+          },
+          {
+            "start": 35.18,
+            "end": 35.36,
+            "text": " make"
+          },
+          {
+            "start": 35.36,
+            "end": 35.52,
+            "text": " sure"
+          },
+          {
+            "start": 35.52,
+            "end": 35.96,
+            "text": " everyone's"
+          },
+          {
+            "start": 35.96,
+            "end": 35.98,
+            "text": " in"
+          },
+          {
+            "start": 35.98,
+            "end": 36.14,
+            "text": " their"
+          },
+          {
+            "start": 36.14,
+            "end": 36.38,
+            "text": " best"
+          },
+          {
+            "start": 36.38,
+            "end": 36.76,
+            "text": " physical"
+          },
+          {
+            "start": 36.76,
+            "end": 37.3,
+            "text": " condition."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t12",
+        "asset_id": "source_01",
+        "start": 38.88,
+        "end": 43.12,
+        "text": "Well, the first time I got on the suit, it was a lot harder than I thought it was going to be.",
+        "words": [
+          {
+            "start": 38.88,
+            "end": 39.06,
+            "text": " Well,"
+          },
+          {
+            "start": 39.16,
+            "end": 39.24,
+            "text": " the"
+          },
+          {
+            "start": 39.24,
+            "end": 39.5,
+            "text": " first"
+          },
+          {
+            "start": 39.5,
+            "end": 39.7,
+            "text": " time"
+          },
+          {
+            "start": 39.7,
+            "end": 39.82,
+            "text": " I"
+          },
+          {
+            "start": 39.82,
+            "end": 39.92,
+            "text": " got"
+          },
+          {
+            "start": 39.92,
+            "end": 40.04,
+            "text": " on"
+          },
+          {
+            "start": 40.04,
+            "end": 40.2,
+            "text": " the"
+          },
+          {
+            "start": 40.2,
+            "end": 40.56,
+            "text": " suit,"
+          },
+          {
+            "start": 41.04,
+            "end": 41.14,
+            "text": " it"
+          },
+          {
+            "start": 41.14,
+            "end": 41.3,
+            "text": " was"
+          },
+          {
+            "start": 41.3,
+            "end": 41.42,
+            "text": " a"
+          },
+          {
+            "start": 41.42,
+            "end": 41.64,
+            "text": " lot"
+          },
+          {
+            "start": 41.64,
+            "end": 41.9,
+            "text": " harder"
+          },
+          {
+            "start": 41.9,
+            "end": 42.08,
+            "text": " than"
+          },
+          {
+            "start": 42.08,
+            "end": 42.24,
+            "text": " I"
+          },
+          {
+            "start": 42.24,
+            "end": 42.42,
+            "text": " thought"
+          },
+          {
+            "start": 42.42,
+            "end": 42.52,
+            "text": " it"
+          },
+          {
+            "start": 42.52,
+            "end": 42.68,
+            "text": " was"
+          },
+          {
+            "start": 42.68,
+            "end": 42.82,
+            "text": " going"
+          },
+          {
+            "start": 42.82,
+            "end": 42.94,
+            "text": " to"
+          },
+          {
+            "start": 42.94,
+            "end": 43.12,
+            "text": " be."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t13",
+        "asset_id": "source_01",
+        "start": 43.34,
+        "end": 45.36,
+        "text": "You're working within this whole spacesuit.",
+        "words": [
+          {
+            "start": 43.34,
+            "end": 43.52,
+            "text": " You're"
+          },
+          {
+            "start": 43.52,
+            "end": 43.66,
+            "text": " working"
+          },
+          {
+            "start": 43.66,
+            "end": 44.06,
+            "text": " within"
+          },
+          {
+            "start": 44.06,
+            "end": 44.32,
+            "text": " this"
+          },
+          {
+            "start": 44.32,
+            "end": 44.76,
+            "text": " whole"
+          },
+          {
+            "start": 44.76,
+            "end": 45.36,
+            "text": " spacesuit."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t14",
+        "asset_id": "source_01",
+        "start": 45.64,
+        "end": 48.84,
+        "text": "It's really your own spacecraft and it's really tiring.",
+        "words": [
+          {
+            "start": 45.64,
+            "end": 45.68,
+            "text": " It's"
+          },
+          {
+            "start": 45.68,
+            "end": 46.24,
+            "text": " really"
+          },
+          {
+            "start": 46.24,
+            "end": 46.46,
+            "text": " your"
+          },
+          {
+            "start": 46.46,
+            "end": 46.82,
+            "text": " own"
+          },
+          {
+            "start": 46.82,
+            "end": 47.38,
+            "text": " spacecraft"
+          },
+          {
+            "start": 47.38,
+            "end": 47.9,
+            "text": " and"
+          },
+          {
+            "start": 47.9,
+            "end": 48.1,
+            "text": " it's"
+          },
+          {
+            "start": 48.1,
+            "end": 48.4,
+            "text": " really"
+          },
+          {
+            "start": 48.4,
+            "end": 48.84,
+            "text": " tiring."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t15",
+        "asset_id": "source_01",
+        "start": 49.1,
+        "end": 51.16,
+        "text": "You walk with your hands, not your feet.",
+        "words": [
+          {
+            "start": 49.1,
+            "end": 49.34,
+            "text": " You"
+          },
+          {
+            "start": 49.34,
+            "end": 49.6,
+            "text": " walk"
+          },
+          {
+            "start": 49.6,
+            "end": 49.76,
+            "text": " with"
+          },
+          {
+            "start": 49.76,
+            "end": 49.96,
+            "text": " your"
+          },
+          {
+            "start": 49.96,
+            "end": 50.3,
+            "text": " hands,"
+          },
+          {
+            "start": 50.34,
+            "end": 50.52,
+            "text": " not"
+          },
+          {
+            "start": 50.52,
+            "end": 50.78,
+            "text": " your"
+          },
+          {
+            "start": 50.78,
+            "end": 51.16,
+            "text": " feet."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t16",
+        "asset_id": "source_01",
+        "start": 51.46,
+        "end": 55.9,
+        "text": "Everything you do, you're much bigger than you expect to be, so you have to make sure you're not running into things.",
+        "words": [
+          {
+            "start": 51.46,
+            "end": 51.78,
+            "text": " Everything"
+          },
+          {
+            "start": 51.78,
+            "end": 52.02,
+            "text": " you"
+          },
+          {
+            "start": 52.02,
+            "end": 52.16,
+            "text": " do,"
+          },
+          {
+            "start": 52.28,
+            "end": 52.36,
+            "text": " you're"
+          },
+          {
+            "start": 52.36,
+            "end": 52.56,
+            "text": " much"
+          },
+          {
+            "start": 52.56,
+            "end": 52.84,
+            "text": " bigger"
+          },
+          {
+            "start": 52.84,
+            "end": 53.06,
+            "text": " than"
+          },
+          {
+            "start": 53.06,
+            "end": 53.3,
+            "text": " you"
+          },
+          {
+            "start": 53.3,
+            "end": 53.54,
+            "text": " expect"
+          },
+          {
+            "start": 53.54,
+            "end": 53.78,
+            "text": " to"
+          },
+          {
+            "start": 53.78,
+            "end": 53.96,
+            "text": " be,"
+          },
+          {
+            "start": 54.08,
+            "end": 54.14,
+            "text": " so"
+          },
+          {
+            "start": 54.14,
+            "end": 54.22,
+            "text": " you"
+          },
+          {
+            "start": 54.22,
+            "end": 54.34,
+            "text": " have"
+          },
+          {
+            "start": 54.34,
+            "end": 54.44,
+            "text": " to"
+          },
+          {
+            "start": 54.44,
+            "end": 54.62,
+            "text": " make"
+          },
+          {
+            "start": 54.62,
+            "end": 54.8,
+            "text": " sure"
+          },
+          {
+            "start": 54.8,
+            "end": 54.94,
+            "text": " you're"
+          },
+          {
+            "start": 54.94,
+            "end": 55.08,
+            "text": " not"
+          },
+          {
+            "start": 55.08,
+            "end": 55.32,
+            "text": " running"
+          },
+          {
+            "start": 55.32,
+            "end": 55.6,
+            "text": " into"
+          },
+          {
+            "start": 55.6,
+            "end": 55.9,
+            "text": " things."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t17",
+        "asset_id": "source_01",
+        "start": 55.9,
+        "end": 59.9,
+        "text": "My first thought was this is awesome, but this is also really hard.",
+        "words": [
+          {
+            "start": 55.9,
+            "end": 56.36,
+            "text": " My"
+          },
+          {
+            "start": 56.36,
+            "end": 56.64,
+            "text": " first"
+          },
+          {
+            "start": 56.64,
+            "end": 56.9,
+            "text": " thought"
+          },
+          {
+            "start": 56.9,
+            "end": 57.58,
+            "text": " was"
+          },
+          {
+            "start": 57.58,
+            "end": 57.82,
+            "text": " this"
+          },
+          {
+            "start": 57.82,
+            "end": 58.06,
+            "text": " is"
+          },
+          {
+            "start": 58.06,
+            "end": 58.24,
+            "text": " awesome,"
+          },
+          {
+            "start": 58.58,
+            "end": 58.66,
+            "text": " but"
+          },
+          {
+            "start": 58.66,
+            "end": 58.9,
+            "text": " this"
+          },
+          {
+            "start": 58.9,
+            "end": 58.98,
+            "text": " is"
+          },
+          {
+            "start": 58.98,
+            "end": 59.18,
+            "text": " also"
+          },
+          {
+            "start": 59.18,
+            "end": 59.48,
+            "text": " really"
+          },
+          {
+            "start": 59.48,
+            "end": 59.9,
+            "text": " hard."
+          }
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "asset_id": "source_01",
+        "start": 0,
+        "end": 14.86,
+        "evidence_ids": [
+          "source_01:t1",
+          "source_01:t2",
+          "source_01:t3",
+          "source_01:t4",
+          "source_01:t5",
+          "source_01:t6"
+        ],
+        "reason": "Supporting context",
+        "required": false,
+        "score": 0.0
+      }
+    ],
+    "report": {
+      "unresolved": [
+        "No selected spoken evidence found for: quantum teleportation"
+      ],
+      "checks": {
+        "decodable": true,
+        "has_audio": true,
+        "duration": 14.9,
+        "width": 1280,
+        "height": 720,
+        "aspect_ok": true,
+        "predicted_duration": 14.86,
+        "subtitle_cues": 8,
+        "subtitle_within_video": true,
+        "duration_ok": true
+      },
+      "evidence_count": 17,
+      "topic_evidence": [
+        {
+          "topic": "quantum teleportation",
+          "evidence_ids": [],
+          "verified": false
+        }
+      ],
+      "timeline_version": 4,
+      "repairs": [],
+      "render_attempts": 1,
+      "outputs": {
+        "video": "final.mp4",
+        "subtitles": "captions.srt"
+      }
+    },
+    "events": [
+      {
+        "at": "2026-11-18T01:49:13.031760+00:00",
+        "phase": "queued",
+        "message": "Job created"
+      },
+      {
+        "at": "2026-11-18T01:49:13.033736+00:00",
+        "phase": "transcribing",
+        "message": "Transcribing spoken evidence"
+      },
+      {
+        "at": "2026-11-18T01:49:15.946452+00:00",
+        "phase": "transcribing",
+        "message": "Analyzed astronaut-training.mp4"
+      },
+      {
+        "at": "2026-11-18T01:49:15.947411+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:15.948264+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 1 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:18.090440+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:18.219743+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:49:54.727877+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:49:54.728482+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:54.730188+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 2 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:56.711093+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:56.838893+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:50:10.789175+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:50:10.789719+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:50:10.790796+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 3 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:50:12.448556+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:50:12.556051+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:50:28.221347+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:50:28.222254+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:50:28.223781+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 4 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:50:29.635638+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:50:29.731111+00:00",
+        "phase": "needs_review",
+        "message": "Export needs review"
+      }
+    ]
+  },
+  "05_final_workspace": {
+    "id": "14ad45bf0e7547ae886e57ce0ddb308d",
+    "created_at": "2026-11-18T01:49:13.030267+00:00",
+    "updated_at": "2026-11-18T01:50:40.005199+00:00",
+    "status": "complete",
+    "phase": "complete",
+    "instruction": "Create a 15-25 second recap covering only spacewalks; export landscape.",
+    "version": 5,
+    "error": null,
+    "options": {
+      "target_seconds": 25,
+      "aspect": "16:9",
+      "topics": [
+        "spacewalks"
+      ],
+      "subtitles": true,
+      "min_seconds": 15,
+      "max_seconds": 25
+    },
+    "assets": [
+      {
+        "id": "source_01",
+        "name": "astronaut-training.mp4",
+        "path": "<PROJECT>/data/recording-demo/jobs/14ad45bf0e7547ae886e57ce0ddb308d/inputs/source_01.mp4",
+        "duration": 61.0,
+        "width": 640,
+        "height": 360,
+        "fps": 30.0,
+        "has_audio": true,
+        "video_codec": "h264",
+        "size_bytes": 4015389
+      }
+    ],
+    "transcript": [
+      {
+        "id": "source_01:t1",
+        "asset_id": "source_01",
+        "start": 0.0,
+        "end": 2.34,
+        "text": "So we're constantly working on training.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.8,
+            "text": " So"
+          },
+          {
+            "start": 0.8,
+            "end": 1.04,
+            "text": " we're"
+          },
+          {
+            "start": 1.04,
+            "end": 1.32,
+            "text": " constantly"
+          },
+          {
+            "start": 1.32,
+            "end": 1.72,
+            "text": " working"
+          },
+          {
+            "start": 1.72,
+            "end": 1.96,
+            "text": " on"
+          },
+          {
+            "start": 1.96,
+            "end": 2.34,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t2",
+        "asset_id": "source_01",
+        "start": 2.4,
+        "end": 4.7,
+        "text": "Our first two years were purely training.",
+        "words": [
+          {
+            "start": 2.4,
+            "end": 2.56,
+            "text": " Our"
+          },
+          {
+            "start": 2.56,
+            "end": 2.86,
+            "text": " first"
+          },
+          {
+            "start": 2.86,
+            "end": 3.12,
+            "text": " two"
+          },
+          {
+            "start": 3.12,
+            "end": 3.42,
+            "text": " years"
+          },
+          {
+            "start": 3.42,
+            "end": 3.68,
+            "text": " were"
+          },
+          {
+            "start": 3.68,
+            "end": 4.12,
+            "text": " purely"
+          },
+          {
+            "start": 4.12,
+            "end": 4.7,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t3",
+        "asset_id": "source_01",
+        "start": 5.0,
+        "end": 8.04,
+        "text": "Tomorrow I'm getting in the neutral point to lab to practice the spacewalk.",
+        "words": [
+          {
+            "start": 5.0,
+            "end": 5.04,
+            "text": " Tomorrow"
+          },
+          {
+            "start": 5.04,
+            "end": 5.2,
+            "text": " I'm"
+          },
+          {
+            "start": 5.2,
+            "end": 5.42,
+            "text": " getting"
+          },
+          {
+            "start": 5.42,
+            "end": 5.64,
+            "text": " in"
+          },
+          {
+            "start": 5.64,
+            "end": 5.8,
+            "text": " the"
+          },
+          {
+            "start": 5.8,
+            "end": 5.9,
+            "text": " neutral"
+          },
+          {
+            "start": 5.9,
+            "end": 6.3,
+            "text": " point"
+          },
+          {
+            "start": 6.3,
+            "end": 6.5,
+            "text": " to"
+          },
+          {
+            "start": 6.5,
+            "end": 6.68,
+            "text": " lab"
+          },
+          {
+            "start": 6.68,
+            "end": 6.92,
+            "text": " to"
+          },
+          {
+            "start": 6.92,
+            "end": 7.16,
+            "text": " practice"
+          },
+          {
+            "start": 7.16,
+            "end": 7.42,
+            "text": " the"
+          },
+          {
+            "start": 7.42,
+            "end": 8.04,
+            "text": " spacewalk."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t4",
+        "asset_id": "source_01",
+        "start": 8.48,
+        "end": 10.02,
+        "text": "Friday I'm getting in C38.",
+        "words": [
+          {
+            "start": 8.48,
+            "end": 8.68,
+            "text": " Friday"
+          },
+          {
+            "start": 8.68,
+            "end": 8.9,
+            "text": " I'm"
+          },
+          {
+            "start": 8.9,
+            "end": 9.14,
+            "text": " getting"
+          },
+          {
+            "start": 9.14,
+            "end": 9.38,
+            "text": " in"
+          },
+          {
+            "start": 9.38,
+            "end": 10.02,
+            "text": " C38."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t5",
+        "asset_id": "source_01",
+        "start": 10.52,
+        "end": 12.7,
+        "text": "So it's a continuous process every day.",
+        "words": [
+          {
+            "start": 10.52,
+            "end": 10.62,
+            "text": " So"
+          },
+          {
+            "start": 10.62,
+            "end": 10.82,
+            "text": " it's"
+          },
+          {
+            "start": 10.82,
+            "end": 11.08,
+            "text": " a"
+          },
+          {
+            "start": 11.08,
+            "end": 11.36,
+            "text": " continuous"
+          },
+          {
+            "start": 11.36,
+            "end": 11.94,
+            "text": " process"
+          },
+          {
+            "start": 11.94,
+            "end": 12.2,
+            "text": " every"
+          },
+          {
+            "start": 12.2,
+            "end": 12.7,
+            "text": " day."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t6",
+        "asset_id": "source_01",
+        "start": 12.86,
+        "end": 14.64,
+        "text": "Yeah, let's move on to our next question.",
+        "words": [
+          {
+            "start": 12.86,
+            "end": 13.04,
+            "text": " Yeah,"
+          },
+          {
+            "start": 13.08,
+            "end": 13.26,
+            "text": " let's"
+          },
+          {
+            "start": 13.26,
+            "end": 13.44,
+            "text": " move"
+          },
+          {
+            "start": 13.44,
+            "end": 13.6,
+            "text": " on"
+          },
+          {
+            "start": 13.6,
+            "end": 13.68,
+            "text": " to"
+          },
+          {
+            "start": 13.68,
+            "end": 13.94,
+            "text": " our"
+          },
+          {
+            "start": 13.94,
+            "end": 14.02,
+            "text": " next"
+          },
+          {
+            "start": 14.02,
+            "end": 14.64,
+            "text": " question."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t7",
+        "asset_id": "source_01",
+        "start": 15.58,
+        "end": 17.96,
+        "text": "Why do astronauts need to pass a physical?",
+        "words": [
+          {
+            "start": 15.58,
+            "end": 15.58,
+            "text": " Why"
+          },
+          {
+            "start": 15.58,
+            "end": 15.78,
+            "text": " do"
+          },
+          {
+            "start": 15.78,
+            "end": 16.3,
+            "text": " astronauts"
+          },
+          {
+            "start": 16.3,
+            "end": 16.92,
+            "text": " need"
+          },
+          {
+            "start": 16.92,
+            "end": 17.14,
+            "text": " to"
+          },
+          {
+            "start": 17.14,
+            "end": 17.42,
+            "text": " pass"
+          },
+          {
+            "start": 17.42,
+            "end": 17.78,
+            "text": " a"
+          },
+          {
+            "start": 17.78,
+            "end": 17.96,
+            "text": " physical?"
+          }
+        ]
+      },
+      {
+        "id": "source_01:t8",
+        "asset_id": "source_01",
+        "start": 18.96,
+        "end": 22.88,
+        "text": "So there are actually lots of physical aspects to our astronaut training.",
+        "words": [
+          {
+            "start": 18.96,
+            "end": 19.36,
+            "text": " So"
+          },
+          {
+            "start": 19.36,
+            "end": 19.9,
+            "text": " there"
+          },
+          {
+            "start": 19.9,
+            "end": 19.9,
+            "text": " are"
+          },
+          {
+            "start": 19.9,
+            "end": 20.14,
+            "text": " actually"
+          },
+          {
+            "start": 20.14,
+            "end": 20.38,
+            "text": " lots"
+          },
+          {
+            "start": 20.38,
+            "end": 20.68,
+            "text": " of"
+          },
+          {
+            "start": 20.68,
+            "end": 20.88,
+            "text": " physical"
+          },
+          {
+            "start": 20.88,
+            "end": 21.38,
+            "text": " aspects"
+          },
+          {
+            "start": 21.38,
+            "end": 21.68,
+            "text": " to"
+          },
+          {
+            "start": 21.68,
+            "end": 21.88,
+            "text": " our"
+          },
+          {
+            "start": 21.88,
+            "end": 22.34,
+            "text": " astronaut"
+          },
+          {
+            "start": 22.34,
+            "end": 22.88,
+            "text": " training."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t9",
+        "asset_id": "source_01",
+        "start": 23.06,
+        "end": 27.0,
+        "text": "And I can tell you that from the last two years, I've constantly been working out.",
+        "words": [
+          {
+            "start": 23.06,
+            "end": 23.42,
+            "text": " And"
+          },
+          {
+            "start": 23.42,
+            "end": 23.56,
+            "text": " I"
+          },
+          {
+            "start": 23.56,
+            "end": 23.74,
+            "text": " can"
+          },
+          {
+            "start": 23.74,
+            "end": 23.86,
+            "text": " tell"
+          },
+          {
+            "start": 23.86,
+            "end": 24.0,
+            "text": " you"
+          },
+          {
+            "start": 24.0,
+            "end": 24.2,
+            "text": " that"
+          },
+          {
+            "start": 24.2,
+            "end": 24.36,
+            "text": " from"
+          },
+          {
+            "start": 24.36,
+            "end": 24.54,
+            "text": " the"
+          },
+          {
+            "start": 24.54,
+            "end": 24.8,
+            "text": " last"
+          },
+          {
+            "start": 24.8,
+            "end": 24.98,
+            "text": " two"
+          },
+          {
+            "start": 24.98,
+            "end": 25.22,
+            "text": " years,"
+          },
+          {
+            "start": 25.22,
+            "end": 25.76,
+            "text": " I've"
+          },
+          {
+            "start": 25.76,
+            "end": 25.8,
+            "text": " constantly"
+          },
+          {
+            "start": 25.8,
+            "end": 26.14,
+            "text": " been"
+          },
+          {
+            "start": 26.14,
+            "end": 26.46,
+            "text": " working"
+          },
+          {
+            "start": 26.46,
+            "end": 27.0,
+            "text": " out."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t10",
+        "asset_id": "source_01",
+        "start": 27.0,
+        "end": 30.3,
+        "text": "but you need to be able to one do the spacewalks.",
+        "words": [
+          {
+            "start": 27.0,
+            "end": 27.52,
+            "text": " but"
+          },
+          {
+            "start": 27.52,
+            "end": 27.72,
+            "text": " you"
+          },
+          {
+            "start": 27.72,
+            "end": 27.94,
+            "text": " need"
+          },
+          {
+            "start": 27.94,
+            "end": 28.1,
+            "text": " to"
+          },
+          {
+            "start": 28.1,
+            "end": 28.1,
+            "text": " be"
+          },
+          {
+            "start": 28.1,
+            "end": 28.36,
+            "text": " able"
+          },
+          {
+            "start": 28.36,
+            "end": 28.66,
+            "text": " to"
+          },
+          {
+            "start": 28.66,
+            "end": 29.08,
+            "text": " one"
+          },
+          {
+            "start": 29.08,
+            "end": 29.38,
+            "text": " do"
+          },
+          {
+            "start": 29.38,
+            "end": 29.64,
+            "text": " the"
+          },
+          {
+            "start": 29.64,
+            "end": 30.3,
+            "text": " spacewalks."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t11",
+        "asset_id": "source_01",
+        "start": 30.64,
+        "end": 37.3,
+        "text": "You also need to be able to launch the space, fly and jet, so we need to make sure everyone's in their best physical condition.",
+        "words": [
+          {
+            "start": 30.64,
+            "end": 30.64,
+            "text": " You"
+          },
+          {
+            "start": 30.64,
+            "end": 30.94,
+            "text": " also"
+          },
+          {
+            "start": 30.94,
+            "end": 31.12,
+            "text": " need"
+          },
+          {
+            "start": 31.12,
+            "end": 31.3,
+            "text": " to"
+          },
+          {
+            "start": 31.3,
+            "end": 31.32,
+            "text": " be"
+          },
+          {
+            "start": 31.32,
+            "end": 31.56,
+            "text": " able"
+          },
+          {
+            "start": 31.56,
+            "end": 32.12,
+            "text": " to"
+          },
+          {
+            "start": 32.12,
+            "end": 32.42,
+            "text": " launch"
+          },
+          {
+            "start": 32.42,
+            "end": 32.76,
+            "text": " the"
+          },
+          {
+            "start": 32.76,
+            "end": 33.3,
+            "text": " space,"
+          },
+          {
+            "start": 33.34,
+            "end": 33.58,
+            "text": " fly"
+          },
+          {
+            "start": 33.58,
+            "end": 33.82,
+            "text": " and"
+          },
+          {
+            "start": 33.82,
+            "end": 34.12,
+            "text": " jet,"
+          },
+          {
+            "start": 34.56,
+            "end": 34.84,
+            "text": " so"
+          },
+          {
+            "start": 34.84,
+            "end": 34.92,
+            "text": " we"
+          },
+          {
+            "start": 34.92,
+            "end": 35.12,
+            "text": " need"
+          },
+          {
+            "start": 35.12,
+            "end": 35.18,
+            "text": " to"
+          },
+          {
+            "start": 35.18,
+            "end": 35.36,
+            "text": " make"
+          },
+          {
+            "start": 35.36,
+            "end": 35.52,
+            "text": " sure"
+          },
+          {
+            "start": 35.52,
+            "end": 35.96,
+            "text": " everyone's"
+          },
+          {
+            "start": 35.96,
+            "end": 35.98,
+            "text": " in"
+          },
+          {
+            "start": 35.98,
+            "end": 36.14,
+            "text": " their"
+          },
+          {
+            "start": 36.14,
+            "end": 36.38,
+            "text": " best"
+          },
+          {
+            "start": 36.38,
+            "end": 36.76,
+            "text": " physical"
+          },
+          {
+            "start": 36.76,
+            "end": 37.3,
+            "text": " condition."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t12",
+        "asset_id": "source_01",
+        "start": 38.88,
+        "end": 43.12,
+        "text": "Well, the first time I got on the suit, it was a lot harder than I thought it was going to be.",
+        "words": [
+          {
+            "start": 38.88,
+            "end": 39.06,
+            "text": " Well,"
+          },
+          {
+            "start": 39.16,
+            "end": 39.24,
+            "text": " the"
+          },
+          {
+            "start": 39.24,
+            "end": 39.5,
+            "text": " first"
+          },
+          {
+            "start": 39.5,
+            "end": 39.7,
+            "text": " time"
+          },
+          {
+            "start": 39.7,
+            "end": 39.82,
+            "text": " I"
+          },
+          {
+            "start": 39.82,
+            "end": 39.92,
+            "text": " got"
+          },
+          {
+            "start": 39.92,
+            "end": 40.04,
+            "text": " on"
+          },
+          {
+            "start": 40.04,
+            "end": 40.2,
+            "text": " the"
+          },
+          {
+            "start": 40.2,
+            "end": 40.56,
+            "text": " suit,"
+          },
+          {
+            "start": 41.04,
+            "end": 41.14,
+            "text": " it"
+          },
+          {
+            "start": 41.14,
+            "end": 41.3,
+            "text": " was"
+          },
+          {
+            "start": 41.3,
+            "end": 41.42,
+            "text": " a"
+          },
+          {
+            "start": 41.42,
+            "end": 41.64,
+            "text": " lot"
+          },
+          {
+            "start": 41.64,
+            "end": 41.9,
+            "text": " harder"
+          },
+          {
+            "start": 41.9,
+            "end": 42.08,
+            "text": " than"
+          },
+          {
+            "start": 42.08,
+            "end": 42.24,
+            "text": " I"
+          },
+          {
+            "start": 42.24,
+            "end": 42.42,
+            "text": " thought"
+          },
+          {
+            "start": 42.42,
+            "end": 42.52,
+            "text": " it"
+          },
+          {
+            "start": 42.52,
+            "end": 42.68,
+            "text": " was"
+          },
+          {
+            "start": 42.68,
+            "end": 42.82,
+            "text": " going"
+          },
+          {
+            "start": 42.82,
+            "end": 42.94,
+            "text": " to"
+          },
+          {
+            "start": 42.94,
+            "end": 43.12,
+            "text": " be."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t13",
+        "asset_id": "source_01",
+        "start": 43.34,
+        "end": 45.36,
+        "text": "You're working within this whole spacesuit.",
+        "words": [
+          {
+            "start": 43.34,
+            "end": 43.52,
+            "text": " You're"
+          },
+          {
+            "start": 43.52,
+            "end": 43.66,
+            "text": " working"
+          },
+          {
+            "start": 43.66,
+            "end": 44.06,
+            "text": " within"
+          },
+          {
+            "start": 44.06,
+            "end": 44.32,
+            "text": " this"
+          },
+          {
+            "start": 44.32,
+            "end": 44.76,
+            "text": " whole"
+          },
+          {
+            "start": 44.76,
+            "end": 45.36,
+            "text": " spacesuit."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t14",
+        "asset_id": "source_01",
+        "start": 45.64,
+        "end": 48.84,
+        "text": "It's really your own spacecraft and it's really tiring.",
+        "words": [
+          {
+            "start": 45.64,
+            "end": 45.68,
+            "text": " It's"
+          },
+          {
+            "start": 45.68,
+            "end": 46.24,
+            "text": " really"
+          },
+          {
+            "start": 46.24,
+            "end": 46.46,
+            "text": " your"
+          },
+          {
+            "start": 46.46,
+            "end": 46.82,
+            "text": " own"
+          },
+          {
+            "start": 46.82,
+            "end": 47.38,
+            "text": " spacecraft"
+          },
+          {
+            "start": 47.38,
+            "end": 47.9,
+            "text": " and"
+          },
+          {
+            "start": 47.9,
+            "end": 48.1,
+            "text": " it's"
+          },
+          {
+            "start": 48.1,
+            "end": 48.4,
+            "text": " really"
+          },
+          {
+            "start": 48.4,
+            "end": 48.84,
+            "text": " tiring."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t15",
+        "asset_id": "source_01",
+        "start": 49.1,
+        "end": 51.16,
+        "text": "You walk with your hands, not your feet.",
+        "words": [
+          {
+            "start": 49.1,
+            "end": 49.34,
+            "text": " You"
+          },
+          {
+            "start": 49.34,
+            "end": 49.6,
+            "text": " walk"
+          },
+          {
+            "start": 49.6,
+            "end": 49.76,
+            "text": " with"
+          },
+          {
+            "start": 49.76,
+            "end": 49.96,
+            "text": " your"
+          },
+          {
+            "start": 49.96,
+            "end": 50.3,
+            "text": " hands,"
+          },
+          {
+            "start": 50.34,
+            "end": 50.52,
+            "text": " not"
+          },
+          {
+            "start": 50.52,
+            "end": 50.78,
+            "text": " your"
+          },
+          {
+            "start": 50.78,
+            "end": 51.16,
+            "text": " feet."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t16",
+        "asset_id": "source_01",
+        "start": 51.46,
+        "end": 55.9,
+        "text": "Everything you do, you're much bigger than you expect to be, so you have to make sure you're not running into things.",
+        "words": [
+          {
+            "start": 51.46,
+            "end": 51.78,
+            "text": " Everything"
+          },
+          {
+            "start": 51.78,
+            "end": 52.02,
+            "text": " you"
+          },
+          {
+            "start": 52.02,
+            "end": 52.16,
+            "text": " do,"
+          },
+          {
+            "start": 52.28,
+            "end": 52.36,
+            "text": " you're"
+          },
+          {
+            "start": 52.36,
+            "end": 52.56,
+            "text": " much"
+          },
+          {
+            "start": 52.56,
+            "end": 52.84,
+            "text": " bigger"
+          },
+          {
+            "start": 52.84,
+            "end": 53.06,
+            "text": " than"
+          },
+          {
+            "start": 53.06,
+            "end": 53.3,
+            "text": " you"
+          },
+          {
+            "start": 53.3,
+            "end": 53.54,
+            "text": " expect"
+          },
+          {
+            "start": 53.54,
+            "end": 53.78,
+            "text": " to"
+          },
+          {
+            "start": 53.78,
+            "end": 53.96,
+            "text": " be,"
+          },
+          {
+            "start": 54.08,
+            "end": 54.14,
+            "text": " so"
+          },
+          {
+            "start": 54.14,
+            "end": 54.22,
+            "text": " you"
+          },
+          {
+            "start": 54.22,
+            "end": 54.34,
+            "text": " have"
+          },
+          {
+            "start": 54.34,
+            "end": 54.44,
+            "text": " to"
+          },
+          {
+            "start": 54.44,
+            "end": 54.62,
+            "text": " make"
+          },
+          {
+            "start": 54.62,
+            "end": 54.8,
+            "text": " sure"
+          },
+          {
+            "start": 54.8,
+            "end": 54.94,
+            "text": " you're"
+          },
+          {
+            "start": 54.94,
+            "end": 55.08,
+            "text": " not"
+          },
+          {
+            "start": 55.08,
+            "end": 55.32,
+            "text": " running"
+          },
+          {
+            "start": 55.32,
+            "end": 55.6,
+            "text": " into"
+          },
+          {
+            "start": 55.6,
+            "end": 55.9,
+            "text": " things."
+          }
+        ]
+      },
+      {
+        "id": "source_01:t17",
+        "asset_id": "source_01",
+        "start": 55.9,
+        "end": 59.9,
+        "text": "My first thought was this is awesome, but this is also really hard.",
+        "words": [
+          {
+            "start": 55.9,
+            "end": 56.36,
+            "text": " My"
+          },
+          {
+            "start": 56.36,
+            "end": 56.64,
+            "text": " first"
+          },
+          {
+            "start": 56.64,
+            "end": 56.9,
+            "text": " thought"
+          },
+          {
+            "start": 56.9,
+            "end": 57.58,
+            "text": " was"
+          },
+          {
+            "start": 57.58,
+            "end": 57.82,
+            "text": " this"
+          },
+          {
+            "start": 57.82,
+            "end": 58.06,
+            "text": " is"
+          },
+          {
+            "start": 58.06,
+            "end": 58.24,
+            "text": " awesome,"
+          },
+          {
+            "start": 58.58,
+            "end": 58.66,
+            "text": " but"
+          },
+          {
+            "start": 58.66,
+            "end": 58.9,
+            "text": " this"
+          },
+          {
+            "start": 58.9,
+            "end": 58.98,
+            "text": " is"
+          },
+          {
+            "start": 58.98,
+            "end": 59.18,
+            "text": " also"
+          },
+          {
+            "start": 59.18,
+            "end": 59.48,
+            "text": " really"
+          },
+          {
+            "start": 59.48,
+            "end": 59.9,
+            "text": " hard."
+          }
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "asset_id": "source_01",
+        "start": 0,
+        "end": 12.92,
+        "evidence_ids": [
+          "source_01:t1",
+          "source_01:t2",
+          "source_01:t3",
+          "source_01:t4",
+          "source_01:t5"
+        ],
+        "reason": "Supporting context",
+        "required": false,
+        "score": 0.0
+      },
+      {
+        "asset_id": "source_01",
+        "start": 26.82,
+        "end": 30.52,
+        "evidence_ids": [
+          "source_01:t10"
+        ],
+        "reason": "Required topic: spacewalks",
+        "required": true,
+        "score": 1.5
+      }
+    ],
+    "report": {
+      "unresolved": [],
+      "checks": {
+        "decodable": true,
+        "has_audio": true,
+        "duration": 16.666,
+        "width": 1280,
+        "height": 720,
+        "aspect_ok": true,
+        "predicted_duration": 16.62,
+        "subtitle_cues": 10,
+        "subtitle_within_video": true,
+        "duration_ok": true
+      },
+      "evidence_count": 17,
+      "topic_evidence": [
+        {
+          "topic": "spacewalks",
+          "evidence_ids": [
+            "source_01:t10"
+          ],
+          "verified": true
+        }
+      ],
+      "timeline_version": 5,
+      "repairs": [],
+      "render_attempts": 1,
+      "outputs": {
+        "video": "final.mp4",
+        "subtitles": "captions.srt"
+      }
+    },
+    "events": [
+      {
+        "at": "2026-11-18T01:49:13.031760+00:00",
+        "phase": "queued",
+        "message": "Job created"
+      },
+      {
+        "at": "2026-11-18T01:49:13.033736+00:00",
+        "phase": "transcribing",
+        "message": "Transcribing spoken evidence"
+      },
+      {
+        "at": "2026-11-18T01:49:15.946452+00:00",
+        "phase": "transcribing",
+        "message": "Analyzed astronaut-training.mp4"
+      },
+      {
+        "at": "2026-11-18T01:49:15.947411+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:15.948264+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 1 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:18.090440+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:18.219743+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:49:54.727877+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:49:54.728482+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:49:54.730188+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 2 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:49:56.711093+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:49:56.838893+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:50:10.789175+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:50:10.789719+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:50:10.790796+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 3 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:50:12.448556+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:50:12.556051+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      },
+      {
+        "at": "2026-11-18T01:50:28.221347+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:50:28.222254+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:50:28.223781+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 4 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:50:29.635638+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:50:29.731111+00:00",
+        "phase": "needs_review",
+        "message": "Export needs review"
+      },
+      {
+        "at": "2026-11-18T01:50:38.115536+00:00",
+        "phase": "replanning",
+        "message": "Reusing cached transcript for the revision"
+      },
+      {
+        "at": "2026-11-18T01:50:38.116267+00:00",
+        "phase": "planning",
+        "message": "Selecting source-linked clips"
+      },
+      {
+        "at": "2026-11-18T01:50:38.119498+00:00",
+        "phase": "rendering",
+        "message": "Rendering timeline version 5 (attempt 1/3)"
+      },
+      {
+        "at": "2026-11-18T01:50:39.889849+00:00",
+        "phase": "verifying",
+        "message": "Decoding and checking the finished video"
+      },
+      {
+        "at": "2026-11-18T01:50:40.005008+00:00",
+        "phase": "complete",
+        "message": "Export verified"
+      }
+    ]
+  }
+}

@@ -24,3 +24,12 @@ These milestones reflect Git history and executable artifacts, not verified indi
 - Source packaging allowlist, exact file hashes, fresh-extraction test runner and separate dependency environment.
 
 Read tests and recorded traces to assess depth. Counts describe artifacts, not scientific generalization. Two semantic false-complete cases remain and are disclosed. Individual attribution is intentionally deferred in CONTRIBUTIONS.md.
+
+## Real-video walkthrough and browser regression, 17–18 November
+
+- Prepared a 61-second excerpt of an official NASA interview, retaining real video/audio and documenting the exact preparation interval, upstream URL and checksums.
+- Recorded an actual Chrome session through upload, live processing, evidence/checks, manual split/trim/reorder, re-render, follow-up instructions, file downloads and absent-topic review.
+- Fixed an asynchronous form-event reference that prevented opening a newly uploaded project.
+- Fixed monitor sizing that clipped the lower video image and native playback controls. Added browser assertions for monitor bounds and responsive layouts.
+- Added reproducible recording/captioning scripts, Chinese usage guide, isolated recording database, raw task snapshots and MP4 Range verification. No API responses or backend states are simulated in this walkthrough.
+- Preserved actual automatic subtitles and documented transcription errors and context-selection limitations. The example is curated, not an independent quality benchmark.

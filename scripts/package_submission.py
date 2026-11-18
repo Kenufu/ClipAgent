@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FOLDERS = ('clipagent', 'web', 'scripts', 'tests', 'evaluation', 'sample_data', 'docs')
-TOP = ('README.md', 'requirements.txt', 'requirements-artifacts.txt', '.gitignore', 'app.py')
+TOP = ('README.md', 'requirements.txt', 'requirements-artifacts.txt', 'requirements-browser.txt', '.gitignore', 'app.py')
 EXCLUDED = {'__pycache__', '.venv', 'node_modules', '.git', '.DS_Store', '.env', 'build', '.codex-finalizer'}
 
 

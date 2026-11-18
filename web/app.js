@@ -642,11 +642,12 @@ byId("edit-form").addEventListener("submit", async (event) => {
   const files = byId("files").files;
   if (!files.length || files.length > 3) return setError("请选择 1–3 个 MP4 视频。", true);
   const button = event.submitter;
+  const form = event.currentTarget;
   button.disabled = true;
   try {
-    const result = await request("/api/jobs", { method: "POST", body: new FormData(event.currentTarget) });
+    const result = await request("/api/jobs", { method: "POST", body: new FormData(form) });
     byId("create-dialog").close();
-    event.currentTarget.reset();
+    form.reset();
     byId("file-summary").textContent = "选择视频文件";
     await openJob(result.id);
   } catch (error) {

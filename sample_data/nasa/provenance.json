@@ -1,0 +1,36 @@
+{
+  "title": "#AskNASA - How Can I Be An Astronaut?",
+  "credit": "NASA",
+  "nasa_id": "NHQ_2020_0302_AskNASA - How can I be an Astronaut",
+  "official_asset_collection": "https://images-assets.nasa.gov/video/NHQ_2020_0302_AskNASA%20-%20How%20can%20I%20be%20an%20Astronaut/collection.json",
+  "download_url": "https://images-assets.nasa.gov/video/NHQ_2020_0302_AskNASA%20-%20How%20can%20I%20be%20an%20Astronaut/NHQ_2020_0302_AskNASA%20-%20How%20can%20I%20be%20an%20Astronaut~small.mp4",
+  "usage_policy": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+  "usage": "Educational software demonstration with NASA attribution; no endorsement implied. NASA media usage guidelines apply; no rights to NASA insignia or third-party content are claimed.",
+  "downloaded_at": "2026-11-17",
+  "download_sha256": "dc0cbd2181d67b63fd7a2b0a02b47f813a725e62a400efad4656c3dbae748241",
+  "download_metadata": {
+    "duration": 233.28,
+    "width": 640,
+    "height": 360,
+    "fps": 30.0,
+    "has_audio": true,
+    "video_codec": "h264",
+    "size_bytes": 43585817
+  },
+  "preparation": {
+    "start_seconds": 113,
+    "end_seconds": 174,
+    "note": "A fixed 61-second training Q&A excerpt selected by the demo author before upload. Re-encoded at native 640x360; original moving images and audio retained."
+  },
+  "sample_sha256": "629ecb179f90fda171175254728b76bd1818e9b6b3240296d4571f320d7e2342",
+  "sample_metadata": {
+    "duration": 61.0,
+    "width": 640,
+    "height": 360,
+    "fps": 30.0,
+    "has_audio": true,
+    "video_codec": "h264",
+    "size_bytes": 4015389
+  },
+  "evaluation_scope": "Curated demonstration, not a held-out benchmark or human quality rating. The author inspected an earlier transcript to select supported topics. The recorded run transcribes its uploaded source afresh; no transcript is supplied to the backend."
+}

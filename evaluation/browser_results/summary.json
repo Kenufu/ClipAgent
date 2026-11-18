@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "job_id": "14ad45bf0e7547ae886e57ce0ddb308d",
+  "checks": [
+    "Real MP4 upload opens the new job and completes CPU transcription/render/decode",
+    "Ruler seek, split, source-in adjustment, and move/restore operate on the draft",
+    "Follow-up instruction reuses the exact transcript and changes the required topic",
+    "MP4 and SRT downloaded using the actual UI export buttons",
+    "Absent quantum teleportation topic produces needs_review and visible missing evidence",
+    "Project drawer open state persists across reload and Escape closes it",
+    "1440x900, 1280x720 and 390x844 layouts have no horizontal page overflow",
+    "Video element fits its monitor at all three sizes, preserving the full image and controls",
+    "Output MP4 Range request returns HTTP 206 and exactly 1024 requested bytes"
+  ],
+  "page_errors": [],
+  "browser": "157.0.8103.79",
+  "source_sha256": "629ecb179f90fda171175254728b76bd1818e9b6b3240296d4571f320d7e2342",
+  "layouts": [
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "timeline": {
+        "x": 0,
+        "y": 419.515625,
+        "width": 1120,
+        "height": 438.484375,
+        "top": 419.515625,
+        "right": 1120,
+        "bottom": 858,
+        "left": 0
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "scrollWidth": 1280,
+      "timeline": {
+        "x": 0,
+        "y": 340.3125,
+        "width": 960,
+        "height": 337.6875,
+        "top": 340.3125,
+        "right": 960,
+        "bottom": 678,
+        "left": 0
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "timeline": {
+        "x": 0,
+        "y": 522,
+        "width": 390,
+        "height": 300,
+        "top": 522,
+        "right": 390,
+        "bottom": 822,
+        "left": 0
+      }
+    }
+  ],
+  "raw_recording": "92fbc633945669dd5ce6bc3e9cbf7e92.webm",
+  "limitations": [
+    "One selected public NASA video; not a representative benchmark.",
+    "Browser interactions are automated and recorded in real time. Only the cursor is annotated.",
+    "No mocked APIs, fixed transcripts, fake progress or substituted outputs.",
+    "UI recording has no captured audio; original output audio is included in the appended result."
+  ]
+}

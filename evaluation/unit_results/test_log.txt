@@ -27,6 +27,6 @@ test_real_public_audio_cached_model (test_service.ServiceTests.test_real_public_
 test_real_silent_upload_render_decode_manual_edit_revision (test_service.ServiceTests.test_real_silent_upload_render_decode_manual_edit_revision) ... ok
 
 ----------------------------------------------------------------------
-Ran 27 tests in 5.627s
+Ran 27 tests in 5.530s
 
 OK (skipped=1)
