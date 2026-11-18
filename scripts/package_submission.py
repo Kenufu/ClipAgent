@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FOLDERS = ('clipagent', 'web', 'scripts', 'tests', 'evaluation', 'sample_data', 'docs')
-TOP = ('README.md', 'requirements.txt', 'requirements-artifacts.txt', 'requirements-browser.txt', '.gitignore', 'app.py')
+TOP = ('README.md', 'README_EN.md', '安装 ClipAgent.command', '启动 ClipAgent.command', 'requirements.txt', 'requirements-artifacts.txt', 'requirements-browser.txt', '.gitignore', 'app.py')
 EXCLUDED = {'__pycache__', '.venv', 'node_modules', '.git', '.DS_Store', '.env', 'build', '.codex-finalizer'}
 
 
@@ -42,7 +42,7 @@ def build(destination):
             relative = path.relative_to(ROOT).as_posix()
             payload = path.read_bytes()
             manifest['files'][relative] = hashlib.sha256(payload).hexdigest()
-            archive.writestr('Group59-ClipAgent/' + relative, payload)
+            archive.write(path, 'Group59-ClipAgent/' + relative)
         archive.writestr('Group59-ClipAgent/SUBMISSION_MANIFEST.json', json.dumps(manifest, indent=2))
     with zipfile.ZipFile(destination) as archive:
         assert archive.testzip() is None
