@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1120" height="500" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1120 500" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1120" height="500"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-500)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="30" y="465" style="font-family: Helvetica; font-size: 25px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,930) scale(1,-1)">Q = topic tokens; C = cue tokens; N = number of transcript cues</text>
+			<text x="30" y="405" style="font-family: Helvetica; font-size: 30px;fill: rgb(14%,37%,64%); stroke:none;" transform="translate(0,810) scale(1,-1)">w(t) = log(1 + (N + 1) / (df(t) + 1))</text>
+			<text x="30" y="345" style="font-family: Helvetica; font-size: 26px;fill: rgb(14%,37%,64%); stroke:none;" transform="translate(0,690) scale(1,-1)">score(Q,C) = sum[ w(t), t in Q intersect C ] / sum[ w(t), t in Q ]</text>
+			<text x="30" y="300" style="font-family: Helvetica; font-size: 26px;fill: rgb(14%,37%,64%); stroke:none;" transform="translate(0,600) scale(1,-1)">                     + 0.5 * I[ exact topic phrase occurs in cue ]</text>
+			<text x="30" y="256" style="font-family: Helvetica; font-size: 21px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,512) scale(1,-1)">df(t): cue count containing t; I: indicator; empty Q returns score 0</text>
+			<rect x="30" y="125" width="320" height="95" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="44" y="196" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,392) scale(1,-1)">Rank cues</text>
+			<text x="44" y="168" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,336) scale(1,-1)">Per topic; threshold 0.35</text>
+			<path d="M 350,174 L 395,174 Z" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="395 174, 384.8683 178.2836, 384.8683 169.7164" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,37%,64%); fill-rule: evenodd;"/>
+			<rect x="395" y="125" width="320" height="95" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="409" y="196" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,392) scale(1,-1)">Build intervals</text>
+			<text x="409" y="168" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,336) scale(1,-1)">-0.18s / +0.22s padding</text>
+			<path d="M 715,174 L 760,174 Z" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="760 174, 749.8683 178.2836, 749.8683 169.7164" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,37%,64%); fill-rule: evenodd;"/>
+			<rect x="760" y="125" width="320" height="95" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="774" y="196" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,392) scale(1,-1)">Assemble edit</text>
+			<text x="774" y="168" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,336) scale(1,-1)">Context / merge / order</text>
+			<text x="30" y="70" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,140) scale(1,-1)">Constraints: 0 &lt;= start &lt; end &lt;= source duration; no same-source overlap</text>
+			<text x="30" y="20" style="font-family: Helvetica; font-size: 23px;fill: rgb(64%,24%,20%); stroke:none;" transform="translate(0,40) scale(1,-1)">Greedy heuristic; no global optimum and no semantic-entailment guarantee</text>
+		</g>
+	</g>
+</svg>

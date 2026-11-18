@@ -6,6 +6,8 @@ Gao Xuefei · Wang Ling · Zhang Yiqun · Fu Xuanyu
 
 Submission documentation: [final report source](docs/FINAL_REPORT.md), [requirements checklist](docs/REQUIREMENTS_MATRIX.md), [architecture](docs/ARCHITECTURE.md), [work evidence](docs/WORK_LOG.md), [contribution confirmation](docs/CONTRIBUTIONS.md), and [AI assistance disclosure](docs/AI_USE_DECLARATION.md).
 
+Academic diagrams: [six-page vector figure atlas](deliverables/ClipAgent_Academic_Figures.pdf), [16-slide editable academic deck](deliverables/ClipAgent_Academic.pptx), [Chinese explanation guide](docs/FIGURE_GUIDE.md), and [editable SVG sources](docs/figures/). The report now embeds architecture, state transitions, scoring, time mapping, bounded repair and evaluation-design figures directly.
+
 The delivered controller is deterministic and uses pretrained Whisper for speech recognition. It does **not** include a generative LLM planner, LangGraph, MCP server, visual semantic reasoning, or cross-session preference memory. Thumbnail display is not visual understanding. No model training or fine-tuning was performed. These differences from the proposal are recorded in the report.
 
 Local demo for evidence-grounded video editing. It accepts 1–3 MP4 files, transcribes English speech, selects source-linked clips for requested topics, exports an MP4 and SRT, and checks the finished file. The editor includes source monitoring, frame thumbnails, a zoomable timeline, manual clip insertion/splitting/trimming/reordering, and a live execution console. Follow-up instructions reuse cached source analysis.

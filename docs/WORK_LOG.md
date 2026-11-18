@@ -2,6 +2,10 @@
 
 These milestones reflect Git history and executable artifacts, not verified individual hours.
 
+## Academic explanation figures, 18 November
+
+Six vector figures explain implemented architecture, status/phase transitions, the lexical score and greedy constraints, source/output time mapping, bounded observation/repair, and controlled evaluation design. A shared specification generates SVGs, the figure atlas PDF, embedded report drawings and native editable PowerPoint shapes. Formula symbols and illustrative intervals are defined; code references and limitations appear in captions/notes. The report exporter now embeds actual figures instead of relying on external Mermaid rendering. The new deck preserves the original ten slides and adds six technical explanation slides.
+
 | Commit/date | Completed work |
 | --- | --- |
 | b083533 / 2026-10-09 | Repository initialization |

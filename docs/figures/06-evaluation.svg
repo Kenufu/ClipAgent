@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1120" height="500" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1120 500" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1120" height="500"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-500)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="20" y="260" width="250" height="120" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="34" y="356" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,712) scale(1,-1)">18 curated cases</text>
+			<text x="34" y="328" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,656) scale(1,-1)">Transcript + constraints</text>
+			<text x="34" y="303" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,606) scale(1,-1)">Accepted intervals</text>
+			<rect x="355" y="390" width="310" height="90" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="369" y="456" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,912) scale(1,-1)">Chronological baseline</text>
+			<text x="369" y="428" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,856) scale(1,-1)">Same input cases</text>
+			<path d="M 270,320 L 355,435 Z" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="355 435, 345.5331 429.3985, 352.4226 424.3062" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,37%,64%); fill-rule: evenodd;"/>
+			<path d="M 665,435 L 790,295 Z" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="790 295, 786.4474 305.4105, 780.0568 299.7046" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,37%,64%); fill-rule: evenodd;"/>
+			<rect x="355" y="235" width="310" height="90" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="369" y="301" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,602) scale(1,-1)">Lexical planner</text>
+			<text x="369" y="273" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,546) scale(1,-1)">Same input cases</text>
+			<path d="M 270,320 L 355,280 Z" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="355 280, 347.6566 288.1899, 344.0087 280.4382" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,37%,64%); fill-rule: evenodd;"/>
+			<path d="M 665,280 L 790,295 Z" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="790 295, 779.4301 298.0459, 780.4509 289.5398" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,37%,64%); fill-rule: evenodd;"/>
+			<rect x="355" y="80" width="310" height="90" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="369" y="146" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,292) scale(1,-1)">Planner + repair</text>
+			<text x="369" y="118" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,236) scale(1,-1)">Same input cases</text>
+			<path d="M 270,320 L 355,125 Z" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="355 125, 354.8783 135.9993, 347.0248 132.576" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,37%,64%); fill-rule: evenodd;"/>
+			<path d="M 665,125 L 790,295 Z" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="790 295, 780.547 289.375, 787.4492 284.2998" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,37%,64%); fill-rule: evenodd;"/>
+			<rect x="790" y="235" width="310" height="120" style="stroke: rgb(14%,37%,64%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="804" y="331" style="font-family: Helvetica; font-size: 24px;fill: rgb(8%,17%,27%); stroke:none;" transform="translate(0,662) scale(1,-1)">Interval oracle</text>
+			<text x="804" y="303" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,606) scale(1,-1)">Coverage / duration</text>
+			<text x="804" y="278" style="font-family: Helvetica; font-size: 20px;fill: rgb(31%,39%,46%); stroke:none;" transform="translate(0,556) scale(1,-1)">Order / false-complete</text>
+			<text x="25" y="35" style="font-family: Helvetica; font-size: 24px;fill: rgb(14%,37%,64%); stroke:none;" transform="translate(0,70) scale(1,-1)">Feasible passes: 1/14 -&gt; 8/14 -&gt; 10/14; remaining false-complete: 2</text>
+		</g>
+	</g>
+</svg>

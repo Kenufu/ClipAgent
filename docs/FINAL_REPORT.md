@@ -1,6 +1,6 @@
 # ClipAgent: Evidence-Grounded Video Editing
 
-COMP7608B · Group 59 · Final-report draft · 17 November 2026
+COMP7608B · Group 59 · Final-report draft · 18 November 2026
 
 Members: Gao Xuefei, Wang Ling, Zhang Yiqun, Fu Xuanyu. Individual contributions remain pending final team confirmation; proposed responsibilities are not evidence of actual authorship.
 
@@ -32,6 +32,8 @@ The engineering rationale visible in the implementation is a small CPU-based app
 
 ## 3. System architecture and implementation
 
+![Figure 1. Implemented architecture](figures/01-architecture.svg)
+
 The browser workbench calls a local FastAPI server. The server validates uploads, probes source streams, writes job state, and schedules a single background worker. The worker obtains a timestamped transcript, constructs a timeline, renders an export, verifies it, and either repairs or publishes a reviewable result. SQLite contains structured state and events; media and cached model files remain on local disk. The editable architecture diagram is in `docs/ARCHITECTURE.md`; the presentation can visualize the same structure.
 
 | Component | Actual responsibility and source |
@@ -48,6 +50,12 @@ Whisper defaults to `tiny.en`, CPU execution and INT8 computation. The loader re
 The renderer normalizes each clip to 30 fps and either 720×1280 or 1280×720 with aspect-preserving scaling and padding. H.264 video and AAC audio are concatenated, and nonempty subtitles are burned into the MP4 while also being saved as SRT. Silent sources receive a silent audio stream. Consequently, an audio-stream presence check does not prove audible speech or satisfactory sound quality.
 
 ## 4. Agent decisions, observations and stopping
+
+![Figure 2. Status and phase transitions](figures/02-state-machine.svg)
+
+![Figure 3. Selection rule and assembly constraints](figures/03-selection.svg)
+
+![Figure 4. Time mapping and retained evidence](figures/04-provenance.svg)
 
 The agent's goal is a source-grounded recap satisfying the supported brief constraints. Its state consists of the brief/options, source metadata, transcript, timeline, version, render observations, repairs, unresolved requirements and phase events. Its actions are Python tool calls, not externally exposed MCP tools. The default run does not need a human to choose individual cuts, but optional manual edits and revisions remain available.
 
@@ -67,6 +75,8 @@ A concrete retained decision trace is `evaluation/results/traces/challenging_rep
 The controller stops with `complete` when its implemented checks leave no unresolved items, `needs_review` when an export exists but requirements remain unresolved, or `failed` on a tool/processing exception. These labels describe program behavior; `complete` is not proof of semantic correctness. Final checks omit a full semantic and first-topic ordering oracle, which explains several independently scored false-complete cases.
 
 ## 5. Failure handling and reliability
+
+![Figure 5. Bounded feedback loop](figures/05-verification.svg)
 
 | Scenario | Handling and retained evidence | Remaining limit |
 | --- | --- | --- |
@@ -113,6 +123,8 @@ The integration traces distinguish real in-process ASGI/SQLite/worker/render/dec
 A separate public-data run processes LibriSpeech test-clean utterance 6930-75918-0003 (CC BY 4.0, redistributed as an NVIDIA test fixture). The 23.315-second audio is wrapped in a visibly labelled synthetic title-card video. The actual local CPU pipeline takes 1.901 seconds in this run and exports a 22.966-second, 1280x720 video with 11 subtitle cues. Decode, audio presence, aspect, duration and subtitle bounds pass. This single service-level smoke test bypasses HTTP/UI and uses a brief with no topic constraints. It proves execution on this fixture, not real-video semantic accuracy. A complete independent reference transcript was not retrieved, so WER is unavailable. Source, attribution, license and checksum are in `sample_data/provenance.json`; actual results and outputs are in `evaluation/public_results/`.
 
 ## 7. Non-functional requirements and measurement protocol
+
+![Figure 6. Controlled evaluation design](figures/06-evaluation.svg)
 
 | Dimension | Present evidence | Reproducible measurement and acceptance rule |
 | --- | --- | --- |

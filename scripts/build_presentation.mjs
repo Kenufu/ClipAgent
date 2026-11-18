@@ -75,10 +75,27 @@ txt(s,'02   Inspect source evidence and export checks',64,280,1130,62,36,C.fg);
 txt(s,'03   Revise: “Put solution first”',64,375,1130,62,36,C.fg);
 txt(s,'04   Download the video and supporting artifacts',64,470,1130,62,36,C.fg);
 txt(s,'localhost:8765',64,585,1100,61,39,C.cyan,true);
+// Scientific mechanism figures remain editable native shapes and connectors.
+const figures=JSON.parse(await fs.readFile(path.join(root,'docs/figures/figures.json'),'utf8'));
+for(const f of figures){
+  const a=p.slides.add();a.background.fill='#FFFFFF';
+  txt(a,f.title,64,48,1150,80,42,'#152C46',true);
+  txt(a,'ClipAgent  /  Mechanisms and evaluation',64,674,1000,24,16,'#516477');
+  txt(a,String(p.slides.items.length),1160,674,50,24,16,'#245FA5');
+  a.speakerNotes.text=f.caption+'\nSource: '+f.source;
+  for(const o of f.items){
+    if(o.kind==='text')txt(a,o.text,64+o.x,145+o.y-o.size,1120-o.x,o.size+15,o.size,o.color);
+    else if(o.kind==='rect')a.shapes.add({geometry:'rect',position:{left:64+o.x,top:145+o.y,width:o.w,height:o.h},fill:o.fill,line:{fill:o.stroke,width:1.3}});
+    else {
+      const point=(x,y)=>a.shapes.add({geometry:'rect',position:{left:64+x-1,top:145+y-1,width:2,height:2},fill:'none',line:{fill:'none',width:0}});
+      a.shapes.connect(point(o.x1,o.y1),point(o.x2,o.y2),{kind:'straight',line:{fill:o.color,width:2},tail:{type:'arrow',width:'med',length:'med'}});
+    }
+  }
+}
 await fs.writeFile(path.join(build,'evidence-snapshot.json'),JSON.stringify(evidence,null,2));
 for(const [i,s] of p.slides.items.entries()){await fs.writeFile(path.join(build,`slide-${String(i+1).padStart(2,'0')}.png`),new Uint8Array(await (await p.export({slide:s,format:'png',scale:1})).arrayBuffer()));}
 const candidate=path.join(build,'candidate.pptx');await(await PresentationFile.exportPptx(p)).save(candidate);
-const finalPath=path.join(root,'deliverables',process.env.PRESENTATION_NAME||'ClipAgent_Demo.pptx');
-const result=await finalizePresentation({workspaceDir:root,candidatePath:candidate,finalPath,pythonExecutable:path.join(runtime,'python/bin/python3'),integrityValidatorPath:path.join(skill,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit','--require-native-table-slide','7'],explicitTotalSlideCount:10,requiredNativeTableOwnerSlides:[7],requiredNativeChartOwnerSlides:[],fontPolicy:{basis:'design',families:['Arial']},verifyArtifactToolImport:true,receiptPath:path.join(build,'validation.json')});
+const finalPath=path.join(root,'deliverables',process.env.PRESENTATION_NAME||'ClipAgent_Academic.pptx');
+const result=await finalizePresentation({workspaceDir:root,candidatePath:candidate,finalPath,pythonExecutable:path.join(runtime,'python/bin/python3'),integrityValidatorPath:path.join(skill,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit','--require-native-table-slide','7'],explicitTotalSlideCount:16,requiredNativeTableOwnerSlides:[7],requiredNativeChartOwnerSlides:[],fontPolicy:{basis:'design',families:['Arial']},verifyArtifactToolImport:true,receiptPath:path.join(build,'validation-academic.json')});
 // PDF companion uses scripts/build_slide_pdf.py because this runtime lacks a standard-font module.
 console.log(JSON.stringify({finalPath,result},null,2));

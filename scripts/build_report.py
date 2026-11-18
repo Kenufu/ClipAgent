@@ -1,5 +1,6 @@
 """Render the reviewed Markdown report to a paginated PDF. Requires reportlab."""
 import re
+import json
 from pathlib import Path
 from xml.sax.saxutils import escape
 
@@ -40,6 +41,19 @@ def build():
     i=0
     while i<len(lines):
         line=lines[i].strip()
+        match=re.fullmatch(r'!\[(.*?)\]\(figures/(.*?)\.svg\)',line)
+        if match:
+            from scripts.build_academic_figures import drawing
+            figures=json.loads((ROOT/'docs/figures/figures.json').read_text())
+            figure=next(f for f in figures if f['name']==match[2])
+            graphic=drawing(figure)
+            scale=468/graphic.width
+            graphic.scale(scale,scale);graphic.width=468;graphic.height*=scale
+            group=[graphic,Paragraph(inline(match[1])+'. '+inline(figure['caption']),styles['Cell']),Spacer(1,12)]
+            if flow and isinstance(flow[-1],Paragraph) and flow[-1].style.name.startswith('Heading'):
+                group.insert(0,flow.pop())
+            flow.append(KeepTogether(group))
+            i+=1;continue
         if not line:
             i+=1; continue
         if line.startswith('```'):
